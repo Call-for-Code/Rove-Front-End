@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { Select } from 'antd';
+import { Select ,Radio} from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
@@ -70,6 +70,7 @@ const colorRange = [
 
 function Map() {
   const [selected, setSelected] = useState('gather');
+  const [style, setStyle] = useState('dark-v10');
   const mappedData = data.map(coord => [coord.lng, coord.lat]);
 
   const _renderLayers = () => {
@@ -87,15 +88,20 @@ function Map() {
         getPosition: d => d,
         onHover: () => {},
         opacity: 1,
-        pickable: Boolean(false),
+        pickable: true,
         radius,
         upperPercentile,
-        material
+        material,
+        onClick: (event) => { console.log(event); return true; }
       })
     ];
   };
 
-  const mapStyle = 'mapbox://styles/mapbox/dark-v9';
+  const onRadioChange = (e) => {
+    setStyle(e.target.value)
+  };
+
+  const mapStyle = `mapbox://styles/mapbox/${style}`;
   return (
     <div className="map" style={{ position: 'relative' }}>
       <DeckGL
@@ -111,12 +117,20 @@ function Map() {
           mapboxApiAccessToken={MAPBOX_TOKEN}
         />
       </DeckGL>
+
       <div className="select">
         <Select value={selected} onChange={setSelected}>
           <Option value="gather">1. Gather</Option>
           <Option value="organize">2. Organize</Option>
           <Option value="respond">3. Respond</Option>
         </Select>
+      </div>
+
+      <div className="style">
+        <Radio.Group onChange={onRadioChange} value={style}>
+          <Radio.Button value="dark-v10">Normal</Radio.Button>
+          <Radio.Button value="satellite-v9">Satellite</Radio.Button>
+        </Radio.Group>
       </div>
     </div>
   );
