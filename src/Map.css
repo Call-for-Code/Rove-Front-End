@@ -1,0 +1,10 @@
+.select {
+  position: absolute;
+  top: 0;
+  margin: 8px;
+}
+
+.deck {
+  width: 100%;
+  height: 100%;
+}
