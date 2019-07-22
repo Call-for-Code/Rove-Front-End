@@ -15,23 +15,10 @@ import fulldata from './fulldata.json';
 const { TabPane } = Tabs;
 const { Option } = Select;
 
-function GatherPane() {
+function GatherPane({fulldata}) {
   const [selected, setSelected] = useState('overall');
 
-  const calculateOverallPriority = (record) => (
-    record.health.priority * 0.7 +
-    record.food.priority * 0.2 +
-    record.hygiene.priority * 0.1
-  );
-
-  const fulldataWithOverall = fulldata.map(record => ({
-    ...record,
-    overall: {
-      priority: calculateOverallPriority(record)
-    }
-  }));
-
-  const fulldataSorted = fulldataWithOverall.sort((left, right) => {
+  const fulldataSorted = fulldata.sort((left, right) => {
     if(selected === 'overall'){
       return right.overall.priority - left.overall.priority;
     } else if (selected === 'health') {
@@ -124,6 +111,19 @@ function GatherPane() {
 function App() {
   const [tab, setTab] = useState('1');
 
+  const calculateOverallPriority = (record) => (
+    record.health.priority * 0.7 +
+    record.food.priority * 0.2 +
+    record.hygiene.priority * 0.1
+  );
+
+  const fulldataWithOverall = fulldata.map(record => ({
+    ...record,
+    overall: {
+      priority: calculateOverallPriority(record)
+    }
+  }));
+
   return (
     <div className="App">
       <div className="menu">
@@ -140,7 +140,7 @@ function App() {
             className="tabPane"
             tab="1. Gather"
             key="1">
-            <GatherPane/>
+            <GatherPane fulldata={fulldataWithOverall}/>
           </TabPane>
           <TabPane
             tab="2. Organize"
@@ -154,7 +154,7 @@ function App() {
           </TabPane>
         </Tabs>
       </div>
-      <Map fulldata={fulldata} />
+      <Map fulldata={fulldataWithOverall} />
     </div>
   );
 }

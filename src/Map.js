@@ -78,7 +78,7 @@ function Map({fulldata}) {
   };
 
   const _renderLayers = () => {
-    const { radius = 1000, upperPercentile = 100, coverage = 0.9 } = {};
+    const { radius = 200, upperPercentile = 100, coverage = 0.9 } = {};
 
     return [
       new HexagonLayer({
@@ -100,7 +100,7 @@ function Map({fulldata}) {
       }),
       new ScatterplotLayer({
         id: 'scatterplot',
-        data: mappedData,
+        data: fulldata,
         pickable: true,
         opacity: 0.8,
         stroked: true,
@@ -109,9 +109,15 @@ function Map({fulldata}) {
         radiusMinPixels: 1,
         radiusMaxPixels: 100,
         lineWidthMinPixels: 1,
-        getPosition: d => d,
+        getPosition: d => [
+          d.location_information.geometry.location.lng,
+          d.location_information.geometry.location.lat],
         getRadius: d => 20,
-        getFillColor: d => [255, 140, 0],
+        getFillColor: d => [
+          150 * d.overall.priority/500 + 100,
+          0 * d.overall.priority/500,
+          0
+        ],
         getLineColor: d => [0, 0, 0]
       })
     ];
