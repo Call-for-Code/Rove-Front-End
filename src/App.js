@@ -4,10 +4,122 @@ import 'antd/dist/antd.css';
 
 import Map from './Map';
 
-import { Tabs, Icon } from 'antd';
+import { Tabs, Icon, Select, Radio, List } from 'antd';
 import * as Icons from './icons';
 
+import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
+import VList from 'react-virtualized/dist/commonjs/List';
+
+import fulldata from './fulldata.json';
+
 const { TabPane } = Tabs;
+const { Option } = Select;
+
+function GatherPane() {
+  const [selected, setSelected] = useState('overall');
+
+  const calculateOverallPriority = (record) => (
+    record.health.priority * 0.7 +
+    record.food.priority * 0.2 +
+    record.hygiene.priority * 0.1
+  );
+
+  const fulldataWithOverall = fulldata.map(record => ({
+    ...record,
+    overall: {
+      priority: calculateOverallPriority(record)
+    }
+  }));
+
+  const fulldataSorted = fulldataWithOverall.sort((left, right) => {
+    if(selected === 'overall'){
+      return right.overall.priority - left.overall.priority;
+    } else if (selected === 'health') {
+      return right.health.priority - left.health.priority;
+    } else if (selected === 'food') {
+      return right.food.priority - left.food.priority;
+    } else if (selected === 'hygiene') {
+      return right.hygiene.priority - left.hygiene.priority;
+    }
+    return 0;
+  });
+
+  const renderItem = ({ index, key, style }) => {
+    const item = fulldataSorted[index];
+    return (
+      <List.Item key={key} style={style} className="row">
+        <List.Item.Meta
+          title={
+            <div>{item.name}</div>
+          }
+          description={
+            <div>
+              Overall: {Math.round(item.overall.priority)}
+              <Icon className="rowIcon" component={Icons.Bandage} />: {Math.round(item.health.priority)}
+              <Icon className="rowIcon" component={Icons.Food} />: {Math.round(item.food.priority)}
+              <Icon className="rowIcon" component={Icons.Toilet} />: {Math.round(item.hygiene.priority)}
+            </div>
+          } />
+      </List.Item>
+    );
+  };
+
+  const Vlist = ({ height, width }) => (
+    <VList
+      height={height}
+      overscanRowCount={2}
+      rowCount={fulldataSorted.length}
+      rowHeight={73}
+      rowRenderer={renderItem}
+      width={width}
+    />
+  );
+  const AutoSize = () => (
+    <AutoSizer>
+      {({ width, height }) =>
+        Vlist({
+          height,
+          width,
+        })
+      }
+    </AutoSizer>
+  );
+
+  return (
+    <div className="gather">
+      <div className="select">
+        <span className="sort">Sort by Priority:</span>
+        <Select value={selected} onChange={(v) => setSelected(v)}>
+          <Option value="overall">
+            <div className="option">Overall</div>
+          </Option>
+          <Option value="health">
+            <div className="option"><Icon className="icon" component={Icons.Bandage} />Health</div>
+          </Option>
+          <Option value="food">
+            <div className="option"><Icon className="icon" component={Icons.Food} />Food</div>
+          </Option>
+          <Option value="hygiene">
+            <div className="option"><Icon className="icon" component={Icons.Toilet} />Hygiene</div>
+          </Option>
+        </Select>
+      </div>
+
+      <div className="divider" style={{gridArea: 'dividerTop'}}/>
+
+      <div className="rawlist">
+        <AutoSize/>
+      </div>
+
+      <div className="divider" style={{gridArea: 'dividerBottom'}}/>
+
+
+      <div className="info">
+        HERE'S SOME INFO
+      </div>
+    </div>
+  )
+}
 
 function App() {
   const [tab, setTab] = useState('1');
@@ -15,48 +127,34 @@ function App() {
   return (
     <div className="App">
       <div className="menu">
+        <h1 className="header">
+          Emergency Dashboard
+        </h1>
+
         <Tabs
           className="tabs"
           defaultActiveKey={tab}
           onChange={setTab}
-          size="small"
         >
           <TabPane
-            tab={
-              <div>
-                <Icon component={Icons.Bandage} />
-                Health
-              </div>
-            }
-            key="1"
-          >
-            Content of Tab Pane 1
+            className="tabPane"
+            tab="1. Gather"
+            key="1">
+            <GatherPane/>
           </TabPane>
           <TabPane
-            tab={
-              <div>
-                <Icon component={Icons.Food} />
-                Food
-              </div>
-            }
-            key="2"
-          >
+            tab="2. Organize"
+            key="2">
             Content of Tab Pane 2
           </TabPane>
           <TabPane
-            tab={
-              <div>
-                <Icon component={Icons.Toilet} />
-                Hygiene
-              </div>
-            }
-            key="3"
-          >
+            tab="3. Respond"
+            key="3">
             Content of Tab Pane 3
           </TabPane>
         </Tabs>
       </div>
-      <Map />
+      <Map fulldata={fulldata} />
     </div>
   );
 }
