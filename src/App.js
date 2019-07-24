@@ -39,11 +39,11 @@ function GatherPane({ fulldata }) {
             <div>
               Overall: {Math.round(item.overall.priority)}
               <Icon className="rowIcon" component={Icons.Bandage} />:{' '}
-              {Math.round(item.health.priority*10)}
+              {Math.round(item.health.priority * 10)}
               <Icon className="rowIcon" component={Icons.Food} />:{' '}
-              {Math.round(item.food.priority*10)}
+              {Math.round(item.food.priority * 10)}
               <Icon className="rowIcon" component={Icons.Toilet} />:{' '}
-              {Math.round(item.hygiene.priority*10)}
+              {Math.round(item.hygiene.priority * 10)}
             </div>
           }
         />
@@ -126,7 +126,9 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await (await fetch('/fulldata.json')).json();
+      const result = await (await fetch(
+        process.env.PUBLIC_URL + '/fulldata.json'
+      )).json();
       setData(result);
     }
 
