@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { Select ,Radio} from 'antd';
+import { Select, Radio } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
-import {ScatterplotLayer} from '@deck.gl/layers';
+import { ScatterplotLayer } from '@deck.gl/layers';
 import DeckGL from '@deck.gl/react';
 import { StaticMap } from 'react-map-gl';
 import { PhongMaterial } from '@luma.gl/core';
@@ -66,15 +66,15 @@ const colorRange = [
   [209, 55, 78]
 ];
 
-function Map({fulldata}) {
-
+function Map({ fulldata }) {
   const [style, setStyle] = useState('dark-v10');
   const mappedData = fulldata.map(record => [
     record.location_information.geometry.location.lng,
-    record.location_information.geometry.location.lat]);
+    record.location_information.geometry.location.lat
+  ]);
 
-  const onRadioChange = (e) => {
-    setStyle(e.target.value)
+  const onRadioChange = e => {
+    setStyle(e.target.value);
   };
 
   const _renderLayers = () => {
@@ -96,7 +96,10 @@ function Map({fulldata}) {
         radius,
         upperPercentile,
         material,
-        onClick: (event) => { console.log(event); return true; }
+        onClick: event => {
+          console.log(event);
+          return true;
+        }
       }),
       new ScatterplotLayer({
         id: 'scatterplot',
@@ -111,11 +114,12 @@ function Map({fulldata}) {
         lineWidthMinPixels: 1,
         getPosition: d => [
           d.location_information.geometry.location.lng,
-          d.location_information.geometry.location.lat],
+          d.location_information.geometry.location.lat
+        ],
         getRadius: d => 20,
         getFillColor: d => [
-          150 * d.overall.priority/500 + 100,
-          0 * d.overall.priority/500,
+          (150 * d.overall.priority) / 500 + 100,
+          (0 * d.overall.priority) / 500,
           0
         ],
         getLineColor: d => [0, 0, 0]

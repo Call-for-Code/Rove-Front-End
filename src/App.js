@@ -13,11 +13,11 @@ import VList from 'react-virtualized/dist/commonjs/List';
 const { TabPane } = Tabs;
 const { Option } = Select;
 
-function GatherPane({fulldata}) {
+function GatherPane({ fulldata }) {
   const [selected, setSelected] = useState('overall');
 
   const fulldataSorted = fulldata.sort((left, right) => {
-    if(selected === 'overall'){
+    if (selected === 'overall') {
       return right.overall.priority - left.overall.priority;
     } else if (selected === 'health') {
       return right.health.priority - left.health.priority;
@@ -34,17 +34,19 @@ function GatherPane({fulldata}) {
     return (
       <List.Item key={key} style={style} className="row">
         <List.Item.Meta
-          title={
-            <div>{item.name}</div>
-          }
+          title={<div>{item.name}</div>}
           description={
             <div>
               Overall: {Math.round(item.overall.priority)}
-              <Icon className="rowIcon" component={Icons.Bandage} />: {Math.round(item.health.priority)}
-              <Icon className="rowIcon" component={Icons.Food} />: {Math.round(item.food.priority)}
-              <Icon className="rowIcon" component={Icons.Toilet} />: {Math.round(item.hygiene.priority)}
+              <Icon className="rowIcon" component={Icons.Bandage} />:{' '}
+              {Math.round(item.health.priority)}
+              <Icon className="rowIcon" component={Icons.Food} />:{' '}
+              {Math.round(item.food.priority)}
+              <Icon className="rowIcon" component={Icons.Toilet} />:{' '}
+              {Math.round(item.hygiene.priority)}
             </div>
-          } />
+          }
+        />
       </List.Item>
     );
   };
@@ -64,7 +66,7 @@ function GatherPane({fulldata}) {
       {({ width, height }) =>
         Vlist({
           height,
-          width,
+          width
         })
       }
     </AutoSizer>
@@ -74,46 +76,51 @@ function GatherPane({fulldata}) {
     <div className="gather">
       <div className="select">
         <span className="sort">Sort by Priority:</span>
-        <Select value={selected} onChange={(v) => setSelected(v)}>
+        <Select value={selected} onChange={v => setSelected(v)}>
           <Option value="overall">
             <div className="option">Overall</div>
           </Option>
           <Option value="health">
-            <div className="option"><Icon className="icon" component={Icons.Bandage} />Health</div>
+            <div className="option">
+              <Icon className="icon" component={Icons.Bandage} />
+              Health
+            </div>
           </Option>
           <Option value="food">
-            <div className="option"><Icon className="icon" component={Icons.Food} />Food</div>
+            <div className="option">
+              <Icon className="icon" component={Icons.Food} />
+              Food
+            </div>
           </Option>
           <Option value="hygiene">
-            <div className="option"><Icon className="icon" component={Icons.Toilet} />Hygiene</div>
+            <div className="option">
+              <Icon className="icon" component={Icons.Toilet} />
+              Hygiene
+            </div>
           </Option>
         </Select>
       </div>
 
-      <div className="divider" style={{gridArea: 'dividerTop'}}/>
+      <div className="divider" style={{ gridArea: 'dividerTop' }} />
 
       <div className="rawlist">
-        <AutoSize/>
+        <AutoSize />
       </div>
 
-      <div className="divider" style={{gridArea: 'dividerBottom'}}/>
+      <div className="divider" style={{ gridArea: 'dividerBottom' }} />
 
-
-      <div className="info">
-        HERE'S SOME INFO
-      </div>
+      <div className="info">HERE'S SOME INFO</div>
     </div>
-  )
+  );
 }
 
 function App() {
   const [tab, setTab] = useState('1');
 
-  const calculateOverallPriority = (record) => (
+  const calculateOverallPriority = record =>
     record.health.priority * 0.7 +
     record.food.priority * 0.2 +
-    record.hygiene.priority * 0.1
-  );
+    record.hygiene.priority * 0.1;
 
   const [data, setData] = useState([]);
 
@@ -136,29 +143,16 @@ function App() {
   return (
     <div className="App">
       <div className="menu">
-        <h1 className="header">
-          Emergency Dashboard
-        </h1>
+        <h1 className="header">Emergency Dashboard</h1>
 
-        <Tabs
-          className="tabs"
-          defaultActiveKey={tab}
-          onChange={setTab}
-        >
-          <TabPane
-            className="tabPane"
-            tab="1. Gather"
-            key="1">
-            <GatherPane fulldata={fulldataWithOverall}/>
+        <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
+          <TabPane className="tabPane" tab="1. Gather" key="1">
+            <GatherPane fulldata={fulldataWithOverall} />
           </TabPane>
-          <TabPane
-            tab="2. Organize"
-            key="2">
+          <TabPane tab="2. Organize" key="2">
             Content of Tab Pane 2
           </TabPane>
-          <TabPane
-            tab="3. Respond"
-            key="3">
+          <TabPane tab="3. Respond" key="3">
             Content of Tab Pane 3
           </TabPane>
         </Tabs>
