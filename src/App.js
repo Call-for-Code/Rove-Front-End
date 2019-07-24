@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 
 import Map from './Map';
 
-import { Tabs, Icon, Select, Radio, List } from 'antd';
+import { Tabs, Icon, Select, List } from 'antd';
 import * as Icons from './icons';
 
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import VList from 'react-virtualized/dist/commonjs/List';
-
-import fulldata from './fulldata.json';
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -117,7 +115,18 @@ function App() {
     record.hygiene.priority * 0.1
   );
 
-  const fulldataWithOverall = fulldata.map(record => ({
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const result = await (await fetch('/fulldata.json')).json();
+      setData(result);
+    }
+
+    fetchData();
+  }, []);
+
+  const fulldataWithOverall = data.map(record => ({
     ...record,
     overall: {
       priority: calculateOverallPriority(record)
