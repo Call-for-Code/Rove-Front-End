@@ -39,11 +39,11 @@ function GatherPane({ fulldata }) {
             <div>
               Overall: {Math.round(item.overall.priority)}
               <Icon className="rowIcon" component={Icons.Bandage} />:{' '}
-              {Math.round(item.health.priority)}
+              {Math.round(item.health.priority*10)}
               <Icon className="rowIcon" component={Icons.Food} />:{' '}
-              {Math.round(item.food.priority)}
+              {Math.round(item.food.priority*10)}
               <Icon className="rowIcon" component={Icons.Toilet} />:{' '}
-              {Math.round(item.hygiene.priority)}
+              {Math.round(item.hygiene.priority*10)}
             </div>
           }
         />
