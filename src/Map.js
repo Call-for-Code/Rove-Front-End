@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { Checkbox, Radio } from 'antd';
+import { Checkbox, Radio, Card } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
@@ -17,7 +17,6 @@ const MAPBOX_TOKEN =
   'pk.eyJ1IjoicGx1c2N1YmVkIiwiYSI6ImNqeHZmam5zZzA0Z2MzaG5ybGtoZGd6dnAifQ.gUSmW8JdYliAmo2JbvzxGA';
 const MAPBOX_STYLE =
   'mapbox://styles/pluscubed/cjyi8b2lh06p81cmd0awqozo0';
-const DATA_URL = './heatmap.csv';
 
 const ambientLight = new AmbientLight({
   color: [255, 255, 255],
@@ -78,11 +77,20 @@ function Map({ fulldata }) {
     record.location_information.geometry.location.lng,
     record.location_information.geometry.location.lat
   ]);
+
+  const [scatterplotOn, setScatterplotOn] = useState(false);
+  const [hexagonOn, setHexagonOn] = useState(true);
+  const onScatterplotToggle = (e) => {
+    setScatterplotOn(e.target.checked);
+  };
+  const onHexagonToggle = (e) => {
+    setHexagonOn(e.target.checked);
+  };
   const _renderLayers = () => {
-    const { radius = 200, upperPercentile = 100, lowerPercentile = 0, coverage = 0.7 } = {};
+    const { radius = 200, upperPercentile = 100, lowerPercentile = 0, coverage = 0.5 } = {};
 
     return [
-      new HexagonLayer({
+      hexagonOn ? new HexagonLayer({
         id: 'heatmap',
         colorRange,
         coverage,
@@ -102,13 +110,13 @@ function Map({ fulldata }) {
           console.log(event);
           return true;
         }
-      }),
-      new ScatterplotLayer({
+      }) : null,
+      scatterplotOn ? new ScatterplotLayer({
         id: 'scatterplot',
         data: fulldata,
         pickable: true,
         opacity: 0.8,
-        stroked: true,
+        stroked: false,
         filled: true,
         radiusScale: 6,
         radiusMinPixels: 1,
@@ -118,14 +126,14 @@ function Map({ fulldata }) {
           d.location_information.geometry.location.lng,
           d.location_information.geometry.location.lat
         ],
-        getRadius: d => 20,
+        getRadius: d => 5,
         getFillColor: d => [
-          (150 * d.overall.priority) / 500 + 100,
+          155 * d.overall.priority + 100,
           0,
-          0
+          100 * (1-d.overall.priority)
         ],
         getLineColor: d => [0, 0, 0]
-      })
+      }) : null
     ];
   };
 
@@ -148,8 +156,12 @@ function Map({ fulldata }) {
         <Radio.Group onChange={onRadioChange} value={style}>
           <Radio.Button value={MAPBOX_STYLE}>Normal</Radio.Button>
           <Radio.Button value="mapbox://styles/mapbox/satellite-v9">Satellite</Radio.Button>
-        </Radio.Group>
+        </Radio.Group><br/>
       </div>
+      <Card className="layers">
+        <Checkbox onChange={onHexagonToggle} checked={hexagonOn}>Hexagon Layer</Checkbox><br/>
+        <Checkbox onChange={onScatterplotToggle} checked={scatterplotOn}>Scatterplot Layer</Checkbox>
+      </Card>
     </div>
   );
 }

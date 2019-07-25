@@ -8,3 +8,10 @@
   margin: 8px;
   right: 0;
 }
+
+.layers {
+  position: absolute;
+  bottom: 32px;
+  right: 0;
+  margin: 8px;
+}
