@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { Select, Radio } from 'antd';
+import { Checkbox, Radio } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
@@ -15,6 +15,8 @@ import './Map.css';
 
 const MAPBOX_TOKEN =
   'pk.eyJ1IjoicGx1c2N1YmVkIiwiYSI6ImNqeHZmam5zZzA0Z2MzaG5ybGtoZGd6dnAifQ.gUSmW8JdYliAmo2JbvzxGA';
+const MAPBOX_STYLE =
+  'mapbox://styles/pluscubed/cjyi8b2lh06p81cmd0awqozo0';
 const DATA_URL = './heatmap.csv';
 
 const ambientLight = new AmbientLight({
@@ -67,18 +69,17 @@ const colorRange = [
 ];
 
 function Map({ fulldata }) {
-  const [style, setStyle] = useState('dark-v10');
-  const mappedData = fulldata.map(record => [
-    record.location_information.geometry.location.lng,
-    record.location_information.geometry.location.lat
-  ]);
-
+  const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
   };
 
+  const mappedData = fulldata.map(record => [
+    record.location_information.geometry.location.lng,
+    record.location_information.geometry.location.lat
+  ]);
   const _renderLayers = () => {
-    const { radius = 200, upperPercentile = 100, coverage = 0.9 } = {};
+    const { radius = 200, upperPercentile = 100, lowerPercentile = 0, coverage = 0.7 } = {};
 
     return [
       new HexagonLayer({
@@ -86,8 +87,8 @@ function Map({ fulldata }) {
         colorRange,
         coverage,
         data: mappedData,
-        elevationRange: [0, 300],
-        elevationScale: 50,
+        elevationRange: [0, 500],
+        elevationScale: 10,
         extruded: true,
         getPosition: d => d,
         onHover: () => {},
@@ -95,6 +96,7 @@ function Map({ fulldata }) {
         pickable: true,
         radius,
         upperPercentile,
+        lowerPercentile,
         material,
         onClick: event => {
           console.log(event);
@@ -119,7 +121,7 @@ function Map({ fulldata }) {
         getRadius: d => 20,
         getFillColor: d => [
           (150 * d.overall.priority) / 500 + 100,
-          (0 * d.overall.priority) / 500,
+          0,
           0
         ],
         getLineColor: d => [0, 0, 0]
@@ -127,7 +129,6 @@ function Map({ fulldata }) {
     ];
   };
 
-  const mapStyle = `mapbox://styles/mapbox/${style}`;
   return (
     <div className="map" style={{ position: 'relative' }}>
       <DeckGL
@@ -138,15 +139,15 @@ function Map({ fulldata }) {
       >
         <StaticMap
           reuseMaps
-          mapStyle={mapStyle}
+          mapStyle={style}
           preventStyleDiffing={true}
           mapboxApiAccessToken={MAPBOX_TOKEN}
         />
       </DeckGL>
       <div className="style">
         <Radio.Group onChange={onRadioChange} value={style}>
-          <Radio.Button value="dark-v10">Normal</Radio.Button>
-          <Radio.Button value="satellite-v9">Satellite</Radio.Button>
+          <Radio.Button value={MAPBOX_STYLE}>Normal</Radio.Button>
+          <Radio.Button value="mapbox://styles/mapbox/satellite-v9">Satellite</Radio.Button>
         </Radio.Group>
       </div>
     </div>
