@@ -129,8 +129,8 @@ function Map({ fulldata }) {
         getRadius: d => 5,
         getFillColor: d => [
           155 * d.overall.priority + 100,
-          0,
-          100 * (1-d.overall.priority)
+          155 * (1-d.overall.priority),
+          0
         ],
         getLineColor: d => [0, 0, 0]
       }) : null
