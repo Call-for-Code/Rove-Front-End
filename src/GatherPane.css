@@ -46,8 +46,14 @@
 }
 
 .row {
-  margin-left: 16px;
-  margin-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.row:hover {
+  background-color: #e6e6e6;
+  transition: background-color 300ms;
+  cursor: pointer;
 }
 
 .rowIcon {

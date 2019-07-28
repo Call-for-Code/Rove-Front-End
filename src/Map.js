@@ -209,7 +209,7 @@ const MapImpl = React.memo(({hexagonOn, mappedData, fulldata, scatterplotOn, han
         d.location_information.geometry.location.lng,
         d.location_information.geometry.location.lat
       ],
-      getRadius: d => 5,
+      getRadius: d => 10,
       getFillColor: d => scatterplotColorRange[Math.floor(d.overall.priority*6)],
       getLineColor: d => [0, 0, 0],
       onClick: (info, event) => {

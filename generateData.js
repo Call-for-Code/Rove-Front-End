@@ -32,6 +32,13 @@ const parser = parse({
   skip_empty_lines: true
 });
 
+const keywords = [
+  "small wounds",
+  "large wounds",
+  "broken arm",
+  "broken leg",
+];
+
 let processData = () => {
   //console.log(results);
 

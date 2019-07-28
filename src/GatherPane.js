@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Icon, List, Select } from 'antd';
 import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
@@ -15,7 +15,7 @@ const getPriorityUiString = (priority) => {
 export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
   const [selected, setSelected] = useState('overall');
 
-  const fulldataSorted = fulldata.sort((left, right) => {
+  const fulldataSorted = useMemo(() => fulldata.sort((left, right) => {
     if (selected === 'overall') {
       return right.overall.priority - left.overall.priority;
     } else if (selected === 'health') {
@@ -26,14 +26,15 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
       return right.hygiene.priority - left.hygiene.priority;
     }
     return 0;
-  });
+  }), [fulldata, selected]);
 
-  const handleItemClick = (item) => {
-    handleSelectedPt(item._id)
-  };
-
-  const renderItem = ({ index, key, style }) => {
+  const renderItem = useCallback(({ index, key, style }) => {
     const item = fulldataSorted[index];
+
+    const handleItemClick = (item) => {
+      handleSelectedPt(item._id)
+    };
+
     return (
       <List.Item
         key={key}
@@ -59,24 +60,7 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
         />
       </List.Item>
     );
-  };
-
-  const Vlist = ({ height, width }) => (
-    <VList
-      height={height}
-      overscanRowCount={2}
-      rowCount={fulldataSorted.length}
-      rowHeight={73}
-      rowRenderer={renderItem}
-      width={width}
-    />
-  );
-  const AutoSize = () => (
-    <AutoSizer>
-      {({ width, height }) =>
-        Vlist({height, width})}
-    </AutoSizer>
-  );
+  }, [fulldataSorted, handleSelectedPt]);
 
   const selectedPtData = fulldata.filter(record => record._id === selectedPt);
   let info;
@@ -128,7 +112,17 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
       <div className="divider" style={{ gridArea: 'dividerTop' }}/>
 
       <div className="rawlist">
-        <AutoSize/>
+        <AutoSizer>
+          {({ width, height }) =>
+            <VList
+              height={height}
+              overscanRowCount={2}
+              rowCount={fulldataSorted.length}
+              rowHeight={73}
+              rowRenderer={renderItem}
+              width={width}
+            />}
+        </AutoSizer>
       </div>
 
       <div className="divider" style={{ gridArea: 'dividerBottom' }}/>
