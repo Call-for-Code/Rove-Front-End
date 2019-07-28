@@ -12,7 +12,7 @@ const getPriorityUiString = (priority) => {
   return (10 - priority * 10).toFixed(1);
 };
 
-export function GatherPane({ fulldata, selectedPt }) {
+export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
   const [selected, setSelected] = useState('overall');
 
   const fulldataSorted = fulldata.sort((left, right) => {
@@ -28,10 +28,18 @@ export function GatherPane({ fulldata, selectedPt }) {
     return 0;
   });
 
+  const handleItemClick = (item) => {
+    handleSelectedPt(item._id)
+  };
+
   const renderItem = ({ index, key, style }) => {
     const item = fulldataSorted[index];
     return (
-      <List.Item key={key} style={style} className="row">
+      <List.Item
+        key={key}
+        style={style}
+        className="row"
+        onClick={() => handleItemClick(item)}>
         <List.Item.Meta
           title={<div>{item.name}</div>}
           description={
@@ -76,13 +84,13 @@ export function GatherPane({ fulldata, selectedPt }) {
     const report = selectedPtData[0];
     info =
       <div>
-        Name: {report.name} <br/>
-        Phone Number: {report.phone_number} <br/>
-        Location: {report.location_information.geometry.location.lat.toFixed(5)}, {report.location_information.geometry.location.lng.toFixed(5)} <br/>
-        Health Keywords: {report.health.key_words.join(', ')} <br/>
-        Health: {getPriorityUiString(report.health.priority)} <br/>
-        Food: {getPriorityUiString(report.food.priority)} <br/>
-        Hygiene: {getPriorityUiString(report.hygiene.priority)} <br/>
+        <div className="row-label">Name:  </div> {report.name} <br/>
+        <div className="row-label">Phone:  </div> {report.phone_number} <br/>
+        <div className="row-label">Location:  </div> {report.location_information.geometry.location.lat.toFixed(5)}, {report.location_information.geometry.location.lng.toFixed(5)} <br/>
+        <div className="row-label">Keywords:  </div> {report.health.key_words.join(', ')} <br/>
+        <div className="row-label">Health:  </div> {getPriorityUiString(report.health.priority)} <br/>
+        <div className="row-label">Food:  </div> {getPriorityUiString(report.food.priority)} <br/>
+        <div className="row-label">Hygiene:  </div> {getPriorityUiString(report.hygiene.priority)} <br/>
       </div>
   } else {
     info = "Select a report for more information"

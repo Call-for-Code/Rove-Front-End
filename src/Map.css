@@ -15,3 +15,12 @@
   right: 0;
   margin: 8px;
 }
+
+.tooltip {
+  color: white;
+  position: absolute;
+  background-color: black;
+  padding: 8px;
+  z-index: 1;
+  pointer-events: none;
+}

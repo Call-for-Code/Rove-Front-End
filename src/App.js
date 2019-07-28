@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import Map from './Map';
@@ -27,14 +27,16 @@ function App() {
     fetchData();
   }, []);
 
-  const fulldataWithOverall = data.map(record => ({
+  const fulldataWithOverall = useMemo(() => data.map(record => ({
     ...record,
     overall: {
       priority: calculateOverallPriority(record)
     }
-  }));
+  })), [data]);
 
   const [selectedPt, setSelectedPt] = useState("");
+
+  const handleSelectedPt = useCallback((pt) => setSelectedPt(pt), []);
 
   return (
     <div className="App">
@@ -45,6 +47,7 @@ function App() {
           <TabPane className="tabPane" tab="1. Visualize" key="1">
             <GatherPane
               fulldata={fulldataWithOverall}
+              handleSelectedPt={handleSelectedPt}
               selectedPt={selectedPt}/>
           </TabPane>
           <TabPane tab="2. Organize" key="2">
@@ -57,7 +60,7 @@ function App() {
       </div>
       <Map
         fulldata={fulldataWithOverall}
-        handleSelectedPt={setSelectedPt}
+        handleSelectedPt={handleSelectedPt}
       />
     </div>
   );

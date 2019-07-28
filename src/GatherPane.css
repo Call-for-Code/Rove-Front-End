@@ -55,3 +55,11 @@
   height: 16px;
   margin-left: 16px;
 }
+
+.row-label {
+  font-weight: bold;
+  width: 70px;
+  text-align: end;
+  display: inline-block;
+  margin-right: 8px;
+}

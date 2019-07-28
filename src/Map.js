@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -82,48 +82,64 @@ function Map({ fulldata, handleSelectedPt}) {
     setStyle(e.target.value);
   };
 
-  const mappedData = fulldata.map(record => [
+  const mappedData = useMemo(() => fulldata.map(record => [
     record.location_information.geometry.location.lng,
     record.location_information.geometry.location.lat
-  ]);
+  ]), [fulldata]);
 
   const [scatterplotOn, setScatterplotOn] = useState(false);
   const [hexagonOn, setHexagonOn] = useState(true);
-  const onScatterplotToggle = (e) => {
+  const onScatterplotToggle = useCallback((e) => {
     setScatterplotOn(e.target.checked);
-  };
-  const onHexagonToggle = (e) => {
+  }, []);
+  const onHexagonToggle = useCallback((e) => {
     setHexagonOn(e.target.checked);
-  };
+  }, []);
 
   const [hovered, setHovered] = useState(null);
 
-  function _onHover ({x, y, object}) {
-    setHovered({x, y, hoveredObject: object});
-  }
+  const _onHover = useCallback(({x, y, object}) => {
+    setHovered({x, y, object});
+  }, []);
 
   const _renderTooltip = () => {
     if(!hovered) {
       return null;
     }
 
-    const {x, y, hoveredObject} = hovered;
+    const {x, y, object} = hovered;
 
-    if (!hoveredObject) {
+    if(!object) {
       return null;
     }
 
-    const lat = hoveredObject.location_information.geometry.location.lat;
-    const lng = hoveredObject.location_information.geometry.location.lng;
-    const name = hoveredObject.name;
+    if (object.position) {
+      const lat = object.position[1];
+      const lng = object.position[0];
+      const count = object.points.length;
 
-    return (
-      <div className="tooltip" style={{color: 'white', left: x, top: y, position: 'absolute', backgroundColor: 'black'}}>
-        <div>{`${name}`}</div>
-        <div>{`latitude: ${Number.isFinite(lat) ? lat.toFixed(6) : ''}`}</div>
-        <div>{`longitude: ${Number.isFinite(lng) ? lng.toFixed(6) : ''}`}</div>
-      </div>
-    );
+      return (
+        <div className="tooltip" style={{left: x, top: y}}>
+          <div>{`${count} reports`}</div>
+          <div>{`latitude: ${Number.isFinite(lat) ? lat.toFixed(6) : ''}`}</div>
+          <div>{`longitude: ${Number.isFinite(lng) ? lng.toFixed(6) : ''}`}</div>
+        </div>
+      );
+    } else if (object.name) {
+      const lat = object.location_information.geometry.location.lat;
+      const lng = object.location_information.geometry.location.lng;
+      const name = object.name;
+
+
+      return (
+        <div className="tooltip"  style={{left: x, top: y}}>
+          <div>{`${name}`}</div>
+          <div>{`latitude: ${Number.isFinite(lat) ? lat.toFixed(6) : ''}`}</div>
+          <div>{`longitude: ${Number.isFinite(lng) ? lng.toFixed(6) : ''}`}</div>
+          <div>Click for more info</div>
+        </div>
+      );
+    }
   };
 
   return (
@@ -134,7 +150,7 @@ function Map({ fulldata, handleSelectedPt}) {
         fulldata={fulldata}
         scatterplotOn={scatterplotOn}
         handleSelectedPt={handleSelectedPt}
-        onHover={_onHover}
+        handleHover={_onHover}
         style={style}
       />
       <div className="style">
@@ -153,67 +169,59 @@ function Map({ fulldata, handleSelectedPt}) {
   );
 }
 
-function MapImpl({hexagonOn, mappedData, fulldata, scatterplotOn, handleSelectedPt, onHover, style}) {
-  const _renderLayers = () => {
-    const { radius = 200, upperPercentile = 100, lowerPercentile = 0, coverage = 0.5 } = {};
+const MapImpl = React.memo(({hexagonOn, mappedData, fulldata, scatterplotOn, handleSelectedPt, handleHover, style}) => {
+  const { radius = 200, upperPercentile = 100, lowerPercentile = 0, coverage = 0.5 } = {};
 
-    return [
-      hexagonOn ? new HexagonLayer({
-        id: 'heatmap',
-        colorRange,
-        coverage,
-        data: mappedData,
-        elevationRange: [0, 500],
-        elevationScale: 10,
-        extruded: true,
-        getPosition: d => d,
-        onHover: () => {},
-        opacity: 1,
-        pickable: true,
-        radius,
-        upperPercentile,
-        lowerPercentile,
-        material,
-        onClick: event => {
-          console.log(event);
-          return true;
-        }
-      }) : null,
-      scatterplotOn ? new ScatterplotLayer({
-        id: 'scatterplot',
-        data: fulldata,
-        pickable: true,
-        opacity: 0.8,
-        stroked: false,
-        filled: true,
-        radiusScale: 6,
-        radiusMinPixels: 1,
-        radiusMaxPixels: 100,
-        lineWidthMinPixels: 1,
-        getPosition: d => [
-          d.location_information.geometry.location.lng,
-          d.location_information.geometry.location.lat
-        ],
-        getRadius: d => 5,
-        getFillColor: d => scatterplotColorRange[Math.floor(d.overall.priority*6)],
-        getLineColor: d => [0, 0, 0],
-        onClick: (info, event) => {
-          handleSelectedPt(info.object._id);
-        },
-        onHover: (info, event) => {
-          onHover({
-            x: info.x,
-            y: info.y,
-            object: info.object
-          })
-        }
-      }) : null
-    ];
-  };
+  const layers = useMemo(() => [
+    hexagonOn ? new HexagonLayer({
+      id: 'heatmap',
+      colorRange,
+      coverage,
+      data: mappedData,
+      elevationRange: [0, 500],
+      elevationScale: 10,
+      extruded: true,
+      getPosition: d => d,
+      opacity: 1,
+      pickable: true,
+      radius,
+      upperPercentile,
+      lowerPercentile,
+      material,
+      onClick: event => {
+        console.log(event);
+        return true;
+      },
+      onHover: handleHover
+    }) : null,
+    scatterplotOn ? new ScatterplotLayer({
+      id: 'scatterplot',
+      data: fulldata,
+      pickable: true,
+      opacity: 0.8,
+      stroked: false,
+      filled: true,
+      radiusScale: 6,
+      radiusMinPixels: 1,
+      radiusMaxPixels: 100,
+      lineWidthMinPixels: 1,
+      getPosition: d => [
+        d.location_information.geometry.location.lng,
+        d.location_information.geometry.location.lat
+      ],
+      getRadius: d => 5,
+      getFillColor: d => scatterplotColorRange[Math.floor(d.overall.priority*6)],
+      getLineColor: d => [0, 0, 0],
+      onClick: (info, event) => {
+        handleSelectedPt(info.object._id);
+      },
+      onHover: handleHover
+    }) : null
+  ], [hexagonOn, coverage, mappedData, radius, upperPercentile, lowerPercentile, scatterplotOn, fulldata, handleHover, handleSelectedPt]);
 
   return (
     <DeckGL
-      layers={_renderLayers()}
+      layers={layers}
       effects={[lightingEffect]}
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
@@ -226,6 +234,10 @@ function MapImpl({hexagonOn, mappedData, fulldata, scatterplotOn, handleSelected
       />
     </DeckGL>
   );
-}
+});
+
+MapImpl.whyDidYouRender = {
+  logOnDifferentValues: true
+};
 
 export default Map;

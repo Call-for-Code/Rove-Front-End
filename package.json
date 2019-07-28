@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/dark-theme": "^0.2.2",
+    "@welldone-software/why-did-you-render": "^3.2.3",
     "antd": "^3.20.5",
     "deck.gl": "^7.1.10",
     "random-name": "^0.1.2",
