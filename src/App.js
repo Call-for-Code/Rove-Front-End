@@ -34,14 +34,18 @@ function App() {
     }
   }));
 
+  const [selectedPt, setSelectedPt] = useState("");
+
   return (
     <div className="App">
       <div className="menu">
         <h1 className="header">Emergency Dashboard</h1>
 
         <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
-          <TabPane className="tabPane" tab="1. Gather" key="1">
-            <GatherPane fulldata={fulldataWithOverall} />
+          <TabPane className="tabPane" tab="1. Visualize" key="1">
+            <GatherPane
+              fulldata={fulldataWithOverall}
+              selectedPt={selectedPt}/>
           </TabPane>
           <TabPane tab="2. Organize" key="2">
             Content of Tab Pane 2
@@ -51,7 +55,10 @@ function App() {
           </TabPane>
         </Tabs>
       </div>
-      <Map fulldata={fulldataWithOverall} />
+      <Map
+        fulldata={fulldataWithOverall}
+        handleSelectedPt={setSelectedPt}
+      />
     </div>
   );
 }

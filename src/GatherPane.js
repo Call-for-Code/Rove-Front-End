@@ -3,9 +3,16 @@ import { Icon, List, Select } from 'antd';
 import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
+
+import './GatherPane.css';
+
 const { Option } = Select;
 
-export function GatherPane({ fulldata }) {
+const getPriorityUiString = (priority) => {
+  return (10 - priority * 10).toFixed(1);
+};
+
+export function GatherPane({ fulldata, selectedPt }) {
   const [selected, setSelected] = useState('overall');
 
   const fulldataSorted = fulldata.sort((left, right) => {
@@ -29,13 +36,16 @@ export function GatherPane({ fulldata }) {
           title={<div>{item.name}</div>}
           description={
             <div>
-              Overall: {(item.overall.priority * 10).toFixed(1)}
+              Overall: {getPriorityUiString(item.overall.priority)}
+
               <Icon className="rowIcon" component={Icons.Bandage}/>{' '}
-              {(item.health.priority * 10).toFixed(1)}
+              {getPriorityUiString(item.health.priority)}
+
               <Icon className="rowIcon" component={Icons.Food}/>{' '}
-              {(item.food.priority * 10).toFixed(1)}
+              {getPriorityUiString(item.food.priority)}
+
               <Icon className="rowIcon" component={Icons.Toilet}/>{' '}
-              {(item.hygiene.priority * 10).toFixed(1)}
+              {getPriorityUiString(item.hygiene.priority)}
             </div>
           }
         />
@@ -56,18 +66,32 @@ export function GatherPane({ fulldata }) {
   const AutoSize = () => (
     <AutoSizer>
       {({ width, height }) =>
-        Vlist({
-          height,
-          width
-        })
-      }
+        Vlist({height, width})}
     </AutoSizer>
   );
+
+  const selectedPtData = fulldata.filter(record => record._id === selectedPt);
+  let info;
+  if(selectedPtData[0]) {
+    const report = selectedPtData[0];
+    info =
+      <div>
+        Name: {report.name} <br/>
+        Phone Number: {report.phone_number} <br/>
+        Location: {report.location_information.geometry.location.lat.toFixed(5)}, {report.location_information.geometry.location.lng.toFixed(5)} <br/>
+        Health Keywords: {report.health.key_words.join(', ')} <br/>
+        Health: {getPriorityUiString(report.health.priority)} <br/>
+        Food: {getPriorityUiString(report.food.priority)} <br/>
+        Hygiene: {getPriorityUiString(report.hygiene.priority)} <br/>
+      </div>
+  } else {
+    info = "Select a report for more information"
+  }
 
   return (
     <div className="gather">
       <div className="select">
-        <span className="sort">Sort by Priority:</span>
+        <span className="sort">Sort by status:</span>
         <Select value={selected} onChange={v => setSelected(v)}>
           <Option value="overall">
             <div className="option">Overall</div>
@@ -101,7 +125,9 @@ export function GatherPane({ fulldata }) {
 
       <div className="divider" style={{ gridArea: 'dividerBottom' }}/>
 
-      <div className="info">HERE'S SOME INFO</div>
+      <div className="info">
+        {info}
+      </div>
     </div>
   );
 }

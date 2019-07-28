@@ -67,7 +67,16 @@ const colorRange = [
   [209, 55, 78]
 ];
 
-function Map({ fulldata }) {
+const scatterplotColorRange = [
+  [255, 255, 178, 25],
+  [254, 217, 118, 85],
+  [254, 178, 76, 127],
+  [253, 141, 60, 170],
+  [240, 59, 32, 212],
+  [189, 0, 38, 255]
+];
+
+function Map({ fulldata, handleSelectedPt}) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
@@ -86,6 +95,65 @@ function Map({ fulldata }) {
   const onHexagonToggle = (e) => {
     setHexagonOn(e.target.checked);
   };
+
+  const [hovered, setHovered] = useState(null);
+
+  function _onHover ({x, y, object}) {
+    setHovered({x, y, hoveredObject: object});
+  }
+
+  const _renderTooltip = () => {
+    if(!hovered) {
+      return null;
+    }
+
+    const {x, y, hoveredObject} = hovered;
+
+    if (!hoveredObject) {
+      return null;
+    }
+
+    const lat = hoveredObject.location_information.geometry.location.lat;
+    const lng = hoveredObject.location_information.geometry.location.lng;
+    const name = hoveredObject.name;
+
+    return (
+      <div className="tooltip" style={{color: 'white', left: x, top: y, position: 'absolute', backgroundColor: 'black'}}>
+        <div>{`${name}`}</div>
+        <div>{`latitude: ${Number.isFinite(lat) ? lat.toFixed(6) : ''}`}</div>
+        <div>{`longitude: ${Number.isFinite(lng) ? lng.toFixed(6) : ''}`}</div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="map" style={{ position: 'relative' }}>
+      <MapImpl
+        hexagonOn={hexagonOn}
+        mappedData={mappedData}
+        fulldata={fulldata}
+        scatterplotOn={scatterplotOn}
+        handleSelectedPt={handleSelectedPt}
+        onHover={_onHover}
+        style={style}
+      />
+      <div className="style">
+        <Radio.Group onChange={onRadioChange} value={style}>
+          <Radio.Button value={MAPBOX_STYLE}>Normal</Radio.Button>
+          <Radio.Button value="mapbox://styles/mapbox/satellite-v9">Satellite</Radio.Button>
+        </Radio.Group><br/>
+      </div>
+      <Card className="layers">
+        <Checkbox onChange={onHexagonToggle} checked={hexagonOn}>Report Heatmap</Checkbox><br/>
+        <Checkbox onChange={onScatterplotToggle} checked={scatterplotOn}>Priority Scatterplot</Checkbox>
+      </Card>
+
+      {_renderTooltip()}
+    </div>
+  );
+}
+
+function MapImpl({hexagonOn, mappedData, fulldata, scatterplotOn, handleSelectedPt, onHover, style}) {
   const _renderLayers = () => {
     const { radius = 200, upperPercentile = 100, lowerPercentile = 0, coverage = 0.5 } = {};
 
@@ -127,42 +195,36 @@ function Map({ fulldata }) {
           d.location_information.geometry.location.lat
         ],
         getRadius: d => 5,
-        getFillColor: d => [
-          155 * d.overall.priority + 100,
-          155 * (1-d.overall.priority),
-          0
-        ],
-        getLineColor: d => [0, 0, 0]
+        getFillColor: d => scatterplotColorRange[Math.floor(d.overall.priority*6)],
+        getLineColor: d => [0, 0, 0],
+        onClick: (info, event) => {
+          handleSelectedPt(info.object._id);
+        },
+        onHover: (info, event) => {
+          onHover({
+            x: info.x,
+            y: info.y,
+            object: info.object
+          })
+        }
       }) : null
     ];
   };
 
   return (
-    <div className="map" style={{ position: 'relative' }}>
-      <DeckGL
-        layers={_renderLayers()}
-        effects={[lightingEffect]}
-        initialViewState={INITIAL_VIEW_STATE}
-        controller={true}
-      >
-        <StaticMap
-          reuseMaps
-          mapStyle={style}
-          preventStyleDiffing={true}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
-        />
-      </DeckGL>
-      <div className="style">
-        <Radio.Group onChange={onRadioChange} value={style}>
-          <Radio.Button value={MAPBOX_STYLE}>Normal</Radio.Button>
-          <Radio.Button value="mapbox://styles/mapbox/satellite-v9">Satellite</Radio.Button>
-        </Radio.Group><br/>
-      </div>
-      <Card className="layers">
-        <Checkbox onChange={onHexagonToggle} checked={hexagonOn}>Hexagon Layer</Checkbox><br/>
-        <Checkbox onChange={onScatterplotToggle} checked={scatterplotOn}>Scatterplot Layer</Checkbox>
-      </Card>
-    </div>
+    <DeckGL
+      layers={_renderLayers()}
+      effects={[lightingEffect]}
+      initialViewState={INITIAL_VIEW_STATE}
+      controller={true}
+    >
+      <StaticMap
+        reuseMaps
+        mapStyle={style}
+        preventStyleDiffing={true}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
+      />
+    </DeckGL>
   );
 }
 
