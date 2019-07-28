@@ -7,7 +7,6 @@
     "@welldone-software/why-did-you-render": "^3.2.3",
     "antd": "^3.20.5",
     "deck.gl": "^7.1.10",
-    "random-name": "^0.1.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-map-gl": "^5.0.7",
@@ -46,6 +45,8 @@
     "csv-parse": "^4.4.3",
     "csv-parser": "^2.3.0",
     "eslint-config-prettier": "^6.0.0",
+    "faker": "^4.1.0",
+    "moment": "^2.24.0",
     "prettier": "^1.18.2"
   }
 }

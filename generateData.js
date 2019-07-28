@@ -4,7 +4,8 @@
 
 const fs = require('fs');
 const parse = require("csv-parse");
-const randomName = require('random-name');
+const faker = require('faker');
+const moment = require('moment');
 
 function processFloodedRoads() {
   Array.prototype.flatMap = function(lambda) {
@@ -31,91 +32,92 @@ const parser = parse({
   skip_empty_lines: true
 });
 
+let processData = () => {
+  //console.log(results);
+
+  const resultsLatLng = results.slice(1).map(row => [parseFloat(row[1]), parseFloat(row[2]), row[4]]);
+
+  function getRandomPriority(minDistToHotspot) {
+    return Math.random()*0.3 +
+      /*Math.random()**/Math.min(0.7, 0.000001/minDistToHotspot)
+  }
+
+  function generateRandomUser(lat, lng, timestamp) {
+    if(!lat || !lng) {
+      return null;
+    }
+
+    const hotspots = floodedRoads;
+    const distToHotspot = hotspots.map(([ptlng, ptlat]) => {
+      const dlat = lat - ptlat;
+      const dlng = lng - ptlng;
+      return Math.pow(dlat,2) + Math.pow(dlng,2);
+    }).filter(Boolean);
+    // console.log(distToHotspot);
+    const minDistToHotspot = Math.min(...distToHotspot);
+    // console.log(minDistToHotspot);
+
+    console.log(timestamp);
+    return {
+      _id: uuidv4(),
+      userId: String(Math.round(Math.random() * 50000)),
+      name: faker.fake('{{name.firstName}}'),
+      timestamp: moment(timestamp, "YYYY-MM-DD HH:mm:ss.SSS").unix(),
+      location_information: {
+        geometry: {
+          location: {
+            lat: lat,
+            lng: lng,
+          }
+        }
+      },
+      phone_number: Math.floor(Math.random() * 9000000000 + 1000000000),
+      health: {
+        priority: getRandomPriority(minDistToHotspot),
+        key_words: ["uncool"]
+      },
+      food: {
+        priority: getRandomPriority(minDistToHotspot)
+      },
+      hygiene: {
+        priority: getRandomPriority(minDistToHotspot)
+      }
+    };
+  }
+
+
+  // https://stackoverflow.com/a/2117523
+  function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  const data =
+    resultsLatLng
+      .map((coord, i) => {
+        console.log(`index ${i} / ${resultsLatLng.length}`);
+        return generateRandomUser(coord[0], coord[1], coord[2]);
+      })
+      .filter(record => record);
+  console.log(data);
+
+
+  fs.writeFile("./public/fulldata.json", JSON.stringify(data), function(err) {
+    if(err) {
+      return console.log(err);
+    }
+
+    console.log("The file was saved!");
+  });
+
+};
+
 const results = [];
-fs.createReadStream('./Y2017-311-data.txt')
+fs.createReadStream('./floodingheatmap12m.csv')
   .pipe(parser)
   .on('data', (data) => {
     results.push(data);
   })
-  .on('end', () => {
-    //console.log(results);
-
-    const resultsLatLng = results.slice(1).map(row => [parseFloat(row[27]), parseFloat(row[26])]);
-
-    function getRandomPriority(minDistToHotspot) {
-      return Math.random()*0.3 +
-        /*Math.random()**/Math.min(0.7, 0.000001/minDistToHotspot)
-    }
-
-    function generateRandomUser(lat, lng) {
-      if(!lat || !lng) {
-        return null;
-      }
-
-      const hotspots = floodedRoads;
-      const distToHotspot = hotspots.map(([ptlng, ptlat]) => {
-        const dlat = lat - ptlat;
-        const dlng = lng - ptlng;
-        return Math.pow(dlat,2) + Math.pow(dlng,2);
-      }).filter(Boolean);
-      // console.log(distToHotspot);
-      const minDistToHotspot = Math.min(...distToHotspot);
-      // console.log(minDistToHotspot);
-
-      const res = {
-        _id: uuidv4(),
-        userId: String(Math.round(Math.random() * 50000)),
-        name: randomName.first(),
-        location_information: {
-          geometry: {
-            location: {
-              lat: lat,
-              lng: lng,
-            }
-          }
-        },
-        phone_number: Math.floor(Math.random()*9000000000 + 1000000000),
-        health: {
-          priority: getRandomPriority(minDistToHotspot),
-          key_words: ["uncool"]
-        },
-        food: {
-          priority: getRandomPriority(minDistToHotspot)
-        },
-        hygiene: {
-          priority: getRandomPriority(minDistToHotspot)
-        }
-      };
-
-      //console.log(res);
-      return res;
-    }
-
-
-// https://stackoverflow.com/a/2117523
-    function uuidv4() {
-      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-      });
-    }
-
-    const data =
-      resultsLatLng
-        .map((coord, i) => {
-          console.log(`index ${i} / ${resultsLatLng.length}`);
-          return generateRandomUser(coord[1], coord[0]);
-        })
-        .filter(record => record);
-    console.log(data);
-
-
-    fs.writeFile("./public/fulldata.json", JSON.stringify(data), function(err) {
-      if(err) {
-        return console.log(err);
-      }
-
-      console.log("The file was saved!");
-    });
-
-  });
+  .on('end', processData);
