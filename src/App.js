@@ -44,7 +44,7 @@ function App() {
         <h1 className="header">Emergency Dashboard</h1>
 
         <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
-          <TabPane className="tabPane" tab="1. Visualize" key="1">
+          <TabPane className="tab-pane" tab="1. Visualize" key="1">
             <GatherPane
               fulldata={fulldataWithOverall}
               handleSelectedPt={handleSelectedPt}

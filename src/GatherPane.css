@@ -11,6 +11,7 @@
 }
 
 .gather {
+  flex: 1;
   display: grid;
   grid-template:
       'select'
@@ -18,7 +19,7 @@
       'list'
       'dividerBottom'
       'info';
-  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
   grid-template-columns: 1fr;
 }
 
@@ -36,13 +37,13 @@
 
 .rawlist {
   grid-area: list;
-  height: 300px;
 }
 
 .info {
   grid-area: info;
   padding: 16px;
   max-width: 400px;
+  min-height: 200px;
 }
 
 .row {

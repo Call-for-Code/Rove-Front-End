@@ -13,12 +13,10 @@ const getPriorityUiString = (priority) => {
 };
 
 export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
-  const [selected, setSelected] = useState('timestamp');
+  const [selected, setSelected] = useState('overall');
 
   const fulldataSorted = useMemo(() => fulldata.sort((left, right) => {
-    if(selected === 'timestamp') {
-      return right.timestamp - left.timestamp;
-    } else if (selected === 'overall') {
+    if (selected === 'overall') {
       return right.overall.priority - left.overall.priority;
     } else if (selected === 'health') {
       return right.health.priority - left.health.priority;
@@ -79,19 +77,16 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
         <div className="row-label">Hygiene:  </div> {getPriorityUiString(report.hygiene.priority)} <br/>
       </div>
   } else {
-    info = "Select a report in the above list or Priority Scatterplot"
+    info = "Select a report for more information"
   }
 
   return (
     <div className="gather">
       <div className="select">
-        <span className="sort">Sort by:</span>
+        <span className="sort">Sort by status:</span>
         <Select value={selected} onChange={v => setSelected(v)}>
-          <Option value="timestamp">
-            <div className="option">Newest to oldest</div>
-          </Option>
           <Option value="overall">
-            <div className="option">Overall status</div>
+            <div className="option">Overall</div>
           </Option>
           <Option value="health">
             <div className="option">
