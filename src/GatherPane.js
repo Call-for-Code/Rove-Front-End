@@ -28,7 +28,7 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
     return 0;
   }), [fulldata, selected]);
 
-  const renderItem = useCallback(({ index, key, style }) => {
+  const renderItem = ({ index, key, style }) => {
     const item = fulldataSorted[index];
 
     const handleItemClick = (item) => {
@@ -60,7 +60,7 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
         />
       </List.Item>
     );
-  }, [fulldataSorted, handleSelectedPt]);
+  };
 
   const selectedPtData = fulldata.filter(record => record._id === selectedPt);
   let info;
