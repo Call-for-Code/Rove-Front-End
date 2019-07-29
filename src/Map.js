@@ -6,7 +6,7 @@ import { Checkbox, Radio, Card } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
-import { ScatterplotLayer } from '@deck.gl/layers';
+import { ScatterplotLayer, GeoJsonLayer } from '@deck.gl/layers';
 import DeckGL from '@deck.gl/react';
 import { FlyToInterpolator, StaticMap } from 'react-map-gl';
 import { PhongMaterial } from '@luma.gl/core';
@@ -211,7 +211,8 @@ const MapImpl = React.memo(
     tab,
     kmeansResult,
     selectedPt,
-    fullclusters
+    fullclusters,
+     firestations
   }) => {
     const {
       radius = 200,
@@ -335,6 +336,24 @@ const MapImpl = React.memo(
           );
         });
       }
+    } else if (tab === '3') {
+      layers.push(new GeoJsonLayer({
+        id: 'firestations-layer',
+        data: firestations,
+        pickable: true,
+        stroked: false,
+        filled: true,
+        extruded: true,
+        lineWidthScale: 20,
+        lineWidthMinPixels: 2,
+        getFillColor: [255, 50, 50, 255],
+        getLineColor: [255, 255, 255, 255],
+        getRadius: 500,
+        getLineWidth: 1,
+        getElevation: 30,
+        onHover: ({ object, x, y }) => {
+        }
+      }));
     }
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);

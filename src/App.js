@@ -100,6 +100,17 @@ function App() {
     []
   );
 
+  const [firestations, setFirestations] = useState({});
+  useEffect(() => {
+    async function fetchData() {
+      const result = await (await fetch(
+        process.env.PUBLIC_URL + '/firestations.json'
+      )).json();
+      setFirestations(result);
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <div className="menu">
@@ -136,6 +147,7 @@ function App() {
         handleSelectedPt={handleSelectedPt}
         kmeansResult={kmeansResult}
         tab={tab}
+        firestations={firestations}
       />
     </div>
   );
