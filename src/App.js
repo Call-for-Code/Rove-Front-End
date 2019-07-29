@@ -78,7 +78,10 @@ function App() {
     return {
       centroid: cluster.centroid,
       reports: reports,
-      overallPriority, healthPriority,foodPriority,hygienePriority
+      overallPriority: overallPriority/reports.length,
+      healthPriority: healthPriority/reports.length,
+      foodPriority: foodPriority/reports.length,
+      hygienePriority: hygienePriority/reports.length
     }
   }) : [], [fulldata, kmeansResult]);
 

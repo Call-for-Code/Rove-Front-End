@@ -58,13 +58,13 @@ export function OrganizePane({
           title={<div>{cluster.reports.length} reports</div>}
           description={
             <div>
-              Overall: {getPriorityUiString(cluster.overallPriority/200)}
+              Overall: {getPriorityUiString(cluster.overallPriority)}
               <Icon className="rowIcon" component={Icons.Bandage} />{' '}
-              {getPriorityUiString(cluster.healthPriority/200)}
+              {getPriorityUiString(cluster.healthPriority)}
               <Icon className="rowIcon" component={Icons.Food} />{' '}
-              {getPriorityUiString(cluster.foodPriority/200)}
+              {getPriorityUiString(cluster.foodPriority)}
               <Icon className="rowIcon" component={Icons.Toilet} />{' '}
-              {getPriorityUiString(cluster.hygienePriority/200)}
+              {getPriorityUiString(cluster.hygienePriority)}
             </div>
           }
         />

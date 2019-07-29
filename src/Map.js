@@ -274,7 +274,7 @@ const MapImpl = React.memo(
           getRadius: d => {
             return Math.sqrt(d.reports.length)
           },
-          getFillColor: d => scatterplotColorRange[Math.floor(d.overallPriority/50)],
+          getFillColor: d => scatterplotColorRange[Math.max(0, Math.min(5, Math.floor((d.overallPriority-0.5) * 15 + 5)))],
           getLineColor: d => [0, 0, 0],
           onClick: (info, event) => {
 
