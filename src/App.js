@@ -6,6 +6,7 @@ import { Tabs } from 'antd';
 import { GatherPane } from './GatherPane';
 import { OrganizePane } from './OrganizePane';
 import kmeans from 'node-kmeans';
+import { RespondPane } from './RespondPane';
 const { TabPane } = Tabs;
 
 export const K_PARTITIONS = 15;
@@ -135,7 +136,12 @@ function App() {
             />
           </TabPane>
           <TabPane className="tab-pane" tab="3. Respond" key="3">
-            Content of Tab Pane 3
+             <RespondPane
+                fulldata={fulldata}
+                fulldataLngLats={fulldataLngLats}
+                kmeansResult={kmeansResult}
+                fullclusters={fullclusters}
+                firestations={firestations}/>
           </TabPane>
         </Tabs>
       </div>

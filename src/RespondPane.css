@@ -9,23 +9,47 @@
   margin-right: 8px;
 }
 
-.organize {
+.respond {
   flex: 1;
   display: grid;
   grid-template:
-    'fyi'
-    'select'
-    'dividerTop'
-    'list'
-    'dividerBottom'
-    'info';
-  grid-template-rows: auto auto auto 1fr auto auto;
+    'fyi'  auto
+    'from'  auto
+    'dividerTop'  auto
+    'list' 1fr
+    'dividerMid' auto
+    'to' auto
+    'dividerMidBottom' auto
+    'cluster-list' 1fr
+    'dividerBottom' auto
+    'info' auto;
   grid-template-columns: 1fr;
+  max-height: 100%;
 }
 
-.select {
-  grid-area: select;
+.from {
+  grid-area: from;
   padding-bottom: 16px;
+}
+
+.from-label {
+  display: inline-block;
+  width: 60px;
+  text-align: end;
+  padding-right: 12px;
+}
+
+.to {
+  grid-area: to;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.to-label {
+  display: inline-block;
+  width: 60px;
+  text-align: end;
+  padding-right: 12px;
 }
 
 .divider {
@@ -35,8 +59,13 @@
   margin-right: 32px;
 }
 
-.rawlist {
+.respond-rawlist-cluster {
+  grid-area: cluster-list;
+}
+
+.respond-rawlist {
   grid-area: list;
+  overflow: auto;
 }
 
 .organize-info {
@@ -81,6 +110,7 @@
   width: 200px;
 }
 
-.fyi-icon {
-  margin-right: 8px;
+.divider-mid {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
 }

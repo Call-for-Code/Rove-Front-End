@@ -9,7 +9,15 @@ import './GatherPane.css';
 const { Option } = Select;
 
 const getPriorityUiString = priority => {
-  return (10 - priority * 10).toFixed(1);
+  let style;
+  if(priority < 0.3){
+    style = 'status-low';
+  } else if(priority < 0.6){
+    style = 'status-medium';
+  } else{
+    style = 'status-high';
+  }
+  return <span className={style}>{(10 - priority * 10).toFixed(1)}</span>;
 };
 
 export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {

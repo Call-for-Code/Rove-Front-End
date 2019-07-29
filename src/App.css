@@ -40,3 +40,15 @@
 .ant-tabs-content {
   flex: 1 !important;
 }
+
+.status-high {
+  color: #b71c1c;
+}
+
+.status-medium {
+  color: #ff6f00;
+}
+
+.status-low {
+  color: #e8c06f;
+}

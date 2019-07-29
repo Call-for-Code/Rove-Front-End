@@ -346,7 +346,7 @@ const MapImpl = React.memo(
         extruded: true,
         lineWidthScale: 20,
         lineWidthMinPixels: 2,
-        getFillColor: [255, 50, 50, 255],
+        getFillColor: [50, 50, 240, 255],
         getLineColor: [255, 255, 255, 255],
         getRadius: 500,
         getLineWidth: 1,

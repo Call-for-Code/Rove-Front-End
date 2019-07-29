@@ -4,7 +4,7 @@ import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 
-import './OrganizePane.css';
+import './RespondPane.css';
 
 const { Option } = Select;
 
@@ -20,38 +20,47 @@ const getPriorityUiString = priority => {
   return <span className={style}>{Math.max(0, 10 - priority * 10).toFixed(1)}</span>;
 };
 
-export function OrganizePane({
-  fulldata,
-  selectedCluster,
-  handleSelectedCluster,
-  fulldataLngLats,
-  kmeansResult,
-  fullclusters
-}) {
+export function RespondPane({
+                              firestations,
+                               fulldata,
+                               selectedCluster,
+                               handleSelectedCluster,
+                               fulldataLngLats,
+                               kmeansResult,
+                               fullclusters
+                             }) {
   const [selected, setSelected] = useState('overall');
 
-  const fullclustersSorted = useMemo(
-    () =>
-      fullclusters.sort((left, right) => {
-        if (selected === 'overall') {
-          return right.overallPriority - left.overallPriority;
-        } else if (selected === 'health') {
-          return right.healthPriority - left.healthPriority;
-        } else if (selected === 'food') {
-          return right.foodPriority - left.foodPriority;
-        } else if (selected === 'hygiene') {
-          return right.hygienePriority - left.hygienePriority;
-        }
-        return 0;
-      }),
-    [fullclusters, selected]
-  );
-
-  const renderItem = ({ index, key, style }) => {
-    const cluster = fullclustersSorted[index];
+  const renderItem = ({ index, key }) => {
+    const firestation = firestations.features[index];
 
     const handleItemClick = item => {
-      handleSelectedCluster(item._id);
+      //handleSelectedCluster(item._id);
+    };
+    console.log(firestation);
+    return (
+      <List.Item
+        key={key}
+        className="row"
+        onClick={() => handleItemClick(firestation)}
+      >
+        <List.Item.Meta
+          title={<div>{firestation.properties.name}</div>}
+          description={
+            <div>
+
+            </div>
+          }
+        />
+      </List.Item>
+    );
+  };
+
+  const renderClusterItem = ({ index, key, style }) => {
+    const cluster = fullclusters[index];
+
+    const handleItemClick = item => {
+      //handleSelectedCluster(item._id);
     };
 
     return (
@@ -98,9 +107,13 @@ export function OrganizePane({
   }*/
 
   return (
-    <div className="organize">
-      <div className="select">
-        <span className="sort">Sort clusters by:</span>
+    <div className="respond">
+      <div className="fyi">
+        Navigate around flooded areas
+      </div>
+
+      <div className="from">
+        <span className="from-label">From:</span>
         <Select
           className="organize-select"
           value={selected}
@@ -132,15 +145,61 @@ export function OrganizePane({
 
       <div className="divider" style={{ gridArea: 'dividerTop' }} />
 
-      <div className="rawlist">
+      <div className="respond-rawlist">
+        { firestations ?
+          firestations.features.map((firestation, index) => {
+            return renderItem({
+              index: index,
+              key: firestation.geometry.coordinates.join(',')
+            })
+          }) : null
+        }
+      </div>
+
+      <div className="divider-mid" style={{ gridArea: 'dividerMid' }} />
+
+      <div className="to">
+        <span className="to-label">To:</span>
+        <Select
+          className="organize-select"
+          value={selected}
+          onChange={v => setSelected(v)}
+        >
+          <Option value="overall">
+            <div className="option">Overall status</div>
+          </Option>
+          <Option value="health">
+            <div className="option">
+              <Icon className="icon" component={Icons.Bandage} />
+              Health
+            </div>
+          </Option>
+          <Option value="food">
+            <div className="option">
+              <Icon className="icon" component={Icons.Food} />
+              Food
+            </div>
+          </Option>
+          <Option value="hygiene">
+            <div className="option">
+              <Icon className="icon" component={Icons.Toilet} />
+              Hygiene
+            </div>
+          </Option>
+        </Select>
+      </div>
+
+      <div className="divider" style={{ gridArea: 'dividerMidBottom' }} />
+
+      <div className="respond-rawlist-cluster">
         <AutoSizer>
           {({ width, height }) => (
             <VList
               height={height}
               overscanRowCount={2}
-              rowCount={fullclustersSorted.length}
+              rowCount={fullclusters.length}
               rowHeight={73}
-              rowRenderer={renderItem}
+              rowRenderer={renderClusterItem}
               width={width}
             />
           )}
@@ -150,10 +209,6 @@ export function OrganizePane({
       <div className="divider" style={{ gridArea: 'dividerBottom' }} />
 
       <div className="organize-info">{/* {info}*/}</div>
-
-      <div className="fyi">
-        <Icon className="fyi-icon" type="info-circle" /> Circle color indicates cluster priority
-      </div>
     </div>
   );
 }
