@@ -95,6 +95,7 @@ function App() {
       <Map
         fulldata={fulldata}
         fulldataLnglats={fulldataLnglats}
+        selectedPt={selectedPt}
         handleSelectedPt={handleSelectedPt}
         kmeansResult={kmeansResult}
         tab={tab}

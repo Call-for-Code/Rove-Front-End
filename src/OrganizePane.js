@@ -94,8 +94,6 @@ export function OrganizePane({
 
   return (
     <div className="organize">
-      <div>Circles indicate priority</div>
-
       <div className="select">
         <span className="sort">Sort by:</span>
         <Select value={selected} onChange={v => setSelected(v)}>
@@ -144,6 +142,10 @@ export function OrganizePane({
 
       <div className="info">
        {/* {info}*/}
+      </div>
+
+      <div className="fyi">
+        <Icon type="info-circle"/> Size of circle indicates cluster priority
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -8,7 +8,7 @@ import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
 import { ScatterplotLayer } from '@deck.gl/layers';
 import DeckGL from '@deck.gl/react';
-import { StaticMap } from 'react-map-gl';
+import { FlyToInterpolator, StaticMap } from 'react-map-gl';
 import { PhongMaterial } from '@luma.gl/core';
 
 import './Map.css';
@@ -84,7 +84,8 @@ function Map({
   tab,
   handleSelectedPt,
   fulldataLnglats,
-  kmeansResult
+  kmeansResult,
+  ...rest
 }) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
@@ -159,6 +160,7 @@ function Map({
         style={style}
         tab={tab}
         kmeansResult={kmeansResult}
+        {...rest}
       />
       <div className="style">
         <Radio.Group onChange={onRadioChange} value={style}>
@@ -197,7 +199,8 @@ const MapImpl = React.memo(
     handleHover,
     style,
     tab,
-    kmeansResult
+    kmeansResult,
+    selectedPt
   }) => {
     const {
       radius = 200,
@@ -310,11 +313,31 @@ const MapImpl = React.memo(
       }
     }
 
+    const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
+    useEffect(() => {
+      if(!selectedPt) {
+        return;
+      }
+      const selectedPtData = fulldata.filter(record => record._id === selectedPt)[0];
+      setViewState({
+        ...viewState,
+        longitude: selectedPtData.location_information.geometry.location.lng,
+        latitude: selectedPtData.location_information.geometry.location.lat,
+        zoom: 14,
+        pitch: 40.5,
+        bearing: -27.396674584323023,
+        transitionDuration: 500,
+        transitionInterpolator: new FlyToInterpolator(),
+        transitionEasing: t => {return t<.5 ? 2*t*t : -1+(4-2*t)*t}
+      })
+    }, [selectedPt]);
+
     return (
       <DeckGL
+        viewState={viewState}
+        onViewStateChange={({viewState}) => setViewState(viewState)}
         layers={layers}
         effects={[lightingEffect]}
-        initialViewState={INITIAL_VIEW_STATE}
         controller={true}
       >
         <StaticMap

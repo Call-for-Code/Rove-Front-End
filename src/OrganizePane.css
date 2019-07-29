@@ -69,3 +69,8 @@
   display: inline-block;
   margin-right: 8px;
 }
+
+.fyi {
+  padding: 8px;
+  font-weight: 500;
+}
