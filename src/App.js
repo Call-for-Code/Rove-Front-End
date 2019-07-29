@@ -4,7 +4,11 @@ import 'antd/dist/antd.css';
 import Map from './Map';
 import { Tabs } from 'antd';
 import { GatherPane } from './GatherPane';
+import { OrganizePane } from './OrganizePane';
+import kmeans from 'ml-kmeans';
 const { TabPane } = Tabs;
+
+export const K_PARTITIONS = 2;
 
 function App() {
   const [tab, setTab] = useState('1');
@@ -27,16 +31,31 @@ function App() {
     fetchData();
   }, []);
 
-  const fulldataWithOverall = useMemo(() => data.map(record => ({
-    ...record,
-    overall: {
-      priority: calculateOverallPriority(record)
-    }
-  })), [data]);
+  const fulldata = useMemo(
+    () =>
+      data.map(record => ({
+        ...record,
+        overall: {
+          priority: calculateOverallPriority(record)
+        }
+      })),
+    [data]
+  );
 
-  const [selectedPt, setSelectedPt] = useState("");
+  const fulldataLnglats = useMemo(
+    () =>
+      fulldata.map(record => [
+        record.location_information.geometry.location.lng,
+        record.location_information.geometry.location.lat
+      ]),
+    [fulldata]
+  );
+  const kmeansResult =
+      fulldataLnglats.length > 0 ? kmeans(fulldataLnglats, K_PARTITIONS) : {};
 
-  const handleSelectedPt = useCallback((pt) => setSelectedPt(pt), []);
+  const [selectedPt, setSelectedPt] = useState('');
+
+  const handleSelectedPt = useCallback(pt => setSelectedPt(pt), []);
 
   return (
     <div className="App">
@@ -46,21 +65,29 @@ function App() {
         <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
           <TabPane className="tab-pane" tab="1. Visualize" key="1">
             <GatherPane
-              fulldata={fulldataWithOverall}
+              fulldata={fulldata}
               handleSelectedPt={handleSelectedPt}
-              selectedPt={selectedPt}/>
+              selectedPt={selectedPt}
+            />
           </TabPane>
-          <TabPane tab="2. Organize" key="2">
-            Content of Tab Pane 2
+          <TabPane className="tab-pane" tab="2. Organize" key="2">
+            <OrganizePane
+              fulldata={fulldata}
+              fulldataLngLats={fulldataLnglats}
+              kmeansResult={kmeansResult}
+            />
           </TabPane>
-          <TabPane tab="3. Respond" key="3">
+          <TabPane className="tab-pane" tab="3. Respond" key="3">
             Content of Tab Pane 3
           </TabPane>
         </Tabs>
       </div>
       <Map
-        fulldata={fulldataWithOverall}
+        fulldata={fulldata}
+        fulldataLnglats={fulldataLnglats}
         handleSelectedPt={handleSelectedPt}
+        kmeansResult={kmeansResult}
+        tab={tab}
       />
     </div>
   );
