@@ -48,9 +48,9 @@ const material = new PhongMaterial({
 });
 
 const INITIAL_VIEW_STATE = {
-  longitude: -95.12168035,
-  latitude: 29.55954121,
-  zoom: 8,
+  longitude: -95.3428485221802,
+  latitude: 29.7298513221863,
+  zoom: 9.27,
   minZoom: 5,
   maxZoom: 15,
   pitch: 40.5,
@@ -80,11 +80,7 @@ const randomColors = [
 ];
 
 function Map({
-  fulldata,
   tab,
-  handleSelectedPt,
-  fulldataLnglats,
-  kmeansResult,
   ...rest
 }) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
@@ -152,14 +148,10 @@ function Map({
     <div className="map" style={{ position: 'relative' }}>
       <MapImpl
         hexagonOn={hexagonOn}
-        fulldataLngLats={fulldataLnglats}
-        fulldata={fulldata}
         scatterplotOn={scatterplotOn}
-        handleSelectedPt={handleSelectedPt}
         handleHover={onHover}
         style={style}
         tab={tab}
-        kmeansResult={kmeansResult}
         {...rest}
       />
       <div className="style">
@@ -200,13 +192,14 @@ const MapImpl = React.memo(
     style,
     tab,
     kmeansResult,
-    selectedPt
+    selectedPt,
+    fullclusters
   }) => {
     const {
       radius = 200,
       upperPercentile = 100,
       lowerPercentile = 0,
-      coverage = 0.5
+      coverage = 0.7
     } = {};
 
     let layers = [];
@@ -253,7 +246,7 @@ const MapImpl = React.memo(
               ];
             },
             getRadius: d => 10,
-            getFillColor: d => scatterplotColorRange[Math.floor(d.overall.priority * 6)],
+            getFillColor: d => scatterplotColorRange[Math.max(0, Math.min(5, Math.floor(d.overall.priority * 6)))],
             getLineColor: d => [0, 0, 0],
             onClick: (info, event) => {
               handleSelectedPt(info.object._id);
@@ -262,23 +255,26 @@ const MapImpl = React.memo(
           })
           : null)
     } else if (tab==='2') {
+      console.log(fullclusters);
       layers.push(
         new ScatterplotLayer({
           id: 'scatterplot',
-          data: kmeansResult,
+          data: fullclusters,
           pickable: true,
           opacity: 0.8,
           stroked: false,
           filled: true,
-          radiusScale: 6,
+          radiusScale: 100,
           radiusMinPixels: 1,
           radiusMaxPixels: 100,
           lineWidthMinPixels: 1,
           getPosition: (d) => {
             return d.centroid;
           },
-          getRadius: d => d.cluster.length,
-          getFillColor: d => scatterplotColorRange[5],
+          getRadius: d => {
+            return Math.sqrt(d.reports.length)
+          },
+          getFillColor: d => scatterplotColorRange[Math.floor(d.overallPriority/50)],
           getLineColor: d => [0, 0, 0],
           onClick: (info, event) => {
 

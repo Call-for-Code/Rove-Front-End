@@ -3,47 +3,45 @@ import { Icon, List, Select } from 'antd';
 import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
-import kmeans from 'ml-kmeans';
 
 import './OrganizePane.css';
 
 const { Option } = Select;
 
 const getPriorityUiString = priority => {
-  return (10 - priority * 10).toFixed(1);
+  return Math.max(0, (10 - priority * 10)).toFixed(1);
 };
 
 export function OrganizePane({
   fulldata,
   selectedCluster,
   handleSelectedCluster,
-  fulldataLnglats,
-  kmeansResult
+  fulldataLngLats,
+  kmeansResult,
+  fullclusters
 }) {
   const [selected, setSelected] = useState('overall');
 
-  const fulldataSorted = useMemo(
+  const fullclustersSorted = useMemo(
     () =>
-      fulldata.sort((left, right) => {
-        if (selected === 'timestamp') {
-          return right.timestamp - left.timestamp;
-        } else if (selected === 'overall') {
-          return right.overall.priority - left.overall.priority;
+      fullclusters.sort((left, right) => {
+        if (selected === 'overall') {
+          return right.overallPriority - left.overallPriority;
         } else if (selected === 'health') {
-          return right.health.priority - left.health.priority;
+          return right.healthPriority - left.healthPriority;
         } else if (selected === 'food') {
-          return right.food.priority - left.food.priority;
+          return right.foodPriority - left.foodPriority;
         } else if (selected === 'hygiene') {
-          return right.hygiene.priority - left.hygiene.priority;
+          return right.hygienePriority - left.hygienePriority;
         }
         return 0;
       }),
-    [fulldata, selected]
+    [fullclusters, selected]
   );
 
 
   const renderItem = ({ index, key, style }) => {
-    const item = fulldataSorted[index];
+    const cluster = fullclustersSorted[index];
 
     const handleItemClick = item => {
       handleSelectedCluster(item._id);
@@ -54,19 +52,19 @@ export function OrganizePane({
         key={key}
         style={style}
         className="row"
-        onClick={() => handleItemClick(item)}
+        onClick={() => handleItemClick(cluster)}
       >
         <List.Item.Meta
-          title={<div>{item.name}</div>}
+          title={<div>{cluster.reports.length} reports</div>}
           description={
             <div>
-              Overall: {getPriorityUiString(item.overall.priority)}
+              Overall: {getPriorityUiString(cluster.overallPriority/200)}
               <Icon className="rowIcon" component={Icons.Bandage} />{' '}
-              {getPriorityUiString(item.health.priority)}
+              {getPriorityUiString(cluster.healthPriority/200)}
               <Icon className="rowIcon" component={Icons.Food} />{' '}
-              {getPriorityUiString(item.food.priority)}
+              {getPriorityUiString(cluster.foodPriority/200)}
               <Icon className="rowIcon" component={Icons.Toilet} />{' '}
-              {getPriorityUiString(item.hygiene.priority)}
+              {getPriorityUiString(cluster.hygienePriority/200)}
             </div>
           }
         />
@@ -95,8 +93,8 @@ export function OrganizePane({
   return (
     <div className="organize">
       <div className="select">
-        <span className="sort">Sort by:</span>
-        <Select value={selected} onChange={v => setSelected(v)}>
+        <span className="sort">Sort clusters by:</span>
+        <Select className="organize-select" value={selected} onChange={v => setSelected(v)}>
           <Option value="overall">
             <div className="option">Overall status</div>
           </Option>
@@ -129,7 +127,7 @@ export function OrganizePane({
             <VList
               height={height}
               overscanRowCount={2}
-              rowCount={fulldataSorted.length}
+              rowCount={fullclustersSorted.length}
               rowHeight={73}
               rowRenderer={renderItem}
               width={width}
@@ -140,12 +138,12 @@ export function OrganizePane({
 
       <div className="divider" style={{ gridArea: 'dividerBottom' }} />
 
-      <div className="info">
+      <div className="organize-info">
        {/* {info}*/}
       </div>
 
       <div className="fyi">
-        <Icon type="info-circle"/> Size of circle indicates cluster priority
+        <Icon type="info-circle"/> Circle color indicates cluster priority
       </div>
     </div>
   );

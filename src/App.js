@@ -42,7 +42,7 @@ function App() {
     [data]
   );
 
-  const fulldataLnglats = useMemo(
+  const fulldataLngLats = useMemo(
     () =>
       fulldata.map(record => [
         record.location_information.geometry.location.lng,
@@ -53,19 +53,41 @@ function App() {
 
   const [kmeansResult, setKmeansResult] = useState('');
   useEffect(() => {
-    if(!fulldataLnglats || fulldataLnglats.length === 0){
+    if(!fulldataLngLats || fulldataLngLats.length === 0){
       return;
     }
-    kmeans.clusterize(fulldataLnglats, {k: K_PARTITIONS}, (err,res) => {
+    kmeans.clusterize(fulldataLngLats, {k: K_PARTITIONS}, (err,res) => {
       if (err) console.error(err);
       else setKmeansResult(res);
     });
-  }, [fulldataLnglats]);
+  }, [fulldataLngLats]);
+  const fullclusters = useMemo(() => kmeansResult ? kmeansResult.map(cluster => {
+    let overallPriority = 0;
+    let healthPriority = 0;
+    let foodPriority = 0;
+    let hygienePriority = 0;
+    let reports = [];
+    cluster.clusterInd.forEach(ind => {
+      const report = fulldata[ind];
+      overallPriority += report.overall.priority;
+      healthPriority += report.health.priority;
+      foodPriority += report.food.priority;
+      hygienePriority += report.hygiene.priority;
+      reports.push(report);
+    });
+    return {
+      centroid: cluster.centroid,
+      reports: reports,
+      overallPriority, healthPriority,foodPriority,hygienePriority
+    }
+  }) : [], [fulldata, kmeansResult]);
 
 
   const [selectedPt, setSelectedPt] = useState('');
-
   const handleSelectedPt = useCallback(pt => setSelectedPt(pt), []);
+
+  const [selectedCluster, setSelectedCluster] = useState('');
+  const handleSelectedCluster = useCallback(clusterId => setSelectedCluster(clusterId), []);
 
   return (
     <div className="App">
@@ -83,8 +105,11 @@ function App() {
           <TabPane className="tab-pane" tab="2. Organize" key="2">
             <OrganizePane
               fulldata={fulldata}
-              fulldataLngLats={fulldataLnglats}
+              fulldataLngLats={fulldataLngLats}
               kmeansResult={kmeansResult}
+              fullclusters={fullclusters}
+              selectedCluster={selectedCluster}
+              handleSelectedCluster={handleSelectedCluster}
             />
           </TabPane>
           <TabPane className="tab-pane" tab="3. Respond" key="3">
@@ -94,7 +119,8 @@ function App() {
       </div>
       <Map
         fulldata={fulldata}
-        fulldataLnglats={fulldataLnglats}
+        fulldataLngLats={fulldataLngLats}
+        fullclusters={fullclusters}
         selectedPt={selectedPt}
         handleSelectedPt={handleSelectedPt}
         kmeansResult={kmeansResult}
