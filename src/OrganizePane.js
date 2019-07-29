@@ -93,7 +93,9 @@ export function OrganizePane({
   }*/
 
   return (
-    <div className="gather">
+    <div className="organize">
+      <div>Circles indicate priority</div>
+
       <div className="select">
         <span className="sort">Sort by:</span>
         <Select value={selected} onChange={v => setSelected(v)}>

@@ -95,7 +95,7 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
     <div className="gather">
       <div className="select">
         <span className="sort">Sort by:</span>
-        <Select value={selected} onChange={v => setSelected(v)}>
+        <Select className="select-el" value={selected} onChange={v => setSelected(v)}>
           <Option value="timestamp">
             <div className="option">Newest to oldest</div>
           </Option>

@@ -27,6 +27,10 @@
   padding-bottom: 16px;
 }
 
+.select-el {
+  width: 200px;
+}
+
 .divider {
   height: 0.5px;
   background-color: rgba(0, 0, 0, 0.1);

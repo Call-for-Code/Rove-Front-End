@@ -5,10 +5,10 @@ import Map from './Map';
 import { Tabs } from 'antd';
 import { GatherPane } from './GatherPane';
 import { OrganizePane } from './OrganizePane';
-import kmeans from 'ml-kmeans';
+import kmeans from 'node-kmeans';
 const { TabPane } = Tabs;
 
-export const K_PARTITIONS = 2;
+export const K_PARTITIONS = 15;
 
 function App() {
   const [tab, setTab] = useState('1');
@@ -50,8 +50,18 @@ function App() {
       ]),
     [fulldata]
   );
-  const kmeansResult =
-      fulldataLnglats.length > 0 ? kmeans(fulldataLnglats, K_PARTITIONS) : {};
+
+  const [kmeansResult, setKmeansResult] = useState('');
+  useEffect(() => {
+    if(!fulldataLnglats || fulldataLnglats.length === 0){
+      return;
+    }
+    kmeans.clusterize(fulldataLnglats, {k: K_PARTITIONS}, (err,res) => {
+      if (err) console.error(err);
+      else setKmeansResult(res);
+    });
+  }, [fulldataLnglats]);
+
 
   const [selectedPt, setSelectedPt] = useState('');
 

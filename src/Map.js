@@ -169,16 +169,18 @@ function Map({
         </Radio.Group>
         <br />
       </div>
-      <Card className="layers">
-        <div className="layers-label">Layers</div>
-        <Checkbox onChange={onHexagonToggle} checked={hexagonOn}>
-          Count Heatmap
-        </Checkbox>
-        <br />
-        <Checkbox onChange={onScatterplotToggle} checked={scatterplotOn}>
-          Priority Scatterplot
-        </Checkbox>
-      </Card>
+      { tab==='1' ?
+        <Card className="layers">
+          <div className="layers-label">Layers</div>
+          <Checkbox onChange={onHexagonToggle} checked={hexagonOn}>
+            Count Heatmap
+          </Checkbox>
+          <br/>
+          <Checkbox onChange={onScatterplotToggle} checked={scatterplotOn}>
+            Priority Scatterplot
+          </Checkbox>
+        </Card> : null
+      }
 
       {renderTooltip()}
     </div>
@@ -204,35 +206,31 @@ const MapImpl = React.memo(
       coverage = 0.5
     } = {};
 
-    console.log(fulldata.length);
-    console.log(kmeansResult.clusters);
-    
-    const layers = useMemo(
-      () => [
-        hexagonOn
-          ? new HexagonLayer({
-              id: 'heatmap',
-              colorRange,
-              coverage,
-              data: fulldataLngLats,
-              elevationRange: [0, 500],
-              elevationScale: 10,
-              extruded: true,
-              getPosition: d => d,
-              opacity: 1,
-              pickable: true,
-              radius,
-              upperPercentile,
-              lowerPercentile,
-              material,
-              onClick: event => {
-                console.log(event);
-                return true;
-              },
-              onHover: handleHover
-            })
-          : null,
-
+    let layers = [];
+    if(tab==='1'){
+      layers.push(hexagonOn
+        ? new HexagonLayer({
+          id: 'heatmap',
+          colorRange,
+          coverage,
+          data: fulldataLngLats,
+          elevationRange: [0, 500],
+          elevationScale: 10,
+          extruded: true,
+          getPosition: d => d,
+          opacity: 1,
+          pickable: true,
+          radius,
+          upperPercentile,
+          lowerPercentile,
+          material,
+          onClick: event => {
+            console.log(event);
+            return true;
+          },
+          onHover: handleHover
+        })
+        : null,
         scatterplotOn
           ? new ScatterplotLayer({
             id: 'scatterplot-pts',
@@ -252,49 +250,65 @@ const MapImpl = React.memo(
               ];
             },
             getRadius: d => 10,
-            getFillColor: d =>
-              tab === '1' || !kmeansResult.clusters
-                ? scatterplotColorRange[Math.floor(d.overall.priority * 6)]
-                : randomColors[kmeansResult.clusters[fulldata.indexOf(d)]],
+            getFillColor: d => scatterplotColorRange[Math.floor(d.overall.priority * 6)],
             getLineColor: d => [0, 0, 0],
             onClick: (info, event) => {
-              if(tab==='2')
-                console.log(fulldata.indexOf(info.object));
-                console.log(kmeansResult);
               handleSelectedPt(info.object._id);
             },
             onHover: handleHover
           })
-          : null,
-        scatterplotOn && tab === '2'
-          ? new ScatterplotLayer({
-              id: 'scatterplot',
-              data: kmeansResult.centroids,
-              pickable: true,
-              opacity: 0.8,
-              stroked: false,
-              filled: true,
-              radiusScale: 6,
-              radiusMinPixels: 1,
-              radiusMaxPixels: 100,
-              lineWidthMinPixels: 1,
-              getPosition: (d) => {
-                return d.centroid;
-              },
-              getRadius: d => d.size/2,
-              getFillColor: d => scatterplotColorRange[5],
-              getLineColor: d => [0, 0, 0],
-              onClick: (info, event) => {
+          : null)
+    } else if (tab==='2') {
+      layers.push(
+        new ScatterplotLayer({
+          id: 'scatterplot',
+          data: kmeansResult,
+          pickable: true,
+          opacity: 0.8,
+          stroked: false,
+          filled: true,
+          radiusScale: 6,
+          radiusMinPixels: 1,
+          radiusMaxPixels: 100,
+          lineWidthMinPixels: 1,
+          getPosition: (d) => {
+            return d.centroid;
+          },
+          getRadius: d => d.cluster.length,
+          getFillColor: d => scatterplotColorRange[5],
+          getLineColor: d => [0, 0, 0],
+          onClick: (info, event) => {
 
-              },
-              onHover: (info, event) => {
+          },
+          onHover: (info, event) => {
 
-              }
-            })
-          : null
-      ],
-      [hexagonOn, coverage, fulldataLngLats, radius, upperPercentile, lowerPercentile, handleHover, scatterplotOn, fulldata, tab, kmeansResult, handleSelectedPt]
-    );
+          }
+        }));
+      if(kmeansResult){
+        kmeansResult.forEach((cluster, i) => {
+          layers.push(new ScatterplotLayer({
+            id: 'scatterplot-cluster' + i,
+            data: cluster.cluster,
+            pickable: true,
+            opacity: 0.8,
+            stroked: false,
+            filled: true,
+            radiusScale: 6,
+            radiusMinPixels: 1,
+            radiusMaxPixels: 100,
+            lineWidthMinPixels: 1,
+            getPosition: (d) => d,
+            getRadius: d => 10,
+            getFillColor: d => randomColors[i],
+            getLineColor: d => [0, 0, 0],
+            onClick: (info, event) => {
+              handleSelectedPt(info.object._id);
+            },
+            onHover: handleHover
+          }))
+        });
+      }
+    }
 
     return (
       <DeckGL
