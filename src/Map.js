@@ -76,13 +76,31 @@ const scatterplotColorRange = [
 ];
 
 const randomColors = [
-  [230, 25, 75], [60, 180, 75], [255, 225, 25], [0, 130, 200], [245, 130, 48], [145, 30, 180], [70, 240, 240], [240, 50, 230], [210, 245, 60], [250, 190, 190], [0, 128, 128], [230, 190, 255], [170, 110, 40], [255, 250, 200], [128, 0, 0], [170, 255, 195], [128, 128, 0], [255, 215, 180], [0, 0, 128], [128, 128, 128], [255, 255, 255], [0, 0, 0]
+  [230, 25, 75],
+  [60, 180, 75],
+  [255, 225, 25],
+  [0, 130, 200],
+  [245, 130, 48],
+  [145, 30, 180],
+  [70, 240, 240],
+  [240, 50, 230],
+  [210, 245, 60],
+  [250, 190, 190],
+  [0, 128, 128],
+  [230, 190, 255],
+  [170, 110, 40],
+  [255, 250, 200],
+  [128, 0, 0],
+  [170, 255, 195],
+  [128, 128, 0],
+  [255, 215, 180],
+  [0, 0, 128],
+  [128, 128, 128],
+  [255, 255, 255],
+  [0, 0, 0]
 ];
 
-function Map({
-  tab,
-  ...rest
-}) {
+function Map({ tab, ...rest }) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
@@ -163,18 +181,18 @@ function Map({
         </Radio.Group>
         <br />
       </div>
-      { tab==='1' ?
+      {tab === '1' ? (
         <Card className="layers">
           <div className="layers-label">Layers</div>
           <Checkbox onChange={onHexagonToggle} checked={hexagonOn}>
             Count Heatmap
           </Checkbox>
-          <br/>
+          <br />
           <Checkbox onChange={onScatterplotToggle} checked={scatterplotOn}>
             Priority Scatterplot
           </Checkbox>
-        </Card> : null
-      }
+        </Card>
+      ) : null}
 
       {renderTooltip()}
     </div>
@@ -203,58 +221,63 @@ const MapImpl = React.memo(
     } = {};
 
     let layers = [];
-    if(tab==='1'){
-      layers.push(hexagonOn
-        ? new HexagonLayer({
-          id: 'heatmap',
-          colorRange,
-          coverage,
-          data: fulldataLngLats,
-          elevationRange: [0, 500],
-          elevationScale: 10,
-          extruded: true,
-          getPosition: d => d,
-          opacity: 1,
-          pickable: true,
-          radius,
-          upperPercentile,
-          lowerPercentile,
-          material,
-          onClick: event => {
-            console.log(event);
-            return true;
-          },
-          onHover: handleHover
-        })
-        : null,
+    if (tab === '1') {
+      layers.push(
+        hexagonOn
+          ? new HexagonLayer({
+              id: 'heatmap',
+              colorRange,
+              coverage,
+              data: fulldataLngLats,
+              elevationRange: [0, 500],
+              elevationScale: 10,
+              extruded: true,
+              getPosition: d => d,
+              opacity: 1,
+              pickable: true,
+              radius,
+              upperPercentile,
+              lowerPercentile,
+              material,
+              onClick: event => {
+                console.log(event);
+                return true;
+              },
+              onHover: handleHover
+            })
+          : null,
         scatterplotOn
           ? new ScatterplotLayer({
-            id: 'scatterplot-pts',
-            data: fulldata,
-            pickable: true,
-            opacity: 0.8,
-            stroked: false,
-            filled: true,
-            radiusScale: 6,
-            radiusMinPixels: 1,
-            radiusMaxPixels: 100,
-            lineWidthMinPixels: 1,
-            getPosition: (d) => {
-              return [
-                d.location_information.geometry.location.lng,
-                d.location_information.geometry.location.lat
-              ];
-            },
-            getRadius: d => 10,
-            getFillColor: d => scatterplotColorRange[Math.max(0, Math.min(5, Math.floor(d.overall.priority * 6)))],
-            getLineColor: d => [0, 0, 0],
-            onClick: (info, event) => {
-              handleSelectedPt(info.object._id);
-            },
-            onHover: handleHover
-          })
-          : null)
-    } else if (tab==='2') {
+              id: 'scatterplot-pts',
+              data: fulldata,
+              pickable: true,
+              opacity: 0.8,
+              stroked: false,
+              filled: true,
+              radiusScale: 6,
+              radiusMinPixels: 1,
+              radiusMaxPixels: 100,
+              lineWidthMinPixels: 1,
+              getPosition: d => {
+                return [
+                  d.location_information.geometry.location.lng,
+                  d.location_information.geometry.location.lat
+                ];
+              },
+              getRadius: d => 10,
+              getFillColor: d =>
+                scatterplotColorRange[
+                  Math.max(0, Math.min(5, Math.floor(d.overall.priority * 6)))
+                ],
+              getLineColor: d => [0, 0, 0],
+              onClick: (info, event) => {
+                handleSelectedPt(info.object._id);
+              },
+              onHover: handleHover
+            })
+          : null
+      );
+    } else if (tab === '2') {
       console.log(fullclusters);
       layers.push(
         new ScatterplotLayer({
@@ -268,53 +291,60 @@ const MapImpl = React.memo(
           radiusMinPixels: 1,
           radiusMaxPixels: 100,
           lineWidthMinPixels: 1,
-          getPosition: (d) => {
+          getPosition: d => {
             return d.centroid;
           },
           getRadius: d => {
-            return Math.sqrt(d.reports.length)
+            return Math.sqrt(d.reports.length);
           },
-          getFillColor: d => scatterplotColorRange[Math.max(0, Math.min(5, Math.floor((d.overallPriority-0.5) * 15 + 5)))],
+          getFillColor: d =>
+            scatterplotColorRange[
+              Math.max(
+                0,
+                Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
+              )
+            ],
           getLineColor: d => [0, 0, 0],
-          onClick: (info, event) => {
-
-          },
-          onHover: (info, event) => {
-
-          }
-        }));
-      if(kmeansResult){
+          onClick: (info, event) => {},
+          onHover: (info, event) => {}
+        })
+      );
+      if (kmeansResult) {
         kmeansResult.forEach((cluster, i) => {
-          layers.push(new ScatterplotLayer({
-            id: 'scatterplot-cluster' + i,
-            data: cluster.cluster,
-            pickable: true,
-            opacity: 0.8,
-            stroked: false,
-            filled: true,
-            radiusScale: 6,
-            radiusMinPixels: 1,
-            radiusMaxPixels: 100,
-            lineWidthMinPixels: 1,
-            getPosition: (d) => d,
-            getRadius: d => 10,
-            getFillColor: d => randomColors[i],
-            getLineColor: d => [0, 0, 0],
-            onClick: (info, event) => {
-              handleSelectedPt(info.object._id);
-            },
-            onHover: handleHover
-          }))
+          layers.push(
+            new ScatterplotLayer({
+              id: 'scatterplot-cluster' + i,
+              data: cluster.cluster,
+              pickable: true,
+              opacity: 0.8,
+              stroked: false,
+              filled: true,
+              radiusScale: 6,
+              radiusMinPixels: 1,
+              radiusMaxPixels: 100,
+              lineWidthMinPixels: 1,
+              getPosition: d => d,
+              getRadius: d => 10,
+              getFillColor: d => randomColors[i],
+              getLineColor: d => [0, 0, 0],
+              onClick: (info, event) => {
+                handleSelectedPt(info.object._id);
+              },
+              onHover: handleHover
+            })
+          );
         });
       }
     }
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
     useEffect(() => {
-      if(!selectedPt) {
+      if (!selectedPt) {
         return;
       }
-      const selectedPtData = fulldata.filter(record => record._id === selectedPt)[0];
+      const selectedPtData = fulldata.filter(
+        record => record._id === selectedPt
+      )[0];
       setViewState({
         ...viewState,
         longitude: selectedPtData.location_information.geometry.location.lng,
@@ -324,14 +354,16 @@ const MapImpl = React.memo(
         bearing: -27.396674584323023,
         transitionDuration: 500,
         transitionInterpolator: new FlyToInterpolator(),
-        transitionEasing: t => {return t<.5 ? 2*t*t : -1+(4-2*t)*t}
-      })
+        transitionEasing: t => {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+      });
     }, [selectedPt]);
 
     return (
       <DeckGL
         viewState={viewState}
-        onViewStateChange={({viewState}) => setViewState(viewState)}
+        onViewStateChange={({ viewState }) => setViewState(viewState)}
         layers={layers}
         effects={[lightingEffect]}
         controller={true}

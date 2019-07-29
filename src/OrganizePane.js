@@ -9,7 +9,7 @@ import './OrganizePane.css';
 const { Option } = Select;
 
 const getPriorityUiString = priority => {
-  return Math.max(0, (10 - priority * 10)).toFixed(1);
+  return Math.max(0, 10 - priority * 10).toFixed(1);
 };
 
 export function OrganizePane({
@@ -38,7 +38,6 @@ export function OrganizePane({
       }),
     [fullclusters, selected]
   );
-
 
   const renderItem = ({ index, key, style }) => {
     const cluster = fullclustersSorted[index];
@@ -94,7 +93,11 @@ export function OrganizePane({
     <div className="organize">
       <div className="select">
         <span className="sort">Sort clusters by:</span>
-        <Select className="organize-select" value={selected} onChange={v => setSelected(v)}>
+        <Select
+          className="organize-select"
+          value={selected}
+          onChange={v => setSelected(v)}
+        >
           <Option value="overall">
             <div className="option">Overall status</div>
           </Option>
@@ -138,12 +141,10 @@ export function OrganizePane({
 
       <div className="divider" style={{ gridArea: 'dividerBottom' }} />
 
-      <div className="organize-info">
-       {/* {info}*/}
-      </div>
+      <div className="organize-info">{/* {info}*/}</div>
 
       <div className="fyi">
-        <Icon type="info-circle"/> Circle color indicates cluster priority
+        <Icon type="info-circle" /> Circle color indicates cluster priority
       </div>
     </div>
   );

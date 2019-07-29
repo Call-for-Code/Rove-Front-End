@@ -53,44 +53,52 @@ function App() {
 
   const [kmeansResult, setKmeansResult] = useState('');
   useEffect(() => {
-    if(!fulldataLngLats || fulldataLngLats.length === 0){
+    if (!fulldataLngLats || fulldataLngLats.length === 0) {
       return;
     }
-    kmeans.clusterize(fulldataLngLats, {k: K_PARTITIONS}, (err,res) => {
+    kmeans.clusterize(fulldataLngLats, { k: K_PARTITIONS }, (err, res) => {
       if (err) console.error(err);
       else setKmeansResult(res);
     });
   }, [fulldataLngLats]);
-  const fullclusters = useMemo(() => kmeansResult ? kmeansResult.map(cluster => {
-    let overallPriority = 0;
-    let healthPriority = 0;
-    let foodPriority = 0;
-    let hygienePriority = 0;
-    let reports = [];
-    cluster.clusterInd.forEach(ind => {
-      const report = fulldata[ind];
-      overallPriority += report.overall.priority;
-      healthPriority += report.health.priority;
-      foodPriority += report.food.priority;
-      hygienePriority += report.hygiene.priority;
-      reports.push(report);
-    });
-    return {
-      centroid: cluster.centroid,
-      reports: reports,
-      overallPriority: overallPriority/reports.length,
-      healthPriority: healthPriority/reports.length,
-      foodPriority: foodPriority/reports.length,
-      hygienePriority: hygienePriority/reports.length
-    }
-  }) : [], [fulldata, kmeansResult]);
-
+  const fullclusters = useMemo(
+    () =>
+      kmeansResult
+        ? kmeansResult.map(cluster => {
+            let overallPriority = 0;
+            let healthPriority = 0;
+            let foodPriority = 0;
+            let hygienePriority = 0;
+            let reports = [];
+            cluster.clusterInd.forEach(ind => {
+              const report = fulldata[ind];
+              overallPriority += report.overall.priority;
+              healthPriority += report.health.priority;
+              foodPriority += report.food.priority;
+              hygienePriority += report.hygiene.priority;
+              reports.push(report);
+            });
+            return {
+              centroid: cluster.centroid,
+              reports: reports,
+              overallPriority: overallPriority / reports.length,
+              healthPriority: healthPriority / reports.length,
+              foodPriority: foodPriority / reports.length,
+              hygienePriority: hygienePriority / reports.length
+            };
+          })
+        : [],
+    [fulldata, kmeansResult]
+  );
 
   const [selectedPt, setSelectedPt] = useState('');
   const handleSelectedPt = useCallback(pt => setSelectedPt(pt), []);
 
   const [selectedCluster, setSelectedCluster] = useState('');
-  const handleSelectedCluster = useCallback(clusterId => setSelectedCluster(clusterId), []);
+  const handleSelectedCluster = useCallback(
+    clusterId => setSelectedCluster(clusterId),
+    []
+  );
 
   return (
     <div className="App">
