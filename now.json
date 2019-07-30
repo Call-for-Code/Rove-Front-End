@@ -3,6 +3,10 @@
     {
       "src": "/(.*).json",
       "dest": "/(.*).json"
+    },
+    {
+      "src": "/(.*).geojson",
+      "dest": "/(.*).geojson"
     }
   ]
 }
