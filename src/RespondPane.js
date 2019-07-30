@@ -112,7 +112,10 @@ function RespondPane({
 
   return (
     <div className="respond">
-      <div className="fyi">Navigate around <span className="flooded">flooded roads</span> and <span className="flooded-building">buildings</span></div>
+      <div className="fyi">
+        Navigate around <span className="flooded">flooded roads</span> and{' '}
+        <span className="flooded-building">buildings</span>
+      </div>
 
       <div className="from">
         <span className="from-label">From:</span>
@@ -120,7 +123,10 @@ function RespondPane({
           {selectedFirestation && selectedFirestation.properties ? (
             selectedFirestation.properties.name
           ) : (
-            <span style={{ fontStyle: 'italic' }}>Select a fire station <span className="firestation">(dark blue dot)</span></span>
+            <span style={{ fontStyle: 'italic' }}>
+              Select a fire station{' '}
+              <span className="firestation">(dark blue dot)</span>
+            </span>
           )}
         </span>
       </div>

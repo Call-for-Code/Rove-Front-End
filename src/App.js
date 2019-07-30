@@ -226,15 +226,13 @@ function App() {
   );
 }
 
-
 class AppWrapper {
-
-
   render() {
     return (
       <ErrorBoundary>
-        <App/>
-      </ErrorBoundary>);
+        <App />
+      </ErrorBoundary>
+    );
   }
 }
 

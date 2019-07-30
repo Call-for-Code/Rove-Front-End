@@ -100,7 +100,7 @@ const randomColors = [
   [0, 0, 0]
 ];
 
-function Map({ tab, buildings,...rest }) {
+function Map({ tab, buildings, ...rest }) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
@@ -214,11 +214,12 @@ function Map({ tab, buildings,...rest }) {
       ) : null}
 
       {tab === '3' ? (
-        buildings ? null :
+        buildings ? null : (
           <Card className="loading">
             <div className="loading-label">Building data loading...</div>
           </Card>
-      ): null}
+        )
+      ) : null}
 
       {renderTooltip()}
     </div>
@@ -239,10 +240,10 @@ const MapImpl = React.memo(
     fullclusters,
     firestations,
     route,
-     handleSelectedFirestation,
-     handleSelectedCluster,
+    handleSelectedFirestation,
+    handleSelectedCluster,
     buildings,
-     kmeansResult,
+    kmeansResult,
     roads
   }) => {
     const {
@@ -360,8 +361,8 @@ const MapImpl = React.memo(
               getRadius: d => 10,
               getFillColor: d => randomColors[i],
               getLineColor: d => [0, 0, 0],
-              onClick: ({object}, event) => {
-               /* handleSelectedPt(object);*/
+              onClick: ({ object }, event) => {
+                /* handleSelectedPt(object);*/
               },
               onHover: handleHover
             })
@@ -385,7 +386,7 @@ const MapImpl = React.memo(
           getLineWidth: 1,
           getElevation: 30,
           onHover: handleHover,
-          onClick: ({object, x, y}) => {
+          onClick: ({ object, x, y }) => {
             handleSelectedFirestation(object);
           }
         })
@@ -394,17 +395,14 @@ const MapImpl = React.memo(
         layers.push(
           new PathLayer({
             id: 'path-layer',
-            data: [
-              route
-            ],
+            data: [route],
             pickable: true,
             widthScale: 20,
             widthMinPixels: 2,
             getPath: d => d,
-            getColor: [255, 0 , 0, 255],
+            getColor: [255, 0, 0, 255],
             getWidth: 5,
-            onHover: ({ object, x, y }) => {
-            },
+            onHover: ({ object, x, y }) => {}
           })
         );
       }
@@ -433,9 +431,9 @@ const MapImpl = React.memo(
                 0,
                 Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
               )
-              ],
+            ],
           getLineColor: d => [0, 0, 0],
-          onClick: ({object, x, y}, event) => {
+          onClick: ({ object, x, y }, event) => {
             handleSelectedCluster(object);
           },
           onHover: handleHover
@@ -453,7 +451,7 @@ const MapImpl = React.memo(
           lineWidthScale: 20,
           lineWidthMinPixels: 2,
           getFillColor: d => {
-            if(d.properties.damageleve === 'none'){
+            if (d.properties.damageleve === 'none') {
               return [0, 255, 0, 100];
             } else if (d.properties.damageleve === 'MIN') {
               return [255, 255, 0, 150];
@@ -464,7 +462,7 @@ const MapImpl = React.memo(
           getLineColor: [255, 255, 255, 200],
           getRadius: 500,
           getLineWidth: 1,
-          getElevation: 30,
+          getElevation: 30
           /*onHover: handleHover,
           onClick: ({object, x, y}) => {
             handleSelectedFirestation(object);
@@ -482,20 +480,17 @@ const MapImpl = React.memo(
           extruded: false,
           lineWidthScale: 20,
           lineWidthMinPixels: 2,
-          getFillColor: d => {
-
-          },
-          getLineColor: [0,255,255, 200],
+          getFillColor: d => {},
+          getLineColor: [0, 255, 255, 200],
           getRadius: 500,
           getLineWidth: 1,
-          getElevation: 30,
+          getElevation: 30
           /*onHover: handleHover,
           onClick: ({object, x, y}) => {
             handleSelectedFirestation(object);
           }*/
         })
       );
-
     }
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
