@@ -124,7 +124,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let result = await (await fetch(
-        'https://www.googleapis.com/storage/v1/b/ibm-frontend/o/buildings.geojson?alt=media'
+        'http://storage.googleapis.com/ibm-frontend/buildings.geojson'
       )).json();
       setBuildings(result);
     }
