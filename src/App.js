@@ -124,7 +124,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let result = await (await fetch(
-        process.env.PUBLIC_URL + '/buildings.geojson'
+        'https://storage.cloud.google.com/ibm-frontend/buildings.geojson'
       )).json();
       setBuildings(result);
     }
