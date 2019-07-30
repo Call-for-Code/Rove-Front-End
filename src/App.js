@@ -147,7 +147,7 @@ function App() {
     if (tab === '3' && selectedFirestation && selectedCluster) {
       async function fetchData() {
         const result = await fetch(
-          `http://ligma.mybluemix.net/api/route/` +
+          `https://ligma.mybluemix.net/api/route/` +
             `?start=${selectedFirestation.geometry.coordinates[1]},${
               selectedFirestation.geometry.coordinates[0]
             }` +
