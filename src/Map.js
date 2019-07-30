@@ -246,252 +246,274 @@ const MapImpl = React.memo(
     kmeansResult,
     roads
   }) => {
-    const {
-      radius = 200,
-      upperPercentile = 100,
-      lowerPercentile = 0,
-      coverage = 0.7
-    } = {};
 
-    let layers = [];
-    if (tab === '1') {
-      layers.push(
-        hexagonOn
-          ? new HexagonLayer({
-              id: 'heatmap',
-              colorRange,
-              coverage,
-              data: fulldataLngLats,
-              elevationRange: [0, 500],
-              elevationScale: 10,
-              extruded: true,
-              getPosition: d => d,
-              opacity: 1,
-              pickable: true,
-              radius,
-              upperPercentile,
-              lowerPercentile,
-              material,
-              onClick: event => {
-                console.log(event);
-                return true;
-              },
-              onHover: handleHover
-            })
-          : null,
-        scatterplotOn
-          ? new ScatterplotLayer({
-              id: 'scatterplot-pts',
-              data: fulldata,
+    const [layers, setLayers] = useState([]);
+
+    useEffect(() => {
+      async function fetchData() {
+        const {
+          radius = 200,
+          upperPercentile = 100,
+          lowerPercentile = 0,
+          coverage = 0.7
+        } = {};
+        let layers = [];
+        if (tab === '1') {
+          layers.push(
+            hexagonOn
+              ? new HexagonLayer({
+                id: 'heatmap',
+                colorRange,
+                coverage,
+                data: fulldataLngLats,
+                elevationRange: [0, 500],
+                elevationScale: 10,
+                extruded: true,
+                getPosition: d => d,
+                opacity: 1,
+                pickable: true,
+                radius,
+                upperPercentile,
+                lowerPercentile,
+                material,
+                onClick: event => {
+                  console.log(event);
+                  return true;
+                },
+                onHover: handleHover
+              })
+              : null,
+            scatterplotOn
+              ? new ScatterplotLayer({
+                id: 'scatterplot-pts',
+                data: fulldata,
+                pickable: true,
+                opacity: 0.8,
+                stroked: false,
+                filled: true,
+                radiusScale: 6,
+                radiusMinPixels: 1,
+                radiusMaxPixels: 100,
+                lineWidthMinPixels: 1,
+                getPosition: d => {
+                  return [
+                    d.location_information.geometry.location.lng,
+                    d.location_information.geometry.location.lat
+                  ];
+                },
+                getRadius: d => 10,
+                getFillColor: d =>
+                  scatterplotColorRange[
+                    Math.max(0, Math.min(5, Math.floor(d.overall.priority * 6)))
+                    ],
+                getLineColor: d => [0, 0, 0],
+                onClick: (info, event) => {
+                  handleSelectedPt(info.object._id);
+                },
+                onHover: handleHover
+              })
+              : null
+          );
+        } else if (tab === '2') {
+          console.log(fullclusters);
+          layers.push(
+            new ScatterplotLayer({
+              id: 'scatterplot',
+              data: fullclusters,
               pickable: true,
               opacity: 0.8,
               stroked: false,
               filled: true,
-              radiusScale: 6,
+              radiusScale: 100,
               radiusMinPixels: 1,
               radiusMaxPixels: 100,
               lineWidthMinPixels: 1,
               getPosition: d => {
-                return [
-                  d.location_information.geometry.location.lng,
-                  d.location_information.geometry.location.lat
-                ];
+                return d.centroid;
               },
-              getRadius: d => 10,
+              getRadius: d => {
+                return Math.sqrt(d.reports.length);
+              },
               getFillColor: d =>
                 scatterplotColorRange[
-                  Math.max(0, Math.min(5, Math.floor(d.overall.priority * 6)))
-                ],
+                  Math.max(
+                    0,
+                    Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
+                  )
+                  ],
               getLineColor: d => [0, 0, 0],
-              onClick: (info, event) => {
-                handleSelectedPt(info.object._id);
-              },
-              onHover: handleHover
+              onClick: (info, event) => {},
+              onHover: (info, event) => {}
             })
-          : null
-      );
-    } else if (tab === '2') {
-      console.log(fullclusters);
-      layers.push(
-        new ScatterplotLayer({
-          id: 'scatterplot',
-          data: fullclusters,
-          pickable: true,
-          opacity: 0.8,
-          stroked: false,
-          filled: true,
-          radiusScale: 100,
-          radiusMinPixels: 1,
-          radiusMaxPixels: 100,
-          lineWidthMinPixels: 1,
-          getPosition: d => {
-            return d.centroid;
-          },
-          getRadius: d => {
-            return Math.sqrt(d.reports.length);
-          },
-          getFillColor: d =>
-            scatterplotColorRange[
-              Math.max(
-                0,
-                Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
-              )
-            ],
-          getLineColor: d => [0, 0, 0],
-          onClick: (info, event) => {},
-          onHover: (info, event) => {}
-        })
-      );
-      if (kmeansResult) {
-        kmeansResult.forEach((cluster, i) => {
-          console.log(cluster);
+          );
+          if (kmeansResult) {
+            kmeansResult.forEach((cluster, i) => {
+              console.log(cluster);
+              layers.push(
+                new ScatterplotLayer({
+                  id: 'scatterplot-cluster' + i,
+                  data: cluster.cluster,
+                  pickable: true,
+                  opacity: 0.8,
+                  stroked: false,
+                  filled: true,
+                  radiusScale: 6,
+                  radiusMinPixels: 1,
+                  radiusMaxPixels: 100,
+                  lineWidthMinPixels: 1,
+                  getPosition: d => d,
+                  getRadius: d => 10,
+                  getFillColor: d => randomColors[i],
+                  getLineColor: d => [0, 0, 0],
+                  onClick: ({ object }, event) => {
+                    /* handleSelectedPt(object);*/
+                  },
+                  onHover: handleHover
+                })
+              );
+            });
+          }
+        } else if (tab === '3') {
+          layers.push(
+            new GeoJsonLayer({
+              id: 'firestations-layer',
+              data: firestations,
+              pickable: true,
+              stroked: false,
+              filled: true,
+              extruded: true,
+              lineWidthScale: 20,
+              lineWidthMinPixels: 2,
+              getFillColor: [50, 50, 240, 255],
+              getLineColor: [255, 255, 255, 255],
+              getRadius: 500,
+              getLineWidth: 1,
+              getElevation: 30,
+              onHover: handleHover,
+              onClick: ({ object, x, y }) => {
+                handleSelectedFirestation(object);
+              }
+            })
+          );
+          if (route) {
+            layers.push(
+              new PathLayer({
+                id: 'path-layer',
+                data: [route],
+                pickable: true,
+                widthScale: 20,
+                widthMinPixels: 2,
+                getPath: d => d,
+                getColor: [255, 0, 0, 255],
+                getWidth: 5,
+                onHover: ({ object, x, y }) => {}
+              })
+            );
+          }
+
           layers.push(
             new ScatterplotLayer({
-              id: 'scatterplot-cluster' + i,
-              data: cluster.cluster,
+              id: 'scatterplot',
+              data: fullclusters,
               pickable: true,
               opacity: 0.8,
               stroked: false,
               filled: true,
-              radiusScale: 6,
+              radiusScale: 100,
               radiusMinPixels: 1,
               radiusMaxPixels: 100,
               lineWidthMinPixels: 1,
-              getPosition: d => d,
-              getRadius: d => 10,
-              getFillColor: d => randomColors[i],
+              getPosition: d => {
+                return d.centroid;
+              },
+              getRadius: d => {
+                return Math.sqrt(d.reports.length);
+              },
+              getFillColor: d =>
+                scatterplotColorRange[
+                  Math.max(
+                    0,
+                    Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
+                  )
+                  ],
               getLineColor: d => [0, 0, 0],
-              onClick: ({ object }, event) => {
-                /* handleSelectedPt(object);*/
+              onClick: ({ object, x, y }, event) => {
+                handleSelectedCluster(object);
               },
               onHover: handleHover
             })
           );
-        });
+
+          layers.push(
+            new GeoJsonLayer({
+              id: 'buildlings-layer',
+              data: buildings,
+              pickable: true,
+              stroked: false,
+              filled: true,
+              extruded: false,
+              lineWidthScale: 20,
+              lineWidthMinPixels: 2,
+              getFillColor: d => {
+                if (d.properties.damageleve === 'none') {
+                  return [0, 255, 0, 100];
+                } else if (d.properties.damageleve === 'MIN') {
+                  return [255, 255, 0, 150];
+                } else {
+                  return [255, 0, 0, 255];
+                }
+              },
+              getLineColor: [255, 255, 255, 200],
+              getRadius: 500,
+              getLineWidth: 1,
+              getElevation: 30
+              /*onHover: handleHover,
+              onClick: ({object, x, y}) => {
+                handleSelectedFirestation(object);
+              }*/
+            })
+          );
+
+          layers.push(
+            new GeoJsonLayer({
+              id: 'roads-layer',
+              data: roads,
+              pickable: true,
+              stroked: false,
+              filled: true,
+              extruded: false,
+              lineWidthScale: 20,
+              lineWidthMinPixels: 2,
+              getFillColor: d => {},
+              getLineColor: [0, 255, 255, 200],
+              getRadius: 500,
+              getLineWidth: 1,
+              getElevation: 30
+              /*onHover: handleHover,
+              onClick: ({object, x, y}) => {
+                handleSelectedFirestation(object);
+              }*/
+            })
+          );
+        }
+        setLayers(layers);
       }
-    } else if (tab === '3') {
-      layers.push(
-        new GeoJsonLayer({
-          id: 'firestations-layer',
-          data: firestations,
-          pickable: true,
-          stroked: false,
-          filled: true,
-          extruded: true,
-          lineWidthScale: 20,
-          lineWidthMinPixels: 2,
-          getFillColor: [50, 50, 240, 255],
-          getLineColor: [255, 255, 255, 255],
-          getRadius: 500,
-          getLineWidth: 1,
-          getElevation: 30,
-          onHover: handleHover,
-          onClick: ({ object, x, y }) => {
-            handleSelectedFirestation(object);
-          }
-        })
-      );
-      if (route) {
-        layers.push(
-          new PathLayer({
-            id: 'path-layer',
-            data: [route],
-            pickable: true,
-            widthScale: 20,
-            widthMinPixels: 2,
-            getPath: d => d,
-            getColor: [255, 0, 0, 255],
-            getWidth: 5,
-            onHover: ({ object, x, y }) => {}
-          })
-        );
-      }
-
-      layers.push(
-        new ScatterplotLayer({
-          id: 'scatterplot',
-          data: fullclusters,
-          pickable: true,
-          opacity: 0.8,
-          stroked: false,
-          filled: true,
-          radiusScale: 100,
-          radiusMinPixels: 1,
-          radiusMaxPixels: 100,
-          lineWidthMinPixels: 1,
-          getPosition: d => {
-            return d.centroid;
-          },
-          getRadius: d => {
-            return Math.sqrt(d.reports.length);
-          },
-          getFillColor: d =>
-            scatterplotColorRange[
-              Math.max(
-                0,
-                Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
-              )
-            ],
-          getLineColor: d => [0, 0, 0],
-          onClick: ({ object, x, y }, event) => {
-            handleSelectedCluster(object);
-          },
-          onHover: handleHover
-        })
-      );
-
-      layers.push(
-        new GeoJsonLayer({
-          id: 'buildlings-layer',
-          data: buildings,
-          pickable: true,
-          stroked: false,
-          filled: true,
-          extruded: false,
-          lineWidthScale: 20,
-          lineWidthMinPixels: 2,
-          getFillColor: d => {
-            if (d.properties.damageleve === 'none') {
-              return [0, 255, 0, 100];
-            } else if (d.properties.damageleve === 'MIN') {
-              return [255, 255, 0, 150];
-            } else {
-              return [255, 0, 0, 255];
-            }
-          },
-          getLineColor: [255, 255, 255, 200],
-          getRadius: 500,
-          getLineWidth: 1,
-          getElevation: 30
-          /*onHover: handleHover,
-          onClick: ({object, x, y}) => {
-            handleSelectedFirestation(object);
-          }*/
-        })
-      );
-
-      layers.push(
-        new GeoJsonLayer({
-          id: 'roads-layer',
-          data: roads,
-          pickable: true,
-          stroked: false,
-          filled: true,
-          extruded: false,
-          lineWidthScale: 20,
-          lineWidthMinPixels: 2,
-          getFillColor: d => {},
-          getLineColor: [0, 255, 255, 200],
-          getRadius: 500,
-          getLineWidth: 1,
-          getElevation: 30
-          /*onHover: handleHover,
-          onClick: ({object, x, y}) => {
-            handleSelectedFirestation(object);
-          }*/
-        })
-      );
-    }
+      fetchData();
+    }, [
+      buildings,
+      firestations,
+      fullclusters,
+      fulldata,
+      fulldataLngLats,
+      hexagonOn,
+      kmeansResult,
+      layers,
+      roads,
+      route,
+      scatterplotOn,
+      tab
+    ]);
+    
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
     useEffect(() => {

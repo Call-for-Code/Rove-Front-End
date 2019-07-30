@@ -229,7 +229,7 @@ function App() {
   );
 }
 
-class AppWrapper {
+class AppWrapper extends React.Component {
   render() {
     return (
       <ErrorBoundary>
