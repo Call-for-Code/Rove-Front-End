@@ -242,7 +242,8 @@ const MapImpl = React.memo(
      handleSelectedFirestation,
      handleSelectedCluster,
     buildings,
-     kmeansResult
+     kmeansResult,
+    roads
   }) => {
     const {
       radius = 200,
@@ -453,14 +454,38 @@ const MapImpl = React.memo(
           lineWidthMinPixels: 2,
           getFillColor: d => {
             if(d.properties.damageleve === 'none'){
-              return [0, 255, 0, 255];
+              return [0, 255, 0, 100];
             } else if (d.properties.damageleve === 'MIN') {
-              return [255, 255, 0, 255];
+              return [255, 255, 0, 150];
             } else {
               return [255, 0, 0, 255];
             }
           },
-          getLineColor: [255, 255, 255, 255],
+          getLineColor: [255, 255, 255, 200],
+          getRadius: 500,
+          getLineWidth: 1,
+          getElevation: 30,
+          /*onHover: handleHover,
+          onClick: ({object, x, y}) => {
+            handleSelectedFirestation(object);
+          }*/
+        })
+      );
+
+      layers.push(
+        new GeoJsonLayer({
+          id: 'roads-layer',
+          data: roads,
+          pickable: true,
+          stroked: false,
+          filled: true,
+          extruded: false,
+          lineWidthScale: 20,
+          lineWidthMinPixels: 2,
+          getFillColor: d => {
+
+          },
+          getLineColor: [0,255,255, 200],
           getRadius: 500,
           getLineWidth: 1,
           getElevation: 30,

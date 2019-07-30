@@ -114,3 +114,15 @@
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.flooded {
+  color: cyan;
+}
+
+.flooded-building {
+  color: red;
+}
+
+.firestation {
+  color: rgb(50, 50, 240);
+}

@@ -124,9 +124,20 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let result = await (await fetch(
-        'https://storage.cloud.google.com/ibm-frontend/buildings.geojson'
+        'https://www.googleapis.com/storage/v1/b/ibm-frontend/o/buildings.geojson?alt=media'
       )).json();
       setBuildings(result);
+    }
+    fetchData();
+  }, []);
+
+  const [roads, setRoads] = useState(null);
+  useEffect(() => {
+    async function fetchData() {
+      let result = await (await fetch(
+        process.env.PUBLIC_URL + '/roads.geojson'
+      )).json();
+      setRoads(result);
     }
     fetchData();
   }, []);
@@ -209,6 +220,7 @@ function App() {
         handleSelectedCluster={handleSelectedCluster}
         buildings={buildings}
         kmeansResult={kmeansResult}
+        roads={roads}
       />
     </div>
   );
