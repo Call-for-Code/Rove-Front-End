@@ -22,7 +22,7 @@ const getPriorityUiString = priority => {
   );
 };
 
-export function RespondPane({
+function RespondPane({
   firestations,
   fulldata,
   selectedCluster,
@@ -120,7 +120,7 @@ export function RespondPane({
           {selectedFirestation && selectedFirestation.properties ? (
             selectedFirestation.properties.name
           ) : (
-            <span style={{ fontStyle: 'italic' }}>Select a firestation</span>
+            <span style={{ fontStyle: 'italic' }}>Select a fire station (blue dot)</span>
           )}
         </span>
       </div>
@@ -174,3 +174,7 @@ export function RespondPane({
     </div>
   );
 }
+
+RespondPane.whyDidYouRender = true;
+
+export { RespondPane };

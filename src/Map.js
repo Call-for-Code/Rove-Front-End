@@ -100,7 +100,7 @@ const randomColors = [
   [0, 0, 0]
 ];
 
-function Map({ tab, ...rest }) {
+function Map({ tab, buildings,...rest }) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
@@ -188,6 +188,7 @@ function Map({ tab, ...rest }) {
         handleHover={onHover}
         style={style}
         tab={tab}
+        buildings={buildings}
         {...rest}
       />
       <div className="style">
@@ -212,6 +213,13 @@ function Map({ tab, ...rest }) {
         </Card>
       ) : null}
 
+      {tab === '3' ? (
+        buildings ? null :
+          <Card className="loading">
+            <div className="loading-label">Building data loading...</div>
+          </Card>
+      ): null}
+
       {renderTooltip()}
     </div>
   );
@@ -232,7 +240,9 @@ const MapImpl = React.memo(
     firestations,
     route,
      handleSelectedFirestation,
-     handleSelectedCluster
+     handleSelectedCluster,
+    buildings,
+     kmeansResult
   }) => {
     const {
       radius = 200,
@@ -330,13 +340,13 @@ const MapImpl = React.memo(
           onHover: (info, event) => {}
         })
       );
-      if (fullclusters) {
-        fullclusters.forEach((cluster, i) => {
+      if (kmeansResult) {
+        kmeansResult.forEach((cluster, i) => {
           console.log(cluster);
           layers.push(
             new ScatterplotLayer({
               id: 'scatterplot-cluster' + i,
-              data: cluster.reports,
+              data: cluster.cluster,
               pickable: true,
               opacity: 0.8,
               stroked: false,
@@ -345,10 +355,7 @@ const MapImpl = React.memo(
               radiusMinPixels: 1,
               radiusMaxPixels: 100,
               lineWidthMinPixels: 1,
-              getPosition: d => [
-                d.location_information.geometry.location.lng,
-                d.location_information.geometry.location.lat
-              ],
+              getPosition: d => d,
               getRadius: d => 10,
               getFillColor: d => randomColors[i],
               getLineColor: d => [0, 0, 0],
@@ -434,6 +441,36 @@ const MapImpl = React.memo(
         })
       );
 
+      layers.push(
+        new GeoJsonLayer({
+          id: 'buildlings-layer',
+          data: buildings,
+          pickable: true,
+          stroked: false,
+          filled: true,
+          extruded: false,
+          lineWidthScale: 20,
+          lineWidthMinPixels: 2,
+          getFillColor: d => {
+            if(d.properties.damageleve === 'none'){
+              return [0, 255, 0, 255];
+            } else if (d.properties.damageleve === 'MIN') {
+              return [255, 255, 0, 255];
+            } else {
+              return [255, 0, 0, 255];
+            }
+          },
+          getLineColor: [255, 255, 255, 255],
+          getRadius: 500,
+          getLineWidth: 1,
+          getElevation: 30,
+          /*onHover: handleHover,
+          onClick: ({object, x, y}) => {
+            handleSelectedFirestation(object);
+          }*/
+        })
+      );
+
     }
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
@@ -478,6 +515,6 @@ const MapImpl = React.memo(
   }
 );
 
-MapImpl.whyDidYouRender = true;
+// MapImpl.whyDidYouRender = true;
 
 export default Map;

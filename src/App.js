@@ -120,6 +120,17 @@ function App() {
     []
   );
 
+  const [buildings, setBuildings] = useState(null);
+  useEffect(() => {
+    async function fetchData() {
+      let result = await (await fetch(
+        process.env.PUBLIC_URL + '/buildings.geojson'
+      )).json();
+      setBuildings(result);
+    }
+    fetchData();
+  }, []);
+
   const [route, setRoute] = useState(null);
   useEffect(() => {
     if (tab === '3' && selectedFirestation && selectedCluster) {
@@ -196,6 +207,8 @@ function App() {
         route={route}
         handleSelectedFirestation={handleSelectedFirestation}
         handleSelectedCluster={handleSelectedCluster}
+        buildings={buildings}
+        kmeansResult={kmeansResult}
       />
     </div>
   );

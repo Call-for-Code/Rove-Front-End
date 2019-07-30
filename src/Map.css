@@ -29,3 +29,12 @@
   font-weight: bold;
   padding-bottom: 8px;
 }
+
+.loading {
+  position: absolute;
+  margin: 8px;
+}
+
+.loading-label {
+  color: red;
+}
