@@ -174,7 +174,10 @@ function App() {
   return (
     <div className="App">
       <div className="menu">
-        <h1 className="header">ROVE</h1>
+        <h1 className="header">
+          {/*<img src=></img>*/}
+          ROVE
+        </h1>
 
         <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
           <TabPane className="tab-pane" tab="1. Visualize" key="1">
@@ -236,4 +239,4 @@ class AppWrapper {
   }
 }
 
-export default App;
+export default AppWrapper;
