@@ -6,7 +6,7 @@ import { Checkbox, Radio, Card } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
-import { ScatterplotLayer, GeoJsonLayer } from '@deck.gl/layers';
+import { ScatterplotLayer, GeoJsonLayer, PathLayer } from '@deck.gl/layers';
 import DeckGL from '@deck.gl/react';
 import { FlyToInterpolator, StaticMap } from 'react-map-gl';
 import { PhongMaterial } from '@luma.gl/core';
@@ -51,7 +51,7 @@ const INITIAL_VIEW_STATE = {
   longitude: -95.3428485221802,
   latitude: 29.7298513221863,
   zoom: 9.27,
-  minZoom: 5,
+  minZoom: 0,
   maxZoom: 15,
   pitch: 40.5,
   bearing: -27.396674584323023
@@ -131,6 +131,7 @@ function Map({ tab, ...rest }) {
     }
 
     if (object.position) {
+      // 1. Gather Hexagon
       const lat = object.position[1];
       const lng = object.position[0];
       const count = object.points.length;
@@ -145,6 +146,7 @@ function Map({ tab, ...rest }) {
         </div>
       );
     } else if (object.name) {
+      // 1. Gather point
       const lat = object.location_information.geometry.location.lat;
       const lng = object.location_information.geometry.location.lng;
       const name = object.name;
@@ -157,6 +159,22 @@ function Map({ tab, ...rest }) {
             Number.isFinite(lng) ? lng.toFixed(6) : ''
           }`}</div>
           <div>Click for more info</div>
+        </div>
+      );
+    } else if (object.properties && object.properties.name) {
+      // 3. firestation
+      return (
+        <div className="tooltip" style={{ left: x, top: y }}>
+          <div>{`${object.properties.name}`}</div>
+          <div>Click to set navigation start</div>
+        </div>
+      );
+    } else if (object.reports) {
+      // 3. cluster
+      return (
+        <div className="tooltip" style={{ left: x, top: y }}>
+          <div>{`Cluster - ${object.reports.length}`}</div>
+          <div>Click to set navigation destination</div>
         </div>
       );
     }
@@ -209,10 +227,12 @@ const MapImpl = React.memo(
     handleHover,
     style,
     tab,
-    kmeansResult,
     selectedPt,
     fullclusters,
-     firestations
+    firestations,
+    route,
+     handleSelectedFirestation,
+     handleSelectedCluster
   }) => {
     const {
       radius = 200,
@@ -310,12 +330,13 @@ const MapImpl = React.memo(
           onHover: (info, event) => {}
         })
       );
-      if (kmeansResult) {
-        kmeansResult.forEach((cluster, i) => {
+      if (fullclusters) {
+        fullclusters.forEach((cluster, i) => {
+          console.log(cluster);
           layers.push(
             new ScatterplotLayer({
               id: 'scatterplot-cluster' + i,
-              data: cluster.cluster,
+              data: cluster.reports,
               pickable: true,
               opacity: 0.8,
               stroked: false,
@@ -324,12 +345,15 @@ const MapImpl = React.memo(
               radiusMinPixels: 1,
               radiusMaxPixels: 100,
               lineWidthMinPixels: 1,
-              getPosition: d => d,
+              getPosition: d => [
+                d.location_information.geometry.location.lng,
+                d.location_information.geometry.location.lat
+              ],
               getRadius: d => 10,
               getFillColor: d => randomColors[i],
               getLineColor: d => [0, 0, 0],
-              onClick: (info, event) => {
-                handleSelectedPt(info.object._id);
+              onClick: ({object}, event) => {
+               /* handleSelectedPt(object);*/
               },
               onHover: handleHover
             })
@@ -337,23 +361,79 @@ const MapImpl = React.memo(
         });
       }
     } else if (tab === '3') {
-      layers.push(new GeoJsonLayer({
-        id: 'firestations-layer',
-        data: firestations,
-        pickable: true,
-        stroked: false,
-        filled: true,
-        extruded: true,
-        lineWidthScale: 20,
-        lineWidthMinPixels: 2,
-        getFillColor: [50, 50, 240, 255],
-        getLineColor: [255, 255, 255, 255],
-        getRadius: 500,
-        getLineWidth: 1,
-        getElevation: 30,
-        onHover: ({ object, x, y }) => {
-        }
-      }));
+      layers.push(
+        new GeoJsonLayer({
+          id: 'firestations-layer',
+          data: firestations,
+          pickable: true,
+          stroked: false,
+          filled: true,
+          extruded: true,
+          lineWidthScale: 20,
+          lineWidthMinPixels: 2,
+          getFillColor: [50, 50, 240, 255],
+          getLineColor: [255, 255, 255, 255],
+          getRadius: 500,
+          getLineWidth: 1,
+          getElevation: 30,
+          onHover: handleHover,
+          onClick: ({object, x, y}) => {
+            handleSelectedFirestation(object);
+          }
+        })
+      );
+      if (route) {
+        layers.push(
+          new PathLayer({
+            id: 'path-layer',
+            data: [
+              route
+            ],
+            pickable: true,
+            widthScale: 20,
+            widthMinPixels: 2,
+            getPath: d => d,
+            getColor: [255, 0 , 0, 255],
+            getWidth: 5,
+            onHover: ({ object, x, y }) => {
+            },
+          })
+        );
+      }
+
+      layers.push(
+        new ScatterplotLayer({
+          id: 'scatterplot',
+          data: fullclusters,
+          pickable: true,
+          opacity: 0.8,
+          stroked: false,
+          filled: true,
+          radiusScale: 100,
+          radiusMinPixels: 1,
+          radiusMaxPixels: 100,
+          lineWidthMinPixels: 1,
+          getPosition: d => {
+            return d.centroid;
+          },
+          getRadius: d => {
+            return Math.sqrt(d.reports.length);
+          },
+          getFillColor: d =>
+            scatterplotColorRange[
+              Math.max(
+                0,
+                Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
+              )
+              ],
+          getLineColor: d => [0, 0, 0],
+          onClick: ({object, x, y}, event) => {
+            handleSelectedCluster(object);
+          },
+          onHover: handleHover
+        })
+      );
+
     }
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);

@@ -6,28 +6,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -95.366599,
-                    29.764764,
-                    0
-                ]
-            },
-            "properties": {
-                "name": "Houston Fire Station 1 - Closed 2001",
-                "styleUrl": "#icon-168",
-                "styleHash": "5dbf8198",
-                "styleMapHash": {
-                    "normal": "#icon-168-normal",
-                    "highlight": "#icon-168-highlight"
-                },
-                "icon": "http://www.gstatic.com/mapspro/images/stock/168-ylw-pushpin.png",
-                "description": "Houston Fire Station 1 - Closed 2001<br>410 Bagby<br>Houston, TX  77002"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -95.481016,
                     29.762093,
                     0
@@ -42,7 +20,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/ZIsbo1jkCldeR4MM_HImgPVwbdtJMqH5hUWxNvgef9z--BkH8x3LDABykhnEdHf3PbzzzCes6oB4FykWgGu07KZ1wApdUj5RhB01VHj7OvtlloQwAxvAL0I-hpKJPiVG\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 2<br>5880 Woodway<br>Houston, TX 77057",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/ZIsbo1jkCldeR4MM_HImgPVwbdtJMqH5hUWxNvgef9z--BkH8x3LDABykhnEdHf3PbzzzCes6oB4FykWgGu07KZ1wApdUj5RhB01VHj7OvtlloQwAxvAL0I-hpKJPiVG\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 2<br>5880 Woodway<br>Houston, TX 77057",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/ZIsbo1jkCldeR4MM_HImgPVwbdtJMqH5hUWxNvgef9z--BkH8x3LDABykhnEdHf3PbzzzCes6oB4FykWgGu07KZ1wApdUj5RhB01VHj7OvtlloQwAxvAL0I-hpKJPiVG"
             }
         },
@@ -65,7 +43,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/D1DyYZ3WdiJNwO8XNEE5r83jg5TPE0DgRNikad8jMeThjbaoaVWNSlJknu-YZO8vvDaMdWOKA25oSP5uzdcazF8NlfpqbHc7nvub8Ku-2JmKZDef6RGa4HmLYCEJlL6D\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 3<br>3735 W Alabama St<br>Houston, TX 77027",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/D1DyYZ3WdiJNwO8XNEE5r83jg5TPE0DgRNikad8jMeThjbaoaVWNSlJknu-YZO8vvDaMdWOKA25oSP5uzdcazF8NlfpqbHc7nvub8Ku-2JmKZDef6RGa4HmLYCEJlL6D\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 3<br>3735 W Alabama St<br>Houston, TX 77027",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/D1DyYZ3WdiJNwO8XNEE5r83jg5TPE0DgRNikad8jMeThjbaoaVWNSlJknu-YZO8vvDaMdWOKA25oSP5uzdcazF8NlfpqbHc7nvub8Ku-2JmKZDef6RGa4HmLYCEJlL6D"
             }
         },
@@ -88,7 +66,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/dY1AqaJRpBidR0F6JUNQNtsK74pOPylQoGwrlvcrFgJjTyv6f-HZeM02G16NGNvQL8gfl0au_2q22Hfb6cOufqRUTu34LOV05PCYpGhW5ElVBjGn3bfuECYdBXJOW5Hg\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 4<br>6530 W Little York Rd<br>Houston, TX  77088",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/dY1AqaJRpBidR0F6JUNQNtsK74pOPylQoGwrlvcrFgJjTyv6f-HZeM02G16NGNvQL8gfl0au_2q22Hfb6cOufqRUTu34LOV05PCYpGhW5ElVBjGn3bfuECYdBXJOW5Hg\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 4<br>6530 W Little York Rd<br>Houston, TX  77088",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/dY1AqaJRpBidR0F6JUNQNtsK74pOPylQoGwrlvcrFgJjTyv6f-HZeM02G16NGNvQL8gfl0au_2q22Hfb6cOufqRUTu34LOV05PCYpGhW5ElVBjGn3bfuECYdBXJOW5Hg"
             }
         },
@@ -111,7 +89,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/XaX8oWD6JZktPHPcYrhF9ixS7H6Ei6-D0-BV838a9dO2JJG6Cm-Tf5LKS0SiajFEbVnCChv2I9h8A2b-7g4m-9tDvizXJqYkyEqsNFbAFzIssFyWREIRth1Q1j8eNJRm\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 5<br>2020 Hollister St<br>Houston, TX  77080",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/XaX8oWD6JZktPHPcYrhF9ixS7H6Ei6-D0-BV838a9dO2JJG6Cm-Tf5LKS0SiajFEbVnCChv2I9h8A2b-7g4m-9tDvizXJqYkyEqsNFbAFzIssFyWREIRth1Q1j8eNJRm\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 5<br>2020 Hollister St<br>Houston, TX  77080",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/XaX8oWD6JZktPHPcYrhF9ixS7H6Ei6-D0-BV838a9dO2JJG6Cm-Tf5LKS0SiajFEbVnCChv2I9h8A2b-7g4m-9tDvizXJqYkyEqsNFbAFzIssFyWREIRth1Q1j8eNJRm"
             }
         },
@@ -134,7 +112,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/TSeUFGJsEcZ5WyY6kOPfXAsgdLrTXAbtGRMeKGBo8cvj9wO2WifuBgGpIO-7euQYW76gdSNVnKlIUaVQL8A6GOVylGjSe5oAyRAY8thNn_kVVVZUE2Fx5v3avG5w4oqf\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 6 (http://www.hfdstation6.com/)<br>3402 Washington<br>Houston, TX 77007",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/TSeUFGJsEcZ5WyY6kOPfXAsgdLrTXAbtGRMeKGBo8cvj9wO2WifuBgGpIO-7euQYW76gdSNVnKlIUaVQL8A6GOVylGjSe5oAyRAY8thNn_kVVVZUE2Fx5v3avG5w4oqf\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 6 (http://www.hfdstation6.com/)<br>3402 Washington<br>Houston, TX 77007",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/TSeUFGJsEcZ5WyY6kOPfXAsgdLrTXAbtGRMeKGBo8cvj9wO2WifuBgGpIO-7euQYW76gdSNVnKlIUaVQL8A6GOVylGjSe5oAyRAY8thNn_kVVVZUE2Fx5v3avG5w4oqf"
             }
         },
@@ -157,7 +135,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/xDd3RgZJzeJVmzqu-XKcu3NAW0fPJbH151IwFRhMp8uOwZkhwuuDX-w_Ji1EF6-WjyL17ULTw8Bzx40iHCzMCGk_wPXJ2ZAA7ZeYCvyKbjUPSFDZfK8pYuGeaWJdrzHW\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 7<br>1402 Elgin St<br>Houston, TX  77004",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/xDd3RgZJzeJVmzqu-XKcu3NAW0fPJbH151IwFRhMp8uOwZkhwuuDX-w_Ji1EF6-WjyL17ULTw8Bzx40iHCzMCGk_wPXJ2ZAA7ZeYCvyKbjUPSFDZfK8pYuGeaWJdrzHW\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 7<br>1402 Elgin St<br>Houston, TX  77004",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/xDd3RgZJzeJVmzqu-XKcu3NAW0fPJbH151IwFRhMp8uOwZkhwuuDX-w_Ji1EF6-WjyL17ULTw8Bzx40iHCzMCGk_wPXJ2ZAA7ZeYCvyKbjUPSFDZfK8pYuGeaWJdrzHW"
             }
         },
@@ -202,7 +180,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/r_tJretsu0pIToeS8zancEi6waQ3GMiGcwOGPKmIPhM-v27O532dUIVo3fvL3i0Iapr3K10fgpzNReeoScQalGINEX1MVgzFJYCARetM80ai-z5FkbEIiacGSdY-MKMZ\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 9<br>702 Hogan St<br>Houston, TX  77009",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/r_tJretsu0pIToeS8zancEi6waQ3GMiGcwOGPKmIPhM-v27O532dUIVo3fvL3i0Iapr3K10fgpzNReeoScQalGINEX1MVgzFJYCARetM80ai-z5FkbEIiacGSdY-MKMZ\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 9<br>702 Hogan St<br>Houston, TX  77009",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/r_tJretsu0pIToeS8zancEi6waQ3GMiGcwOGPKmIPhM-v27O532dUIVo3fvL3i0Iapr3K10fgpzNReeoScQalGINEX1MVgzFJYCARetM80ai-z5FkbEIiacGSdY-MKMZ"
             }
         },
@@ -225,7 +203,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/vCiyBar8CJwUfNnRlwXcHh7SAz3J49fwR-6_lKxA8SI8oDFx_yvo1eUFXXknLwh0YPuKqqhndW48BEuz7W-a1gVdMvvYlTSoc6BmH7djKjK2_C2i5-2QJ_f7BmVTHH_7\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 10<br>6600 Corporate Dr<br>Houston, TX  77036",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/vCiyBar8CJwUfNnRlwXcHh7SAz3J49fwR-6_lKxA8SI8oDFx_yvo1eUFXXknLwh0YPuKqqhndW48BEuz7W-a1gVdMvvYlTSoc6BmH7djKjK2_C2i5-2QJ_f7BmVTHH_7\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 10<br>6600 Corporate Dr<br>Houston, TX  77036",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/vCiyBar8CJwUfNnRlwXcHh7SAz3J49fwR-6_lKxA8SI8oDFx_yvo1eUFXXknLwh0YPuKqqhndW48BEuz7W-a1gVdMvvYlTSoc6BmH7djKjK2_C2i5-2QJ_f7BmVTHH_7"
             }
         },
@@ -248,7 +226,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/TqEMLyuisPOshO5sWBilNACxzXX-fGWmwxwBC5iaK-_Wcfbl6CM246oGoB5MWFAQ2RtrENhfJ374L-bl7o_Yt3gJEKinGaRowz01AF6yjdbGPrItMkUWeUxZ3xTjXQ8u\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 11<br>460 TC Jester Blvd<br>Houston, TX  77008",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/TqEMLyuisPOshO5sWBilNACxzXX-fGWmwxwBC5iaK-_Wcfbl6CM246oGoB5MWFAQ2RtrENhfJ374L-bl7o_Yt3gJEKinGaRowz01AF6yjdbGPrItMkUWeUxZ3xTjXQ8u\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 11<br>460 TC Jester Blvd<br>Houston, TX  77008",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/TqEMLyuisPOshO5sWBilNACxzXX-fGWmwxwBC5iaK-_Wcfbl6CM246oGoB5MWFAQ2RtrENhfJ374L-bl7o_Yt3gJEKinGaRowz01AF6yjdbGPrItMkUWeUxZ3xTjXQ8u"
             }
         },
@@ -271,7 +249,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/w8tWmEw8fiDs0KOejqoifh6xtGJLQWWbATNDlmke9Dk5UxJpmaIDJtYo9r1uKvXW-rB__DfJWJWjustiuLwe290xQpbyJpJNcf6jJ76o5lEuRRJZx_WFp5flICF8cfqy\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 12<br>1502 Alber<br>Houston, TX  77009",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/w8tWmEw8fiDs0KOejqoifh6xtGJLQWWbATNDlmke9Dk5UxJpmaIDJtYo9r1uKvXW-rB__DfJWJWjustiuLwe290xQpbyJpJNcf6jJ76o5lEuRRJZx_WFp5flICF8cfqy\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 12<br>1502 Alber<br>Houston, TX  77009",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/w8tWmEw8fiDs0KOejqoifh6xtGJLQWWbATNDlmke9Dk5UxJpmaIDJtYo9r1uKvXW-rB__DfJWJWjustiuLwe290xQpbyJpJNcf6jJ76o5lEuRRJZx_WFp5flICF8cfqy"
             }
         },
@@ -294,30 +272,8 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/vYcyBtUq4YdoPKl3tbLp7AvdgdJZS91xCSeyM6okLA7Vn4swS7n7YtSlwr5VIw2oNnaGIPe26oC3iBIA1NVbif60K9bPFRZ4B7nAF32JNiPHWGHHWY_3LeYqzUKiGBs8\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 13<br>2215 W 43rd<br>Houston, TX  77018",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/vYcyBtUq4YdoPKl3tbLp7AvdgdJZS91xCSeyM6okLA7Vn4swS7n7YtSlwr5VIw2oNnaGIPe26oC3iBIA1NVbif60K9bPFRZ4B7nAF32JNiPHWGHHWY_3LeYqzUKiGBs8\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 13<br>2215 W 43rd<br>Houston, TX  77018",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/vYcyBtUq4YdoPKl3tbLp7AvdgdJZS91xCSeyM6okLA7Vn4swS7n7YtSlwr5VIw2oNnaGIPe26oC3iBIA1NVbif60K9bPFRZ4B7nAF32JNiPHWGHHWY_3LeYqzUKiGBs8"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -95.397935,
-                    29.792537,
-                    0
-                ]
-            },
-            "properties": {
-                "name": "Houston Fire Station 14",
-                "styleUrl": "#icon-168",
-                "styleHash": "5dbf8198",
-                "styleMapHash": {
-                    "normal": "#icon-168-normal",
-                    "highlight": "#icon-168-highlight"
-                },
-                "icon": "http://www.gstatic.com/mapspro/images/stock/168-ylw-pushpin.png",
-                "description": "Houston Fire Station 14 - Closed 1987<br>107 W 12th St<br>Houston, TX  77008"
             }
         },
         {
@@ -339,7 +295,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/JKyHMPQv5-cG-k70zmFeV2gNY3YjyMzGkOlGsfdC-SjxXt7ubWyS9LJXAlJnCAT6mVjv99TNeHFAssW-FEzGBW96F5PGxBd52mhHLjeCx8WmfBmPHdUPHFp_tI1lujBw\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 15<br>5306 N Main St<br>Houston, TX  77009",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/JKyHMPQv5-cG-k70zmFeV2gNY3YjyMzGkOlGsfdC-SjxXt7ubWyS9LJXAlJnCAT6mVjv99TNeHFAssW-FEzGBW96F5PGxBd52mhHLjeCx8WmfBmPHdUPHFp_tI1lujBw\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 15<br>5306 N Main St<br>Houston, TX  77009",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/JKyHMPQv5-cG-k70zmFeV2gNY3YjyMzGkOlGsfdC-SjxXt7ubWyS9LJXAlJnCAT6mVjv99TNeHFAssW-FEzGBW96F5PGxBd52mhHLjeCx8WmfBmPHdUPHFp_tI1lujBw"
             }
         },
@@ -362,7 +318,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/hqV7KlmoJCSQSQ9r4r-Nc3B2METhILXS1o2e2_deMhMxqJL9HFWFLJpy_LrskGBf8CZwEuEFsD1KBRwgZgOXWfwYNebocF_7I10fmqJK9XUG0hFs85GNMRtYeFczW2f3\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 16<br>1700 Richmond Ave<br>Houston, TX  77098",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/hqV7KlmoJCSQSQ9r4r-Nc3B2METhILXS1o2e2_deMhMxqJL9HFWFLJpy_LrskGBf8CZwEuEFsD1KBRwgZgOXWfwYNebocF_7I10fmqJK9XUG0hFs85GNMRtYeFczW2f3\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 16<br>1700 Richmond Ave<br>Houston, TX  77098",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/hqV7KlmoJCSQSQ9r4r-Nc3B2METhILXS1o2e2_deMhMxqJL9HFWFLJpy_LrskGBf8CZwEuEFsD1KBRwgZgOXWfwYNebocF_7I10fmqJK9XUG0hFs85GNMRtYeFczW2f3"
             }
         },
@@ -385,7 +341,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/0Og4NYARjA2v_AFqtX36LnDcJW_OD5z9UqVaLpbp0p63VuWC_aociLE5xMnLEbJHnDOQrfYHwk-p2Nv3RnJCOFNWVxNybTWcMq1TsR9A7XXBNUsMtR4G3nq3966qLkML\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 17<br>2805 Navigation Blvd<br>Houston, TX  77003",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/0Og4NYARjA2v_AFqtX36LnDcJW_OD5z9UqVaLpbp0p63VuWC_aociLE5xMnLEbJHnDOQrfYHwk-p2Nv3RnJCOFNWVxNybTWcMq1TsR9A7XXBNUsMtR4G3nq3966qLkML\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 17<br>2805 Navigation Blvd<br>Houston, TX  77003",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/0Og4NYARjA2v_AFqtX36LnDcJW_OD5z9UqVaLpbp0p63VuWC_aociLE5xMnLEbJHnDOQrfYHwk-p2Nv3RnJCOFNWVxNybTWcMq1TsR9A7XXBNUsMtR4G3nq3966qLkML"
             }
         },
@@ -408,7 +364,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/TBk245nguRqQHHRpoKDcrlALbTqy4XG0P1YXEs__ezthny5kl6vqKScca-OqyAqDKet2LQmILpdg4QUd05ALaPUoDDOicrGHo7hXPa5kKr_aK3fCc8gMk6qZKZmXHKAi\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 18 (http://www.houstonstation18.com/)<br>619 Telephone Rd<br>Houston, TX  77023",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/TBk245nguRqQHHRpoKDcrlALbTqy4XG0P1YXEs__ezthny5kl6vqKScca-OqyAqDKet2LQmILpdg4QUd05ALaPUoDDOicrGHo7hXPa5kKr_aK3fCc8gMk6qZKZmXHKAi\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 18 (http://www.houstonstation18.com/)<br>619 Telephone Rd<br>Houston, TX  77023",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/TBk245nguRqQHHRpoKDcrlALbTqy4XG0P1YXEs__ezthny5kl6vqKScca-OqyAqDKet2LQmILpdg4QUd05ALaPUoDDOicrGHo7hXPa5kKr_aK3fCc8gMk6qZKZmXHKAi"
             }
         },
@@ -431,7 +387,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/3PvC4mcdXGxiW-rtKvs_5rrcbw0NAKZOxfJVZg0iZA_k6DhBg6tR2OqPc1wAsEL4zghma3_8RqnWPkuZwxrZjZXYY2olWGo1Lt5ZJnpf8Y6LGs8SnE5JOYxBcFRaCJ6K\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 19 (http://www.firehouse19.com/)<br>1801 Gregg St<br>Houston, TX  77020",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/3PvC4mcdXGxiW-rtKvs_5rrcbw0NAKZOxfJVZg0iZA_k6DhBg6tR2OqPc1wAsEL4zghma3_8RqnWPkuZwxrZjZXYY2olWGo1Lt5ZJnpf8Y6LGs8SnE5JOYxBcFRaCJ6K\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 19 (http://www.firehouse19.com/)<br>1801 Gregg St<br>Houston, TX  77020",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/3PvC4mcdXGxiW-rtKvs_5rrcbw0NAKZOxfJVZg0iZA_k6DhBg6tR2OqPc1wAsEL4zghma3_8RqnWPkuZwxrZjZXYY2olWGo1Lt5ZJnpf8Y6LGs8SnE5JOYxBcFRaCJ6K"
             }
         },
@@ -454,7 +410,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/nLflXc5bmmloxQc2xnzFTa7bdnYSmH1pIES06qUqBhyEK-pTB7l2qFWACRFZfrZK60eCl7ab3pTOWlX7cMRWXeXdNm_iNrmBV8ZqdI8TumhL3AGvXk9_hPUoi8tlcUQB\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 20<br>6902 Navigation Blvd<br>Houston, TX  77011",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/nLflXc5bmmloxQc2xnzFTa7bdnYSmH1pIES06qUqBhyEK-pTB7l2qFWACRFZfrZK60eCl7ab3pTOWlX7cMRWXeXdNm_iNrmBV8ZqdI8TumhL3AGvXk9_hPUoi8tlcUQB\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 20<br>6902 Navigation Blvd<br>Houston, TX  77011",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/nLflXc5bmmloxQc2xnzFTa7bdnYSmH1pIES06qUqBhyEK-pTB7l2qFWACRFZfrZK60eCl7ab3pTOWlX7cMRWXeXdNm_iNrmBV8ZqdI8TumhL3AGvXk9_hPUoi8tlcUQB"
             }
         },
@@ -477,7 +433,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/wh_0tHRyHEZ0_wxmrMKIOXKfVmhJBWchu3CKnTnwTGYSsiaF0TKnc34GW1NcWPPyo7JAGm3MwxmxvCnv92qhDpyrPupH_aHAfceVKpBmSTvljX8eePeV4TGw91uM1Jxq\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 21<br>10515 S Main St<br>Houston, TX  77025",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/wh_0tHRyHEZ0_wxmrMKIOXKfVmhJBWchu3CKnTnwTGYSsiaF0TKnc34GW1NcWPPyo7JAGm3MwxmxvCnv92qhDpyrPupH_aHAfceVKpBmSTvljX8eePeV4TGw91uM1Jxq\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 21<br>10515 S Main St<br>Houston, TX  77025",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/wh_0tHRyHEZ0_wxmrMKIOXKfVmhJBWchu3CKnTnwTGYSsiaF0TKnc34GW1NcWPPyo7JAGm3MwxmxvCnv92qhDpyrPupH_aHAfceVKpBmSTvljX8eePeV4TGw91uM1Jxq"
             }
         },
@@ -500,7 +456,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/E2s0KIIHNgU9x-eFqfTB5zxLvtCxrAmGDPNQtLy473xvp2b0IXTefajwhss3uRJFbkPTaHodl3xSEyAyEUMaMsnEIJOpd6NB87Rc9EHPph7BYF2aXJ_EB9jZSnjWBiAh\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 22 (http://www.houstonhazmat.org/)<br>7825 Harrisburg Blvd<br>Houston, TX  77012",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/E2s0KIIHNgU9x-eFqfTB5zxLvtCxrAmGDPNQtLy473xvp2b0IXTefajwhss3uRJFbkPTaHodl3xSEyAyEUMaMsnEIJOpd6NB87Rc9EHPph7BYF2aXJ_EB9jZSnjWBiAh\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 22 (http://www.houstonhazmat.org/)<br>7825 Harrisburg Blvd<br>Houston, TX  77012",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/E2s0KIIHNgU9x-eFqfTB5zxLvtCxrAmGDPNQtLy473xvp2b0IXTefajwhss3uRJFbkPTaHodl3xSEyAyEUMaMsnEIJOpd6NB87Rc9EHPph7BYF2aXJ_EB9jZSnjWBiAh"
             }
         },
@@ -523,30 +479,8 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/vkXTO4vxVlnCTkQOkWWPKt_40bTiIRd_--9Wlrt_3aGrzEG_CbLHINbdYp9EmHg81kcW10OTMh61epeMEdGzHHD9j0gCkLHVA9742aqr6rYDz7DwqaEu1yTfOCGmABgI\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 23<br>8005 Lawndale<br>Houston, TX  77012",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/vkXTO4vxVlnCTkQOkWWPKt_40bTiIRd_--9Wlrt_3aGrzEG_CbLHINbdYp9EmHg81kcW10OTMh61epeMEdGzHHD9j0gCkLHVA9742aqr6rYDz7DwqaEu1yTfOCGmABgI\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 23<br>8005 Lawndale<br>Houston, TX  77012",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/vkXTO4vxVlnCTkQOkWWPKt_40bTiIRd_--9Wlrt_3aGrzEG_CbLHINbdYp9EmHg81kcW10OTMh61epeMEdGzHHD9j0gCkLHVA9742aqr6rYDz7DwqaEu1yTfOCGmABgI"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -95.34987,
-                    29.742358,
-                    0
-                ]
-            },
-            "properties": {
-                "name": "Old Houston Fire Station 24",
-                "styleUrl": "#icon-168",
-                "styleHash": "5dbf8198",
-                "styleMapHash": {
-                    "normal": "#icon-168-normal",
-                    "highlight": "#icon-168-highlight"
-                },
-                "icon": "http://www.gstatic.com/mapspro/images/stock/168-ylw-pushpin.png",
-                "description": "Old Houston Fire Station 24 - Closed 1977<br>Palmer at Bell<br>Houston, TX  77003"
             }
         },
         {
@@ -568,7 +502,7 @@
                     "highlight": "#icon-161-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/161-grn-pushpin.png",
-                "description": "Houston Fire Station 24<br>2000 Reed Rd<br>Houston, TX 77051<br><br>Station 24 at 2000 Reed Road, at the Northwest corner of Reed and HWY 288, is being funded and will probably start construction in mid-2008."
+                "description": "Houston Fire Station 24<br>2000 Reed Rd<br>Houston, TX 77051<br>Station 24 at 2000 Reed Road, at the Northwest corner of Reed and HWY 288, is being funded and will probably start construction in mid-2008."
             }
         },
         {
@@ -590,7 +524,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/u96Nhxn7cOrTJq17PGr7QYwfGRTPcNAD7BcE5DuudMPqB2Vywy6gMuN4XGpA3M8H4zhQKrf2XOnrl4KgNksX3BvpED66u0v4ciYqS7LeXZVl3XPflQ8ez59ePFINxPpV\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 25 (http://www.hfdfirewalkers.com/)<br>3902 Scott St<br>Houston, TX  77004",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/u96Nhxn7cOrTJq17PGr7QYwfGRTPcNAD7BcE5DuudMPqB2Vywy6gMuN4XGpA3M8H4zhQKrf2XOnrl4KgNksX3BvpED66u0v4ciYqS7LeXZVl3XPflQ8ez59ePFINxPpV\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 25 (http://www.hfdfirewalkers.com/)<br>3902 Scott St<br>Houston, TX  77004",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/u96Nhxn7cOrTJq17PGr7QYwfGRTPcNAD7BcE5DuudMPqB2Vywy6gMuN4XGpA3M8H4zhQKrf2XOnrl4KgNksX3BvpED66u0v4ciYqS7LeXZVl3XPflQ8ez59ePFINxPpV"
             }
         },
@@ -613,7 +547,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/nIBMRis86Jrew6OJrJOT0Xf7s_laNpaipk9uJpDm3-2y5gkNroc6qH-WgtUgNm-mpQjQB5_wLBP7U2WbQK1t0_mU2DUAruvJV6MHBfIw9xnri5CzBG8xl21RULv7NDik\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 26 (http://hfdstation26.net/default.aspx)<br>7111 Dixie Dr<br>Houston, TX  77087",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/nIBMRis86Jrew6OJrJOT0Xf7s_laNpaipk9uJpDm3-2y5gkNroc6qH-WgtUgNm-mpQjQB5_wLBP7U2WbQK1t0_mU2DUAruvJV6MHBfIw9xnri5CzBG8xl21RULv7NDik\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 26 (http://hfdstation26.net/default.aspx)<br>7111 Dixie Dr<br>Houston, TX  77087",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/nIBMRis86Jrew6OJrJOT0Xf7s_laNpaipk9uJpDm3-2y5gkNroc6qH-WgtUgNm-mpQjQB5_wLBP7U2WbQK1t0_mU2DUAruvJV6MHBfIw9xnri5CzBG8xl21RULv7NDik"
             }
         },
@@ -636,7 +570,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/3s6qnzAO6a8Y_Qk51qQjMu8a4TE0qKlm7prGwynD7-ZXEOMwBICSFE0CxXcZkbEmXf0TSqmZIB4tXMdfaMtWTK9H_wXW6mvuP0P7VyjiTxTpe3NtBryJH3tGSBXmQejx\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 27<br>6515 Lyons Ave<br>Houston, TX  77020",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/3s6qnzAO6a8Y_Qk51qQjMu8a4TE0qKlm7prGwynD7-ZXEOMwBICSFE0CxXcZkbEmXf0TSqmZIB4tXMdfaMtWTK9H_wXW6mvuP0P7VyjiTxTpe3NtBryJH3tGSBXmQejx\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 27<br>6515 Lyons Ave<br>Houston, TX  77020",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/3s6qnzAO6a8Y_Qk51qQjMu8a4TE0qKlm7prGwynD7-ZXEOMwBICSFE0CxXcZkbEmXf0TSqmZIB4tXMdfaMtWTK9H_wXW6mvuP0P7VyjiTxTpe3NtBryJH3tGSBXmQejx"
             }
         },
@@ -659,7 +593,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/eRltUguXWHbAwF-cojIj5vnsqK558gnRpq3dtB9g6X75wA3h5H9pwP6AlL3p34fmKV4R5jZpl5o7dZ4CMKLklN2t9xDJAlFNWPAbjOExJ2SxUlpVX0yWL85-GKNaFRc1\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 28 (http://www.houstonfirestation28.com/)<br>3000 Chimney Rock Rd<br>Houston, TX  77057",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/eRltUguXWHbAwF-cojIj5vnsqK558gnRpq3dtB9g6X75wA3h5H9pwP6AlL3p34fmKV4R5jZpl5o7dZ4CMKLklN2t9xDJAlFNWPAbjOExJ2SxUlpVX0yWL85-GKNaFRc1\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 28 (http://www.houstonfirestation28.com/)<br>3000 Chimney Rock Rd<br>Houston, TX  77057",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/eRltUguXWHbAwF-cojIj5vnsqK558gnRpq3dtB9g6X75wA3h5H9pwP6AlL3p34fmKV4R5jZpl5o7dZ4CMKLklN2t9xDJAlFNWPAbjOExJ2SxUlpVX0yWL85-GKNaFRc1"
             }
         },
@@ -682,7 +616,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/-iOG2QGyCyv1DDA-TRrHlDrp2CmtoLlxP7D2Iunvu0ojPFJc1PZuEhzio71uzGIoDDePchCa7WJc1j0tqSMTG3uEEFLB_xVeW3saRj37K-rHl8k7I0KDk3Qdum0YanW0\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 29<br>4831 Galveston RD<br>Houston, TX  77017",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/-iOG2QGyCyv1DDA-TRrHlDrp2CmtoLlxP7D2Iunvu0ojPFJc1PZuEhzio71uzGIoDDePchCa7WJc1j0tqSMTG3uEEFLB_xVeW3saRj37K-rHl8k7I0KDk3Qdum0YanW0\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 29<br>4831 Galveston RD<br>Houston, TX  77017",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/-iOG2QGyCyv1DDA-TRrHlDrp2CmtoLlxP7D2Iunvu0ojPFJc1PZuEhzio71uzGIoDDePchCa7WJc1j0tqSMTG3uEEFLB_xVeW3saRj37K-rHl8k7I0KDk3Qdum0YanW0"
             }
         },
@@ -705,7 +639,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/_uLUCfljlOX1MQooDuwmHIhkH1akSVSQpWwTXnHnPtQk7xpgavMLld3YKUab4929QgDLtCQ5f8NfH3wm44BXt6OvvecXe0W76oW97rOm8C2TSDhpEbfRP4CsnbMSJPdy\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 30<br>6702 Irvington Blvd<br>Houston, TX  77022",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/_uLUCfljlOX1MQooDuwmHIhkH1akSVSQpWwTXnHnPtQk7xpgavMLld3YKUab4929QgDLtCQ5f8NfH3wm44BXt6OvvecXe0W76oW97rOm8C2TSDhpEbfRP4CsnbMSJPdy\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 30<br>6702 Irvington Blvd<br>Houston, TX  77022",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/_uLUCfljlOX1MQooDuwmHIhkH1akSVSQpWwTXnHnPtQk7xpgavMLld3YKUab4929QgDLtCQ5f8NfH3wm44BXt6OvvecXe0W76oW97rOm8C2TSDhpEbfRP4CsnbMSJPdy"
             }
         },
@@ -728,7 +662,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/sFRHziAqGkRC5_0RAXP5Ptwz6RrS1vWRPhVOGVsW5M4VnOt46xgfmnoGJc1gv0KfkFEgecubD8jsv12PFTieMY-qlqG-QNBdsbHfsFB3I-gCC4JMrd1XLDx6vYjhIIlT\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 31 (http://hfd31.com/)<br>222 W Crosstimbers St<br>Houston, TX  77018",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/sFRHziAqGkRC5_0RAXP5Ptwz6RrS1vWRPhVOGVsW5M4VnOt46xgfmnoGJc1gv0KfkFEgecubD8jsv12PFTieMY-qlqG-QNBdsbHfsFB3I-gCC4JMrd1XLDx6vYjhIIlT\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 31 (http://hfd31.com/)<br>222 W Crosstimbers St<br>Houston, TX  77018",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/sFRHziAqGkRC5_0RAXP5Ptwz6RrS1vWRPhVOGVsW5M4VnOt46xgfmnoGJc1gv0KfkFEgecubD8jsv12PFTieMY-qlqG-QNBdsbHfsFB3I-gCC4JMrd1XLDx6vYjhIIlT"
             }
         },
@@ -751,7 +685,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/Ya0z8fZkHLf7uHEa7kLT-WzBwv98uVQlQYC23GFSrf-y8Dmo0ey9V31vXE7_9NSquBrn6NpV0vv-Pc44pxZ5UkaDhftfXmjekSWRU0nvyZ2EmLUzrGHNRLWr8b0q6aLM\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 32<br>8614 Tidwell Rd<br>Houston, TX  77028",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/Ya0z8fZkHLf7uHEa7kLT-WzBwv98uVQlQYC23GFSrf-y8Dmo0ey9V31vXE7_9NSquBrn6NpV0vv-Pc44pxZ5UkaDhftfXmjekSWRU0nvyZ2EmLUzrGHNRLWr8b0q6aLM\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 32<br>8614 Tidwell Rd<br>Houston, TX  77028",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/Ya0z8fZkHLf7uHEa7kLT-WzBwv98uVQlQYC23GFSrf-y8Dmo0ey9V31vXE7_9NSquBrn6NpV0vv-Pc44pxZ5UkaDhftfXmjekSWRU0nvyZ2EmLUzrGHNRLWr8b0q6aLM"
             }
         },
@@ -774,7 +708,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/0sLWvTNhRxo3xYOMlpCY9_kUT5ld1mDkW15rSf9iP0g-iXcBhj9boxBfyHILsM0APENFHsswHMZ3pJUX5O2Q11N5WsQtIFlH0r1yrdx3bvQLxlbqekT4-yfO3t3yU0-z\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 33<br>7117 Fannin St<br>Houston, TX  77030",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/0sLWvTNhRxo3xYOMlpCY9_kUT5ld1mDkW15rSf9iP0g-iXcBhj9boxBfyHILsM0APENFHsswHMZ3pJUX5O2Q11N5WsQtIFlH0r1yrdx3bvQLxlbqekT4-yfO3t3yU0-z\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 33<br>7117 Fannin St<br>Houston, TX  77030",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/0sLWvTNhRxo3xYOMlpCY9_kUT5ld1mDkW15rSf9iP0g-iXcBhj9boxBfyHILsM0APENFHsswHMZ3pJUX5O2Q11N5WsQtIFlH0r1yrdx3bvQLxlbqekT4-yfO3t3yU0-z"
             }
         },
@@ -797,7 +731,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/C7QEDVI6yXC7AFpQF1K85Happak1W8rb2kgG67Nr8wK3VEvCofAA04KrfySPT9CmN6niAvVANCNIr3u7UlOCyGLBW9s8F5-9Ei8-VIlDH6r_WX9m57GIfDj00WuuojhC\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 34<br>3100 Laura Koppe Rd<br>Houston, TX  77034",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/C7QEDVI6yXC7AFpQF1K85Happak1W8rb2kgG67Nr8wK3VEvCofAA04KrfySPT9CmN6niAvVANCNIr3u7UlOCyGLBW9s8F5-9Ei8-VIlDH6r_WX9m57GIfDj00WuuojhC\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 34<br>3100 Laura Koppe Rd<br>Houston, TX  77034",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/C7QEDVI6yXC7AFpQF1K85Happak1W8rb2kgG67Nr8wK3VEvCofAA04KrfySPT9CmN6niAvVANCNIr3u7UlOCyGLBW9s8F5-9Ei8-VIlDH6r_WX9m57GIfDj00WuuojhC"
             }
         },
@@ -842,7 +776,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/gzWqug1CCvKC1fXe8fmjnmmmJk6WOSP83duKxL03P9VSAhFCJpsoao1xjNLe3AhG-PbsCM0y2beeBqVZYMuJXRiV1_9cITSAAu_uHWvd-EDUfGbGsdmSKEFda14YP5Es\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 36<br>7720 Airport Blvd<br>Houston, TX  77061",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/gzWqug1CCvKC1fXe8fmjnmmmJk6WOSP83duKxL03P9VSAhFCJpsoao1xjNLe3AhG-PbsCM0y2beeBqVZYMuJXRiV1_9cITSAAu_uHWvd-EDUfGbGsdmSKEFda14YP5Es\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 36<br>7720 Airport Blvd<br>Houston, TX  77061",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/gzWqug1CCvKC1fXe8fmjnmmmJk6WOSP83duKxL03P9VSAhFCJpsoao1xjNLe3AhG-PbsCM0y2beeBqVZYMuJXRiV1_9cITSAAu_uHWvd-EDUfGbGsdmSKEFda14YP5Es"
             }
         },
@@ -865,7 +799,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/i9sAiZdKqEwuYFm8yHOoYOice3nb8rlxh9ra_LPNjYHTI3CUF-xkDyfKMFPZuSDvDMn4bKGQom7RFo_Zictwieu4pmku8BDzBnVk0Ko031qxOXNRFQuWD1wEbH4YeQW5\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 37<br>3828 Aberdeen Way<br>Houston, TX  77025",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/i9sAiZdKqEwuYFm8yHOoYOice3nb8rlxh9ra_LPNjYHTI3CUF-xkDyfKMFPZuSDvDMn4bKGQom7RFo_Zictwieu4pmku8BDzBnVk0Ko031qxOXNRFQuWD1wEbH4YeQW5\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 37<br>3828 Aberdeen Way<br>Houston, TX  77025",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/i9sAiZdKqEwuYFm8yHOoYOice3nb8rlxh9ra_LPNjYHTI3CUF-xkDyfKMFPZuSDvDMn4bKGQom7RFo_Zictwieu4pmku8BDzBnVk0Ko031qxOXNRFQuWD1wEbH4YeQW5"
             }
         },
@@ -888,7 +822,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/p-2YrU6axLab9GpJJs0Vo0YnZUIKjvrRYPdg2LKSYcRS5qp9ZEyP0M_L4cQ4NwG_Gv01UWFjZlkDK_CxTKSrtMbXbv8-mgUTs8vCa6OYNkdmIoFyJzWGAs1a3-V4cjhV\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 38<br>1120 Silber Rd<br>Houston, TX  77023",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/p-2YrU6axLab9GpJJs0Vo0YnZUIKjvrRYPdg2LKSYcRS5qp9ZEyP0M_L4cQ4NwG_Gv01UWFjZlkDK_CxTKSrtMbXbv8-mgUTs8vCa6OYNkdmIoFyJzWGAs1a3-V4cjhV\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 38<br>1120 Silber Rd<br>Houston, TX  77023",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/p-2YrU6axLab9GpJJs0Vo0YnZUIKjvrRYPdg2LKSYcRS5qp9ZEyP0M_L4cQ4NwG_Gv01UWFjZlkDK_CxTKSrtMbXbv8-mgUTs8vCa6OYNkdmIoFyJzWGAs1a3-V4cjhV"
             }
         },
@@ -911,7 +845,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/_a0R2K2_swGPqZWkc5gkeqKoNsfrT2RB_MuznZrCClI2uIp71KhaprEfRYmRu8BCGDoBM_2Wr2FF6_9Vjqek31sbu-I4OQKG8PQHpbo5Zb2smNnPtkF6fAihdemsKtw5\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 39<br>5810 Pickfair St<br>Houston, TX  77026",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/_a0R2K2_swGPqZWkc5gkeqKoNsfrT2RB_MuznZrCClI2uIp71KhaprEfRYmRu8BCGDoBM_2Wr2FF6_9Vjqek31sbu-I4OQKG8PQHpbo5Zb2smNnPtkF6fAihdemsKtw5\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 39<br>5810 Pickfair St<br>Houston, TX  77026",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/_a0R2K2_swGPqZWkc5gkeqKoNsfrT2RB_MuznZrCClI2uIp71KhaprEfRYmRu8BCGDoBM_2Wr2FF6_9Vjqek31sbu-I4OQKG8PQHpbo5Zb2smNnPtkF6fAihdemsKtw5"
             }
         },
@@ -956,7 +890,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/-W70L8hFlFRxSUnlBk18hV2HBzPvurnZkAxLEwfMpiLQDH-my5Tl9fGgxfBXlp6TRSt1qZIg3Aed9SyvOupTOWbQyYwa40S4UrFK_YmVpTqaEEO4vVL2E3N7H5Z3hSS7\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 41<br>805 Pearl St<br>Houston, TX  77029",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/-W70L8hFlFRxSUnlBk18hV2HBzPvurnZkAxLEwfMpiLQDH-my5Tl9fGgxfBXlp6TRSt1qZIg3Aed9SyvOupTOWbQyYwa40S4UrFK_YmVpTqaEEO4vVL2E3N7H5Z3hSS7\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 41<br>805 Pearl St<br>Houston, TX  77029",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/-W70L8hFlFRxSUnlBk18hV2HBzPvurnZkAxLEwfMpiLQDH-my5Tl9fGgxfBXlp6TRSt1qZIg3Aed9SyvOupTOWbQyYwa40S4UrFK_YmVpTqaEEO4vVL2E3N7H5Z3hSS7"
             }
         },
@@ -979,7 +913,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/g4uOPFHohBSQ5N7S4kpV8IfOjKOnJWTgbjVTlfbYlgs1eVoiGUFDJitg5hN2MUztZKb61jerEzjELDegCqCHyoY3b4bw7ltgabAL8dUIvL9ixZvObrqOSUcAO0Os2HKw\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 42<br>8675 Clinton Dr<br>Houston, TX  77029",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/g4uOPFHohBSQ5N7S4kpV8IfOjKOnJWTgbjVTlfbYlgs1eVoiGUFDJitg5hN2MUztZKb61jerEzjELDegCqCHyoY3b4bw7ltgabAL8dUIvL9ixZvObrqOSUcAO0Os2HKw\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 42<br>8675 Clinton Dr<br>Houston, TX  77029",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/g4uOPFHohBSQ5N7S4kpV8IfOjKOnJWTgbjVTlfbYlgs1eVoiGUFDJitg5hN2MUztZKb61jerEzjELDegCqCHyoY3b4bw7ltgabAL8dUIvL9ixZvObrqOSUcAO0Os2HKw"
             }
         },
@@ -1002,7 +936,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/rN7FOw467ZvjTF-DvIJTKZ7sj8aOhsEDjDeLM_svIu4MZUWLumvhMCwDEbj3REFb3TtcSVybb1nqDELdGOqN1IBLNoS1ad50j3V_xypVP8gve7iuA2lTESYcu4bsaI3y\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 43<br>7330 N Wayside Dr<br>Houston, TX  77028",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/rN7FOw467ZvjTF-DvIJTKZ7sj8aOhsEDjDeLM_svIu4MZUWLumvhMCwDEbj3REFb3TtcSVybb1nqDELdGOqN1IBLNoS1ad50j3V_xypVP8gve7iuA2lTESYcu4bsaI3y\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 43<br>7330 N Wayside Dr<br>Houston, TX  77028",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/rN7FOw467ZvjTF-DvIJTKZ7sj8aOhsEDjDeLM_svIu4MZUWLumvhMCwDEbj3REFb3TtcSVybb1nqDELdGOqN1IBLNoS1ad50j3V_xypVP8gve7iuA2lTESYcu4bsaI3y"
             }
         },
@@ -1025,7 +959,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/YqWzkOm8mQGc7Jh6QWQUlDdfhmrn82VmuZn0snLdUvg6jQnxxNHUhOXya2nCu14g6_QzIrPto1tswuyYYz2-K8fJTfuJdRO29Y46_y0GfVleWTkpF0wl2ANu1UyShULe\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 44<br>675 Maxey Rd<br>Houston, TX  77013",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/YqWzkOm8mQGc7Jh6QWQUlDdfhmrn82VmuZn0snLdUvg6jQnxxNHUhOXya2nCu14g6_QzIrPto1tswuyYYz2-K8fJTfuJdRO29Y46_y0GfVleWTkpF0wl2ANu1UyShULe\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 44<br>675 Maxey Rd<br>Houston, TX  77013",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/YqWzkOm8mQGc7Jh6QWQUlDdfhmrn82VmuZn0snLdUvg6jQnxxNHUhOXya2nCu14g6_QzIrPto1tswuyYYz2-K8fJTfuJdRO29Y46_y0GfVleWTkpF0wl2ANu1UyShULe"
             }
         },
@@ -1048,7 +982,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/JJBTjmuqts4E-cZtzQFYbrMBNE-ATJCBjgsy3fBsWfnFIrtwocif1gsNVHNlm1QpGHBU6FKnrFN0PVQx2GJHJMQgE96UI18n1sZMcjWohToqFdzq7DgBF6cPOvvQJT97\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 45<br>4910 N McCarty St<br>Houston, TX  77013",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/JJBTjmuqts4E-cZtzQFYbrMBNE-ATJCBjgsy3fBsWfnFIrtwocif1gsNVHNlm1QpGHBU6FKnrFN0PVQx2GJHJMQgE96UI18n1sZMcjWohToqFdzq7DgBF6cPOvvQJT97\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 45<br>4910 N McCarty St<br>Houston, TX  77013",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/JJBTjmuqts4E-cZtzQFYbrMBNE-ATJCBjgsy3fBsWfnFIrtwocif1gsNVHNlm1QpGHBU6FKnrFN0PVQx2GJHJMQgE96UI18n1sZMcjWohToqFdzq7DgBF6cPOvvQJT97"
             }
         },
@@ -1071,7 +1005,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/VitHy10drMFsd9T6HpWvd744qCqeBXFnjGU0-LOtVyJpm2Bn6SwMS4bZtUYtNcbGKjq-rF6EFL23-jx0JlxsRjgTdejkZ3qRgS1XG8ku8sKoFCElJM72MvkzuYHF7nfr\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 46 (http://www.station46.com/)<br>3902 Corder St<br>Houston, TX  77021",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/VitHy10drMFsd9T6HpWvd744qCqeBXFnjGU0-LOtVyJpm2Bn6SwMS4bZtUYtNcbGKjq-rF6EFL23-jx0JlxsRjgTdejkZ3qRgS1XG8ku8sKoFCElJM72MvkzuYHF7nfr\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 46 (http://www.station46.com/)<br>3902 Corder St<br>Houston, TX  77021",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/VitHy10drMFsd9T6HpWvd744qCqeBXFnjGU0-LOtVyJpm2Bn6SwMS4bZtUYtNcbGKjq-rF6EFL23-jx0JlxsRjgTdejkZ3qRgS1XG8ku8sKoFCElJM72MvkzuYHF7nfr"
             }
         },
@@ -1094,7 +1028,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/RepCEQqLKGXmSZzQ4kp0p-jp4OwSyMsG4NUNOQrdiqnBQ2MduWV_qxHgFWujvpaE_jy-TQ_nrFy21ApQH_7cYMHW9Q16gdLr_IzVXmubnGZE-C3MVbJDuG3y8SZdng-J\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 47<br>2615 Tidewater Dr<br>Houston, TX  77045",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/RepCEQqLKGXmSZzQ4kp0p-jp4OwSyMsG4NUNOQrdiqnBQ2MduWV_qxHgFWujvpaE_jy-TQ_nrFy21ApQH_7cYMHW9Q16gdLr_IzVXmubnGZE-C3MVbJDuG3y8SZdng-J\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 47<br>2615 Tidewater Dr<br>Houston, TX  77045",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/RepCEQqLKGXmSZzQ4kp0p-jp4OwSyMsG4NUNOQrdiqnBQ2MduWV_qxHgFWujvpaE_jy-TQ_nrFy21ApQH_7cYMHW9Q16gdLr_IzVXmubnGZE-C3MVbJDuG3y8SZdng-J"
             }
         },
@@ -1117,7 +1051,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/THSXwThYPmaDr7nz6S0uaUkfUaeeOasrONy7JwxnI3pe1xSgq_6zd1BqEDROIcfkH_YbOf97SyaAP3NjXQlfM5vsB8x6YDBUlwQ5MhpR4UtUWStZhoHyIrWwSHrrKBT9\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 48<br>11616 Chimney Rock Rd<br>Houston, TX  77035",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/THSXwThYPmaDr7nz6S0uaUkfUaeeOasrONy7JwxnI3pe1xSgq_6zd1BqEDROIcfkH_YbOf97SyaAP3NjXQlfM5vsB8x6YDBUlwQ5MhpR4UtUWStZhoHyIrWwSHrrKBT9\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 48<br>11616 Chimney Rock Rd<br>Houston, TX  77035",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/THSXwThYPmaDr7nz6S0uaUkfUaeeOasrONy7JwxnI3pe1xSgq_6zd1BqEDROIcfkH_YbOf97SyaAP3NjXQlfM5vsB8x6YDBUlwQ5MhpR4UtUWStZhoHyIrWwSHrrKBT9"
             }
         },
@@ -1140,7 +1074,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/GI41Xc4Ce6Y8fJc8kVasvyDFZcFUqDt4j_vWfJvtp-5j9XplBwxG5GEmrcG3ex36g06OffAE-6Hezdw_ZvTUw1lv2xDFOVwuE8f2Rx8YXaRcnt45nlra3F4Wxat-rY1a\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 49<br>1212 Gessner Rd<br>Houston, TX  77055",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/GI41Xc4Ce6Y8fJc8kVasvyDFZcFUqDt4j_vWfJvtp-5j9XplBwxG5GEmrcG3ex36g06OffAE-6Hezdw_ZvTUw1lv2xDFOVwuE8f2Rx8YXaRcnt45nlra3F4Wxat-rY1a\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 49<br>1212 Gessner Rd<br>Houston, TX  77055",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/GI41Xc4Ce6Y8fJc8kVasvyDFZcFUqDt4j_vWfJvtp-5j9XplBwxG5GEmrcG3ex36g06OffAE-6Hezdw_ZvTUw1lv2xDFOVwuE8f2Rx8YXaRcnt45nlra3F4Wxat-rY1a"
             }
         },
@@ -1163,7 +1097,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/xBtTVExBW7X2faQvdBRTmUi4gSLxgWb0792x9laB0vgb1PME2w3C3pv8gXwQIOQn_teI2HcfcC4E03paMb_NlJH8xxPOomHkKUgHuhZaz5mfNqHc7VnwCbm8GXJrkzpM\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 50<br>4420 Bingle Rd<br>Houston, TX  77092",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/xBtTVExBW7X2faQvdBRTmUi4gSLxgWb0792x9laB0vgb1PME2w3C3pv8gXwQIOQn_teI2HcfcC4E03paMb_NlJH8xxPOomHkKUgHuhZaz5mfNqHc7VnwCbm8GXJrkzpM\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 50<br>4420 Bingle Rd<br>Houston, TX  77092",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/xBtTVExBW7X2faQvdBRTmUi4gSLxgWb0792x9laB0vgb1PME2w3C3pv8gXwQIOQn_teI2HcfcC4E03paMb_NlJH8xxPOomHkKUgHuhZaz5mfNqHc7VnwCbm8GXJrkzpM"
             }
         },
@@ -1186,7 +1120,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/7Lv5jiXvxRqdAPPcOXP7Np-bIoiTnGHnSmZe_8KaoOOp47l2xNUqx_SKFd4oWDcv-QvNDEboCDifTWisdD_nrdVt9hYManLcbkTdGNTDEP9JO7LJ1lPq2_WRDHf0Yc-G\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 51 (http://www.firehouse51.net/)<br>6902 Bellaire Blvd<br>Houston, TX  77074",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/7Lv5jiXvxRqdAPPcOXP7Np-bIoiTnGHnSmZe_8KaoOOp47l2xNUqx_SKFd4oWDcv-QvNDEboCDifTWisdD_nrdVt9hYManLcbkTdGNTDEP9JO7LJ1lPq2_WRDHf0Yc-G\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 51 (http://www.firehouse51.net/)<br>6902 Bellaire Blvd<br>Houston, TX  77074",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/7Lv5jiXvxRqdAPPcOXP7Np-bIoiTnGHnSmZe_8KaoOOp47l2xNUqx_SKFd4oWDcv-QvNDEboCDifTWisdD_nrdVt9hYManLcbkTdGNTDEP9JO7LJ1lPq2_WRDHf0Yc-G"
             }
         },
@@ -1209,7 +1143,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/nxqftGFg3UvS4uQBF8XoTV3ueChgFRjEE3Uta2jCtRtVybP-UbEoxuWv6yj95a8TFqmBuJjLqZ41Sw7cCD3nB5_H6aOg23u3-DCZ3_C9-iD3SMwBrrge7ULvOMmVjnRR\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 52<br>10343 Hartsook St<br>Houston, TX  77034",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/nxqftGFg3UvS4uQBF8XoTV3ueChgFRjEE3Uta2jCtRtVybP-UbEoxuWv6yj95a8TFqmBuJjLqZ41Sw7cCD3nB5_H6aOg23u3-DCZ3_C9-iD3SMwBrrge7ULvOMmVjnRR\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 52<br>10343 Hartsook St<br>Houston, TX  77034",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/nxqftGFg3UvS4uQBF8XoTV3ueChgFRjEE3Uta2jCtRtVybP-UbEoxuWv6yj95a8TFqmBuJjLqZ41Sw7cCD3nB5_H6aOg23u3-DCZ3_C9-iD3SMwBrrge7ULvOMmVjnRR"
             }
         },
@@ -1232,7 +1166,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/CG0qL5Tf6cuxSlxJls2MVIYQRODEwpASOlQ8NWrNoN3u1bijMTglVit5siRPW4B88SwbtU4nS85ZNe_akWWGiaYENzOs4VafHHC11I1-BwjXMQHFEJRDkkRUsoCQ9XOo\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 53<br>13349 Vicksburg St<br>Houston, TX  77015",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/CG0qL5Tf6cuxSlxJls2MVIYQRODEwpASOlQ8NWrNoN3u1bijMTglVit5siRPW4B88SwbtU4nS85ZNe_akWWGiaYENzOs4VafHHC11I1-BwjXMQHFEJRDkkRUsoCQ9XOo\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 53<br>13349 Vicksburg St<br>Houston, TX  77015",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/CG0qL5Tf6cuxSlxJls2MVIYQRODEwpASOlQ8NWrNoN3u1bijMTglVit5siRPW4B88SwbtU4nS85ZNe_akWWGiaYENzOs4VafHHC11I1-BwjXMQHFEJRDkkRUsoCQ9XOo"
             }
         },
@@ -1277,7 +1211,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/wsuT4uTyTk8zl3gTEr4OzX2wP4oFBSXJ98vbmkCe5R1sy8Ua4mxnsg6Nk-DU6S_N5NcXQlDFp0wntm_3dCGz4XXYZfxQWP938jU3OldVg8K5pfFPaiYjk3e8VQ9KXK0K\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 55<br>11212 Cullen Blvd<br>Houston, TX  77047",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/wsuT4uTyTk8zl3gTEr4OzX2wP4oFBSXJ98vbmkCe5R1sy8Ua4mxnsg6Nk-DU6S_N5NcXQlDFp0wntm_3dCGz4XXYZfxQWP938jU3OldVg8K5pfFPaiYjk3e8VQ9KXK0K\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 55<br>11212 Cullen Blvd<br>Houston, TX  77047",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/wsuT4uTyTk8zl3gTEr4OzX2wP4oFBSXJ98vbmkCe5R1sy8Ua4mxnsg6Nk-DU6S_N5NcXQlDFp0wntm_3dCGz4XXYZfxQWP938jU3OldVg8K5pfFPaiYjk3e8VQ9KXK0K"
             }
         },
@@ -1300,7 +1234,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/QQXEDn0J4d83bVsIhXsmxSFSX-E-jTOZHfeXxsjWA3ScZ4ULt1f8WlZJAHg1fzCpzk69bnyl7uqSUDdce26cDSfmZcvCbkpP1KIRusD_GkSPcNhXFab1lxsymlKaZURZ\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 56<br>5820 E Little York Rd<br>Houston, TX  77016",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/QQXEDn0J4d83bVsIhXsmxSFSX-E-jTOZHfeXxsjWA3ScZ4ULt1f8WlZJAHg1fzCpzk69bnyl7uqSUDdce26cDSfmZcvCbkpP1KIRusD_GkSPcNhXFab1lxsymlKaZURZ\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 56<br>5820 E Little York Rd<br>Houston, TX  77016",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/QQXEDn0J4d83bVsIhXsmxSFSX-E-jTOZHfeXxsjWA3ScZ4ULt1f8WlZJAHg1fzCpzk69bnyl7uqSUDdce26cDSfmZcvCbkpP1KIRusD_GkSPcNhXFab1lxsymlKaZURZ"
             }
         },
@@ -1323,7 +1257,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/Ovhxhg4lN45lNoHzLUSW7l4O9EVnWtze1e1e1evj30vI0kzZaALtWsfa0zyXtG29EXvbKpvSsJMoPOxRzQy1bwSBLHhFW-9RqWZKVIq6wmOPgUdOjorcMnuMPL9CCvAF\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 57<br>13602 Memorial Dr<br>Houston, TX  77079",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/Ovhxhg4lN45lNoHzLUSW7l4O9EVnWtze1e1e1evj30vI0kzZaALtWsfa0zyXtG29EXvbKpvSsJMoPOxRzQy1bwSBLHhFW-9RqWZKVIq6wmOPgUdOjorcMnuMPL9CCvAF\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 57<br>13602 Memorial Dr<br>Houston, TX  77079",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/Ovhxhg4lN45lNoHzLUSW7l4O9EVnWtze1e1e1evj30vI0kzZaALtWsfa0zyXtG29EXvbKpvSsJMoPOxRzQy1bwSBLHhFW-9RqWZKVIq6wmOPgUdOjorcMnuMPL9CCvAF"
             }
         },
@@ -1346,7 +1280,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/bZdhkeUmsPBHmHvqTujNVnLiumJzXxhxMoaZDjEbkZecFg5ekanak1Sd8lMf6Gx5xOAUKcjX0yJoEVbUe8XVlgRR3kEVHy52cWvIE9L_PMZu7hSt2uxmNrvuXqPxowHS\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 58<br>10413 Fulton St<br>Houston, TX  77076",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/bZdhkeUmsPBHmHvqTujNVnLiumJzXxhxMoaZDjEbkZecFg5ekanak1Sd8lMf6Gx5xOAUKcjX0yJoEVbUe8XVlgRR3kEVHy52cWvIE9L_PMZu7hSt2uxmNrvuXqPxowHS\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 58<br>10413 Fulton St<br>Houston, TX  77076",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/bZdhkeUmsPBHmHvqTujNVnLiumJzXxhxMoaZDjEbkZecFg5ekanak1Sd8lMf6Gx5xOAUKcjX0yJoEVbUe8XVlgRR3kEVHy52cWvIE9L_PMZu7hSt2uxmNrvuXqPxowHS"
             }
         },
@@ -1369,7 +1303,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/0bSA-LyXv_VvlQ2AOnpk8ALosM3tCgEwMCmKfBEzMSHdZJroSgB3qcdEFfTTnxe2ed0wXCGX_aAxlqNsUWGM8HBa0Z-135i00SVut3yfTsUZBIPv3oywiCBaHuSgWIy3\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 59<br>13925 S Post Oak Rd<br>Houston, TX  77045",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/0bSA-LyXv_VvlQ2AOnpk8ALosM3tCgEwMCmKfBEzMSHdZJroSgB3qcdEFfTTnxe2ed0wXCGX_aAxlqNsUWGM8HBa0Z-135i00SVut3yfTsUZBIPv3oywiCBaHuSgWIy3\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 59<br>13925 S Post Oak Rd<br>Houston, TX  77045",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/0bSA-LyXv_VvlQ2AOnpk8ALosM3tCgEwMCmKfBEzMSHdZJroSgB3qcdEFfTTnxe2ed0wXCGX_aAxlqNsUWGM8HBa0Z-135i00SVut3yfTsUZBIPv3oywiCBaHuSgWIy3"
             }
         },
@@ -1392,7 +1326,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/gcO2y2k7bcUXo6tO1NSjFOGZyQp29ufIU84zJcf9kZGdr6COHow-vXDVw_4YypGSqICFbfrHYtNASWYgVD9y7MXIAwIXxaw8bvO8NtoQ6p9YRvcxJolBbbpI2FSf9bc1\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 60<br>2925 Jeanetta Rd<br>Houston, TX  77063",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/gcO2y2k7bcUXo6tO1NSjFOGZyQp29ufIU84zJcf9kZGdr6COHow-vXDVw_4YypGSqICFbfrHYtNASWYgVD9y7MXIAwIXxaw8bvO8NtoQ6p9YRvcxJolBbbpI2FSf9bc1\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 60<br>2925 Jeanetta Rd<br>Houston, TX  77063",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/gcO2y2k7bcUXo6tO1NSjFOGZyQp29ufIU84zJcf9kZGdr6COHow-vXDVw_4YypGSqICFbfrHYtNASWYgVD9y7MXIAwIXxaw8bvO8NtoQ6p9YRvcxJolBbbpI2FSf9bc1"
             }
         },
@@ -1415,7 +1349,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/-UoyBsozzc4E0tzjzjyKqYK3YPum3W52eDAaO3pTyNLvZEncD4wE_luQt8DKzC2ug7oMblbFW88rNxPCkPsY-xmgCRIJkYRSC6_M6--g0D83O6NdcXnihkfsTLvLr4i7\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 61<br>9726 Monroe Rd<br>Houston, TX  77075",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/-UoyBsozzc4E0tzjzjyKqYK3YPum3W52eDAaO3pTyNLvZEncD4wE_luQt8DKzC2ug7oMblbFW88rNxPCkPsY-xmgCRIJkYRSC6_M6--g0D83O6NdcXnihkfsTLvLr4i7\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 61<br>9726 Monroe Rd<br>Houston, TX  77075",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/-UoyBsozzc4E0tzjzjyKqYK3YPum3W52eDAaO3pTyNLvZEncD4wE_luQt8DKzC2ug7oMblbFW88rNxPCkPsY-xmgCRIJkYRSC6_M6--g0D83O6NdcXnihkfsTLvLr4i7"
             }
         },
@@ -1438,7 +1372,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/zuG1fDuD62x3cuW5vadV37VQVtDljFXD8aSv2CC3O2X__5Lhszzd40P8p9rO0c28RTrUR1s9Q8mqoDpbBtqE9SbRnbrw2C38nZW2aEQkZWELAczY09Kg-Cs5h1sh9A3M\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 62<br>1602 Seamist Dr<br>Houston, TX , 77008",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/zuG1fDuD62x3cuW5vadV37VQVtDljFXD8aSv2CC3O2X__5Lhszzd40P8p9rO0c28RTrUR1s9Q8mqoDpbBtqE9SbRnbrw2C38nZW2aEQkZWELAczY09Kg-Cs5h1sh9A3M\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 62<br>1602 Seamist Dr<br>Houston, TX , 77008",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/zuG1fDuD62x3cuW5vadV37VQVtDljFXD8aSv2CC3O2X__5Lhszzd40P8p9rO0c28RTrUR1s9Q8mqoDpbBtqE9SbRnbrw2C38nZW2aEQkZWELAczY09Kg-Cs5h1sh9A3M"
             }
         },
@@ -1461,7 +1395,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/EV8J8HRakNmCIEXFq3EpfaFxcOvLyajHTQTW5C4xVFlCuZzeM3dHBfjAOmXnS9YP8842zxrngx7-tbmEAc2y_55QSOdmxTW-kMqT8UAmDG3MsR0jZhHIyvDEw9kVQCFN\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 63<br>5626 Will Clayton Pkwy<br>Houston, TX  77032",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/EV8J8HRakNmCIEXFq3EpfaFxcOvLyajHTQTW5C4xVFlCuZzeM3dHBfjAOmXnS9YP8842zxrngx7-tbmEAc2y_55QSOdmxTW-kMqT8UAmDG3MsR0jZhHIyvDEw9kVQCFN\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 63<br>5626 Will Clayton Pkwy<br>Houston, TX  77032",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/EV8J8HRakNmCIEXFq3EpfaFxcOvLyajHTQTW5C4xVFlCuZzeM3dHBfjAOmXnS9YP8842zxrngx7-tbmEAc2y_55QSOdmxTW-kMqT8UAmDG3MsR0jZhHIyvDEw9kVQCFN"
             }
         },
@@ -1484,7 +1418,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/YWi-KmjICWxM6aif6XX_QRJO4fLJSkfAUDMR2ts6Q5mJ55rijw2f5NeFot1D3LILu0dNLI6pLYsXMV0WQiLLsr_ZBgH6DmPVHUJWGdlkvyBQLPR5HkhX-PDf6eA79Au6\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 64<br>3000 Greens Rd<br>Houston, TX  77032",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/YWi-KmjICWxM6aif6XX_QRJO4fLJSkfAUDMR2ts6Q5mJ55rijw2f5NeFot1D3LILu0dNLI6pLYsXMV0WQiLLsr_ZBgH6DmPVHUJWGdlkvyBQLPR5HkhX-PDf6eA79Au6\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 64<br>3000 Greens Rd<br>Houston, TX  77032",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/YWi-KmjICWxM6aif6XX_QRJO4fLJSkfAUDMR2ts6Q5mJ55rijw2f5NeFot1D3LILu0dNLI6pLYsXMV0WQiLLsr_ZBgH6DmPVHUJWGdlkvyBQLPR5HkhX-PDf6eA79Au6"
             }
         },
@@ -1507,7 +1441,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/M9UBUUrIrAzEy3Zqem8kHyHU5UbxVviEvSwU23a8L02wqkU1MV0WL0hoybadWtpczdHkTIRLa69_sxQaGqzRqMPAh-Ir-YLe0p71i8ByJs4pxco6LKOsHZxT_fR5LVbG\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 65<br>11531 FM 1960 East<br>Huffman, TX  77336",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/M9UBUUrIrAzEy3Zqem8kHyHU5UbxVviEvSwU23a8L02wqkU1MV0WL0hoybadWtpczdHkTIRLa69_sxQaGqzRqMPAh-Ir-YLe0p71i8ByJs4pxco6LKOsHZxT_fR5LVbG\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 65<br>11531 FM 1960 East<br>Huffman, TX  77336",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/M9UBUUrIrAzEy3Zqem8kHyHU5UbxVviEvSwU23a8L02wqkU1MV0WL0hoybadWtpczdHkTIRLa69_sxQaGqzRqMPAh-Ir-YLe0p71i8ByJs4pxco6LKOsHZxT_fR5LVbG"
             }
         },
@@ -1530,7 +1464,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/n1hr20nnr3WeCyJrrHI7m4RbYuFNV7r6skAWx99-uoggMtCwQlXayDzi1CQDDtKgMQKf97_u4eSUA_s4jayPWwL4Dbsr8hiOtryzBLusgz7nhNDuElPBUu0i2Tg0rECS\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 66<br>5800 Teague Rd<br>Houston, TX  77041",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/n1hr20nnr3WeCyJrrHI7m4RbYuFNV7r6skAWx99-uoggMtCwQlXayDzi1CQDDtKgMQKf97_u4eSUA_s4jayPWwL4Dbsr8hiOtryzBLusgz7nhNDuElPBUu0i2Tg0rECS\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 66<br>5800 Teague Rd<br>Houston, TX  77041",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/n1hr20nnr3WeCyJrrHI7m4RbYuFNV7r6skAWx99-uoggMtCwQlXayDzi1CQDDtKgMQKf97_u4eSUA_s4jayPWwL4Dbsr8hiOtryzBLusgz7nhNDuElPBUu0i2Tg0rECS"
             }
         },
@@ -1553,7 +1487,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/THZYJcTQvpiC4HYgaygOHE0eeVQpNCR0SViK7raITlcmE0yOj25y4oAC1hn9VMGx1BBVRURL1CuGVQgW5glpBj7vMqp2QwHj4K2xWUu8ch5Ey8QylWEdwc7i6soKRY-P\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 67 (http://www.hfdfirehouse67.com/)<br>1616 W Little York Rd<br>Houston, TX 77091",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/THZYJcTQvpiC4HYgaygOHE0eeVQpNCR0SViK7raITlcmE0yOj25y4oAC1hn9VMGx1BBVRURL1CuGVQgW5glpBj7vMqp2QwHj4K2xWUu8ch5Ey8QylWEdwc7i6soKRY-P\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 67 (http://www.hfdfirehouse67.com/)<br>1616 W Little York Rd<br>Houston, TX 77091",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/THZYJcTQvpiC4HYgaygOHE0eeVQpNCR0SViK7raITlcmE0yOj25y4oAC1hn9VMGx1BBVRURL1CuGVQgW5glpBj7vMqp2QwHj4K2xWUu8ch5Ey8QylWEdwc7i6soKRY-P"
             }
         },
@@ -1576,7 +1510,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/Kchgyel04bg51dlR172fU-iKgIm-ygEeLPyuYvQR0PdRxb6L95BTPTSZlNGF3ULKqrvt2TlQehFmtMVPfJti9iARHLswyTZevZYDyMIj5JMeCzt1KCNsjlmC-MEYHAGh\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 68 (http://www.firehouse68.com/)<br>8602 Bissonnet St<br>Houston, TX 77074",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/Kchgyel04bg51dlR172fU-iKgIm-ygEeLPyuYvQR0PdRxb6L95BTPTSZlNGF3ULKqrvt2TlQehFmtMVPfJti9iARHLswyTZevZYDyMIj5JMeCzt1KCNsjlmC-MEYHAGh\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 68 (http://www.firehouse68.com/)<br>8602 Bissonnet St<br>Houston, TX 77074",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/Kchgyel04bg51dlR172fU-iKgIm-ygEeLPyuYvQR0PdRxb6L95BTPTSZlNGF3ULKqrvt2TlQehFmtMVPfJti9iARHLswyTZevZYDyMIj5JMeCzt1KCNsjlmC-MEYHAGh"
             }
         },
@@ -1599,7 +1533,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/1iAPSgNTQcP2w-km2-12LmdGW4D9UzgvZRyJNSyDR7V4RxUbdmHmbxJ41smBYqTuDxx-B1cd9sl-XI05rTWa6q0mbdTZjXd1xheGBSm0Xsp5nyj0hOV05IMtZqY-48Pt\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 69<br>1102 West Belt Dr S<br>Houston, TX  77042",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/1iAPSgNTQcP2w-km2-12LmdGW4D9UzgvZRyJNSyDR7V4RxUbdmHmbxJ41smBYqTuDxx-B1cd9sl-XI05rTWa6q0mbdTZjXd1xheGBSm0Xsp5nyj0hOV05IMtZqY-48Pt\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 69<br>1102 West Belt Dr S<br>Houston, TX  77042",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/1iAPSgNTQcP2w-km2-12LmdGW4D9UzgvZRyJNSyDR7V4RxUbdmHmbxJ41smBYqTuDxx-B1cd9sl-XI05rTWa6q0mbdTZjXd1xheGBSm0Xsp5nyj0hOV05IMtZqY-48Pt"
             }
         },
@@ -1622,7 +1556,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/r8IGrj2I9K0VyV_PruI4-B7vvwcI2t5qUGm9F6bBNJQGPDYDZc2WLcYogsGxr090tKshRRYlyf-XjER2CJFfTvuS9h5iVNX60xy8WzIq-27lMmFQKGy5Hh8gy5Awp_cy\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 70<br>11410 Beamer Rd<br>Houston, TX  77089",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/r8IGrj2I9K0VyV_PruI4-B7vvwcI2t5qUGm9F6bBNJQGPDYDZc2WLcYogsGxr090tKshRRYlyf-XjER2CJFfTvuS9h5iVNX60xy8WzIq-27lMmFQKGy5Hh8gy5Awp_cy\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 70<br>11410 Beamer Rd<br>Houston, TX  77089",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/r8IGrj2I9K0VyV_PruI4-B7vvwcI2t5qUGm9F6bBNJQGPDYDZc2WLcYogsGxr090tKshRRYlyf-XjER2CJFfTvuS9h5iVNX60xy8WzIq-27lMmFQKGy5Hh8gy5Awp_cy"
             }
         },
@@ -1645,7 +1579,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/iMe0AbnJEDahKF1xDA8lSdnZP-7jkMbCQDud_e5Kqdg8WRm1xK0O6DfBWMXVz_60VXSaD46yq_qulaXRV3ZcLEBMV6Zg9uvLYN2nKU99y3jvDAUNmxMum3la7hWEHoR8\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 71<br>15200 Space Center<br>Houston, TX  77062",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/iMe0AbnJEDahKF1xDA8lSdnZP-7jkMbCQDud_e5Kqdg8WRm1xK0O6DfBWMXVz_60VXSaD46yq_qulaXRV3ZcLEBMV6Zg9uvLYN2nKU99y3jvDAUNmxMum3la7hWEHoR8\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 71<br>15200 Space Center<br>Houston, TX  77062",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/iMe0AbnJEDahKF1xDA8lSdnZP-7jkMbCQDud_e5Kqdg8WRm1xK0O6DfBWMXVz_60VXSaD46yq_qulaXRV3ZcLEBMV6Zg9uvLYN2nKU99y3jvDAUNmxMum3la7hWEHoR8"
             }
         },
@@ -1668,7 +1602,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/MHM5cG0dl7E9-AnlJioMZzCBGdU2ryL9w_r_Pvm9iZXIxiihvSHgLtWCnX0S66tGkI9_NURE2CxertQHOBI_Zcv3HNjx1a-wHCHMnkHiBbQOdQbLSCCCqJVr6UaNl0Np\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 72<br>17401 Saturn Ln<br>Houston, TX  77058",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/MHM5cG0dl7E9-AnlJioMZzCBGdU2ryL9w_r_Pvm9iZXIxiihvSHgLtWCnX0S66tGkI9_NURE2CxertQHOBI_Zcv3HNjx1a-wHCHMnkHiBbQOdQbLSCCCqJVr6UaNl0Np\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 72<br>17401 Saturn Ln<br>Houston, TX  77058",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/MHM5cG0dl7E9-AnlJioMZzCBGdU2ryL9w_r_Pvm9iZXIxiihvSHgLtWCnX0S66tGkI9_NURE2CxertQHOBI_Zcv3HNjx1a-wHCHMnkHiBbQOdQbLSCCCqJVr6UaNl0Np"
             }
         },
@@ -1713,7 +1647,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/tne7lnmK7P2EjzyPqhppKwGpr5gJcdJ_0xyrO5Tk7ajvE0Sjojbh4hPLyWTNWUsMBMhsxl1o27ekYRt0e9OPNvPh9JsUKRWlXiArw_RE8SyGZWq5GQrZK6mKBmGDADkj\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 74<br>460 Aldine Bender Rd<br>Houston, TX  77060",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/tne7lnmK7P2EjzyPqhppKwGpr5gJcdJ_0xyrO5Tk7ajvE0Sjojbh4hPLyWTNWUsMBMhsxl1o27ekYRt0e9OPNvPh9JsUKRWlXiArw_RE8SyGZWq5GQrZK6mKBmGDADkj\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 74<br>460 Aldine Bender Rd<br>Houston, TX  77060",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/tne7lnmK7P2EjzyPqhppKwGpr5gJcdJ_0xyrO5Tk7ajvE0Sjojbh4hPLyWTNWUsMBMhsxl1o27ekYRt0e9OPNvPh9JsUKRWlXiArw_RE8SyGZWq5GQrZK6mKBmGDADkj"
             }
         },
@@ -1736,7 +1670,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/-LyL6ZYwmxlsYOnnn2Ee3sYB3gnR7EySdl53FBs51jfKmYXJOZhG5AgfoQtdUkoaGZWUg-pjRas09NsEgAIC5yNH5sFnRRSOGsztEnA_A-2m3Dmu5bq1KFCYK16ytPbe\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 75<br>1995 Dairy Ashford St<br>Houston, TX  77077",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/-LyL6ZYwmxlsYOnnn2Ee3sYB3gnR7EySdl53FBs51jfKmYXJOZhG5AgfoQtdUkoaGZWUg-pjRas09NsEgAIC5yNH5sFnRRSOGsztEnA_A-2m3Dmu5bq1KFCYK16ytPbe\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 75<br>1995 Dairy Ashford St<br>Houston, TX  77077",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/-LyL6ZYwmxlsYOnnn2Ee3sYB3gnR7EySdl53FBs51jfKmYXJOZhG5AgfoQtdUkoaGZWUg-pjRas09NsEgAIC5yNH5sFnRRSOGsztEnA_A-2m3Dmu5bq1KFCYK16ytPbe"
             }
         },
@@ -1781,7 +1715,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/Olgay0OaWShiZFIf-eySiPZq7wem-b0_iY7yavHsk5EwofxGZUqwRAXxBakHtNPPlu3z3FqXFe1K7kqlQ4Bpq2feyOAqtUPugLRI13tbJwBXsQEet6-GNs0Si_c2QH5e\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 77<br>10155 Kempwood Dr<br>Houston, TX  77080",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/Olgay0OaWShiZFIf-eySiPZq7wem-b0_iY7yavHsk5EwofxGZUqwRAXxBakHtNPPlu3z3FqXFe1K7kqlQ4Bpq2feyOAqtUPugLRI13tbJwBXsQEet6-GNs0Si_c2QH5e\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 77<br>10155 Kempwood Dr<br>Houston, TX  77080",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/Olgay0OaWShiZFIf-eySiPZq7wem-b0_iY7yavHsk5EwofxGZUqwRAXxBakHtNPPlu3z3FqXFe1K7kqlQ4Bpq2feyOAqtUPugLRI13tbJwBXsQEet6-GNs0Si_c2QH5e"
             }
         },
@@ -1804,7 +1738,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/B206TRpTbKrCuNEJdiT2psI-haEKODAy6gly2JsTdjxkAbQgQrPjDIfskRePZUL-TM1Wc57IIQ0XDPK3ANWrsxpe9rGSV-dmB7uV40rDu-cPD091tUYfe-oM1c9Nj0vY\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 78<br>15100 Memorial Dr<br>Houston, TX  77079",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/B206TRpTbKrCuNEJdiT2psI-haEKODAy6gly2JsTdjxkAbQgQrPjDIfskRePZUL-TM1Wc57IIQ0XDPK3ANWrsxpe9rGSV-dmB7uV40rDu-cPD091tUYfe-oM1c9Nj0vY\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 78<br>15100 Memorial Dr<br>Houston, TX  77079",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/B206TRpTbKrCuNEJdiT2psI-haEKODAy6gly2JsTdjxkAbQgQrPjDIfskRePZUL-TM1Wc57IIQ0XDPK3ANWrsxpe9rGSV-dmB7uV40rDu-cPD091tUYfe-oM1c9Nj0vY"
             }
         },
@@ -1827,7 +1761,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/lGJsAPkZV4DdQLG3LJkH-Sq28V1tpryibw0bzPnfbtNxcZdoybv6PVmbNfV-OALxJd4fAz72mk0NfSA2Slo_RIx6mrvlOB3Hm7xuUWUY5AEdz0QJOYEm1Od8TcIkdJL8\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 80<br>16111 Chimney Rock Rd<br>Houston, TX  77489",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/lGJsAPkZV4DdQLG3LJkH-Sq28V1tpryibw0bzPnfbtNxcZdoybv6PVmbNfV-OALxJd4fAz72mk0NfSA2Slo_RIx6mrvlOB3Hm7xuUWUY5AEdz0QJOYEm1Od8TcIkdJL8\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 80<br>16111 Chimney Rock Rd<br>Houston, TX  77489",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/lGJsAPkZV4DdQLG3LJkH-Sq28V1tpryibw0bzPnfbtNxcZdoybv6PVmbNfV-OALxJd4fAz72mk0NfSA2Slo_RIx6mrvlOB3Hm7xuUWUY5AEdz0QJOYEm1Od8TcIkdJL8"
             }
         },
@@ -1872,7 +1806,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/2TJIp3p6r4Bi_cqLJ1uzUG7OhyLnWawm-qAJ70NtEGtFFr_F4OpH18k58eNLQzxq6KZRo0oguiSps9I-0sFizp2u7tUu_xAENPyFWkqakFqsmkYNuZDl1Cg495he8gpt\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 82<br>11250 Braesridge Dr<br>Houston, TX  77071",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/2TJIp3p6r4Bi_cqLJ1uzUG7OhyLnWawm-qAJ70NtEGtFFr_F4OpH18k58eNLQzxq6KZRo0oguiSps9I-0sFizp2u7tUu_xAENPyFWkqakFqsmkYNuZDl1Cg495he8gpt\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 82<br>11250 Braesridge Dr<br>Houston, TX  77071",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/2TJIp3p6r4Bi_cqLJ1uzUG7OhyLnWawm-qAJ70NtEGtFFr_F4OpH18k58eNLQzxq6KZRo0oguiSps9I-0sFizp2u7tUu_xAENPyFWkqakFqsmkYNuZDl1Cg495he8gpt"
             }
         },
@@ -1939,7 +1873,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/SwONgIQPbIIeNz1ZSR9FcSPhF69xZ1LUY3c4q5vvCFFQ73qUdysDqWfZWiBy0nk37igxCnSe_89eR5YWF9aPyN5Y24yFckiHyiKJKxiiREd31vroBlN5BAP81fLuk9RI\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 86<br>14300 Briar Forest Dr<br>Houston, TX  77024",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/SwONgIQPbIIeNz1ZSR9FcSPhF69xZ1LUY3c4q5vvCFFQ73qUdysDqWfZWiBy0nk37igxCnSe_89eR5YWF9aPyN5Y24yFckiHyiKJKxiiREd31vroBlN5BAP81fLuk9RI\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 86<br>14300 Briar Forest Dr<br>Houston, TX  77024",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/SwONgIQPbIIeNz1ZSR9FcSPhF69xZ1LUY3c4q5vvCFFQ73qUdysDqWfZWiBy0nk37igxCnSe_89eR5YWF9aPyN5Y24yFckiHyiKJKxiiREd31vroBlN5BAP81fLuk9RI"
             }
         },
@@ -1962,7 +1896,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/47t3qPDRwcUB_7Fn-k-dAth6vrTTGavhkKZpY0u91ofQ8YkBumLudtMMSlpKVAMz8J_isqtOLa_nqNeaoifedvZCJU-84BCTzPNpUqmmCEELg4702eaA6CYybOSLDSAE\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 90<br>16525 Park Row Blvd<br>Houston, TX  77084",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/47t3qPDRwcUB_7Fn-k-dAth6vrTTGavhkKZpY0u91ofQ8YkBumLudtMMSlpKVAMz8J_isqtOLa_nqNeaoifedvZCJU-84BCTzPNpUqmmCEELg4702eaA6CYybOSLDSAE\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 90<br>16525 Park Row Blvd<br>Houston, TX  77084",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/47t3qPDRwcUB_7Fn-k-dAth6vrTTGavhkKZpY0u91ofQ8YkBumLudtMMSlpKVAMz8J_isqtOLa_nqNeaoifedvZCJU-84BCTzPNpUqmmCEELg4702eaA6CYybOSLDSAE"
             }
         },
@@ -2007,7 +1941,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/lTO8OF55QoFju0JlMPZZ488eWpFUFzTv9iz9jJ2To1ewV60NrB1YqyFn9uKMYdTy9ISSza5o6npEvJd-aPhtY-7whv07jONeA2GGCHMHK3RQCT5NLRb1EuuS3utWnafQ\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 93<br>911 FM 1959<br>Houston, TX  77546",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/lTO8OF55QoFju0JlMPZZ488eWpFUFzTv9iz9jJ2To1ewV60NrB1YqyFn9uKMYdTy9ISSza5o6npEvJd-aPhtY-7whv07jONeA2GGCHMHK3RQCT5NLRb1EuuS3utWnafQ\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 93<br>911 FM 1959<br>Houston, TX  77546",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/lTO8OF55QoFju0JlMPZZ488eWpFUFzTv9iz9jJ2To1ewV60NrB1YqyFn9uKMYdTy9ISSza5o6npEvJd-aPhtY-7whv07jONeA2GGCHMHK3RQCT5NLRb1EuuS3utWnafQ"
             }
         },
@@ -2030,7 +1964,7 @@
                     "highlight": "#icon-123-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/123-red-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/psKxvvucFiFi7mqjOhZZCtYLYiaqY_ydI0l844UrgHF-cF9Cy4ren8pV58-KGFtdGqNqh4_G8sVdPDNu0Ysf3Il7tB2Tw6iklrEpCQeODiPdcYdBaGYAzpqaRjDuoKig\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 94<br>235 El Dorado Blvd<br>Webster, TX 77598",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/psKxvvucFiFi7mqjOhZZCtYLYiaqY_ydI0l844UrgHF-cF9Cy4ren8pV58-KGFtdGqNqh4_G8sVdPDNu0Ysf3Il7tB2Tw6iklrEpCQeODiPdcYdBaGYAzpqaRjDuoKig\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 94<br>235 El Dorado Blvd<br>Webster, TX 77598",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/psKxvvucFiFi7mqjOhZZCtYLYiaqY_ydI0l844UrgHF-cF9Cy4ren8pV58-KGFtdGqNqh4_G8sVdPDNu0Ysf3Il7tB2Tw6iklrEpCQeODiPdcYdBaGYAzpqaRjDuoKig"
             }
         },
@@ -2075,7 +2009,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/DD6bLUM1PODBbWBuxOfcVm3wytDeXDCg_oRdWISBwuHDLFhG_BB7AEKSzyfggSenUDYWId1TDVnW0zkplb2esnVDaRzgTjsLLZS4cSV6UPUUm78NvTS95jthzPhZCPgC\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 96<br>7409 Willow Chase Blvd<br>Houston, TX 77070",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/DD6bLUM1PODBbWBuxOfcVm3wytDeXDCg_oRdWISBwuHDLFhG_BB7AEKSzyfggSenUDYWId1TDVnW0zkplb2esnVDaRzgTjsLLZS4cSV6UPUUm78NvTS95jthzPhZCPgC\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 96<br>7409 Willow Chase Blvd<br>Houston, TX 77070",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/DD6bLUM1PODBbWBuxOfcVm3wytDeXDCg_oRdWISBwuHDLFhG_BB7AEKSzyfggSenUDYWId1TDVnW0zkplb2esnVDaRzgTjsLLZS4cSV6UPUUm78NvTS95jthzPhZCPgC"
             }
         },
@@ -2120,7 +2054,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/xnLUgbE30MEMrNdxHelX7UtDPS90c9x1Q7J9010TXVk_do6zwPmWAzu_gQ4HBUrEW5RxkP_gtI8vorBRyn5eW0Ov9ozoNIwLqCZZ0hCNEnsgnM3DDOEb5ZbyugTE-TJv\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 101<br>1863 Kingwood Dr<br>Kingwood, TX 77339",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/xnLUgbE30MEMrNdxHelX7UtDPS90c9x1Q7J9010TXVk_do6zwPmWAzu_gQ4HBUrEW5RxkP_gtI8vorBRyn5eW0Ov9ozoNIwLqCZZ0hCNEnsgnM3DDOEb5ZbyugTE-TJv\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 101<br>1863 Kingwood Dr<br>Kingwood, TX 77339",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/xnLUgbE30MEMrNdxHelX7UtDPS90c9x1Q7J9010TXVk_do6zwPmWAzu_gQ4HBUrEW5RxkP_gtI8vorBRyn5eW0Ov9ozoNIwLqCZZ0hCNEnsgnM3DDOEb5ZbyugTE-TJv"
             }
         },
@@ -2143,7 +2077,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/DJiriV-UEwjEo6CMsolfcBBHgk6uoM5VhELYS9t6hQMrWQsXN7IUaF9w9Kk7-x000vmJqh7QK80VHnOGfm3A0Le3joccZBCiNB-4UFBBDCV-pp5nMqQIJjWoujHhqb4-\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 102<br>4102 Lake Houston Pkwy<br>Kingwood, TX 77339",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/DJiriV-UEwjEo6CMsolfcBBHgk6uoM5VhELYS9t6hQMrWQsXN7IUaF9w9Kk7-x000vmJqh7QK80VHnOGfm3A0Le3joccZBCiNB-4UFBBDCV-pp5nMqQIJjWoujHhqb4-\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 102<br>4102 Lake Houston Pkwy<br>Kingwood, TX 77339",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/DJiriV-UEwjEo6CMsolfcBBHgk6uoM5VhELYS9t6hQMrWQsXN7IUaF9w9Kk7-x000vmJqh7QK80VHnOGfm3A0Le3joccZBCiNB-4UFBBDCV-pp5nMqQIJjWoujHhqb4-"
             }
         },
@@ -2188,7 +2122,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/m0Ghtx2nFMET51lAbaDVy7vOuuA4s-vEWXuak5y5Kg9LiYp3aZuL2bgRaoXe7Y2lCzBqJg4rdvKf94sGe68t-yT5u5meX_1AMPrvTQU1v3Gs9LIL3gbZo4Q595UBXtVq\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 104<br>910 Forest Cove Dr<br>Houston, TX  77339",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/m0Ghtx2nFMET51lAbaDVy7vOuuA4s-vEWXuak5y5Kg9LiYp3aZuL2bgRaoXe7Y2lCzBqJg4rdvKf94sGe68t-yT5u5meX_1AMPrvTQU1v3Gs9LIL3gbZo4Q595UBXtVq\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 104<br>910 Forest Cove Dr<br>Houston, TX  77339",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/m0Ghtx2nFMET51lAbaDVy7vOuuA4s-vEWXuak5y5Kg9LiYp3aZuL2bgRaoXe7Y2lCzBqJg4rdvKf94sGe68t-yT5u5meX_1AMPrvTQU1v3Gs9LIL3gbZo4Q595UBXtVq"
             }
         },
@@ -2211,7 +2145,7 @@
                     "highlight": "#icon-124-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/124-red.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/navZuWDf2n3N6jp4yN7lqpAt8E2gBEmQ7iIrHYHxfkfSlXfVvUZ784vhwTSeldIJe01cJW78Hnxey7J5uJTgUTQDjBruGtSLTbFMO2omP8DwhZ9CZyKiM-6bTFMG4ZVs\" height=\"200\" width=\"auto\" /><br><br>Houston Fire Station 105<br>14014 Lake Houston Pkwy<br>Houston, TX  77044",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/navZuWDf2n3N6jp4yN7lqpAt8E2gBEmQ7iIrHYHxfkfSlXfVvUZ784vhwTSeldIJe01cJW78Hnxey7J5uJTgUTQDjBruGtSLTbFMO2omP8DwhZ9CZyKiM-6bTFMG4ZVs\" height=\"30\" width=\"auto\" /><br>Houston Fire Station 105<br>14014 Lake Houston Pkwy<br>Houston, TX  77044",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/navZuWDf2n3N6jp4yN7lqpAt8E2gBEmQ7iIrHYHxfkfSlXfVvUZ784vhwTSeldIJe01cJW78Hnxey7J5uJTgUTQDjBruGtSLTbFMO2omP8DwhZ9CZyKiM-6bTFMG4ZVs"
             }
         },
@@ -2234,7 +2168,7 @@
                     "highlight": "#icon-22-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/W0u40QXS_7k9P130WDnOsbLI0TnFzPDyauNti1nHZHXgIE_H95ZObTwGhWG_6Vk8sN0ABW3ouq9QogEaFaBXIUO2JA-ARNAg\" height=\"200\" width=\"auto\" /><br><br>Galveston Fire Station 1<br>2514 Sealy St<br>Galveston, TX 77550",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/W0u40QXS_7k9P130WDnOsbLI0TnFzPDyauNti1nHZHXgIE_H95ZObTwGhWG_6Vk8sN0ABW3ouq9QogEaFaBXIUO2JA-ARNAg\" height=\"30\" width=\"auto\" /><br>Galveston Fire Station 1<br>2514 Sealy St<br>Galveston, TX 77550",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/W0u40QXS_7k9P130WDnOsbLI0TnFzPDyauNti1nHZHXgIE_H95ZObTwGhWG_6Vk8sN0ABW3ouq9QogEaFaBXIUO2JA-ARNAg"
             }
         },
@@ -2257,7 +2191,7 @@
                     "highlight": "#icon-22-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/GgQeSl49TGq0JHyTLJcssgNQv6F5wStbZNk2aUpk99F6T0IdhdgSWFVNZMsHCDsePWXlqtZJw0nvULDznxsU8KnCDg\" height=\"200\" width=\"auto\" /><br><br>Galveston Fire Station 2<br>428 Church St<br>Galveston, TX 77550",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/GgQeSl49TGq0JHyTLJcssgNQv6F5wStbZNk2aUpk99F6T0IdhdgSWFVNZMsHCDsePWXlqtZJw0nvULDznxsU8KnCDg\" height=\"30\" width=\"auto\" /><br>Galveston Fire Station 2<br>428 Church St<br>Galveston, TX 77550",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/GgQeSl49TGq0JHyTLJcssgNQv6F5wStbZNk2aUpk99F6T0IdhdgSWFVNZMsHCDsePWXlqtZJw0nvULDznxsU8KnCDg"
             }
         },
@@ -2280,7 +2214,7 @@
                     "highlight": "#icon-24-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/24-blue.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/ANKIgBWZ6uRoL_WFz45zw3P_Mv6CQ5Q5XUEEJ7dqG_6DqDFSwBh4wDcv_np2c4O9FUho9d_WG4MUHnsUsQcell6Mhw\" height=\"200\" width=\"auto\" /><br><br>Galveston Fire Station 4<br>8710 Cessna Dr<br>Galveston, TX 77554",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/ANKIgBWZ6uRoL_WFz45zw3P_Mv6CQ5Q5XUEEJ7dqG_6DqDFSwBh4wDcv_np2c4O9FUho9d_WG4MUHnsUsQcell6Mhw\" height=\"30\" width=\"auto\" /><br>Galveston Fire Station 4<br>8710 Cessna Dr<br>Galveston, TX 77554",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/ANKIgBWZ6uRoL_WFz45zw3P_Mv6CQ5Q5XUEEJ7dqG_6DqDFSwBh4wDcv_np2c4O9FUho9d_WG4MUHnsUsQcell6Mhw"
             }
         },
@@ -2303,7 +2237,7 @@
                     "highlight": "#icon-22-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/VVbgBhXmTBkEQDvAKopnqgr0t-1_zv6WlB2t2HVcCzl3k74q_8d_x2f4QsHEdJvWis6hVHIKjb-HB6dkOexkMbnF2g\" height=\"200\" width=\"auto\" /><br><br>Galveston Fire Station 5<br>1104 56th St<br>Galveston, TX 77551",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/VVbgBhXmTBkEQDvAKopnqgr0t-1_zv6WlB2t2HVcCzl3k74q_8d_x2f4QsHEdJvWis6hVHIKjb-HB6dkOexkMbnF2g\" height=\"30\" width=\"auto\" /><br>Galveston Fire Station 5<br>1104 56th St<br>Galveston, TX 77551",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/VVbgBhXmTBkEQDvAKopnqgr0t-1_zv6WlB2t2HVcCzl3k74q_8d_x2f4QsHEdJvWis6hVHIKjb-HB6dkOexkMbnF2g"
             }
         },
@@ -2326,7 +2260,7 @@
                     "highlight": "#icon-24-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/24-blue.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/zuGKqhAPOPe7JCxTpJYvqj3x_Qvy3qXC2Oi_E9-Zwo9QbDl6K1vnyJYP6FO6NmFeIjADI67EL3rofeNEtqmw3MUw\" height=\"200\" width=\"auto\" /><br><br>Galveston Fire Station 7<br>3902 Buccaneer Blvd<br>Galveston, TX 77554",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/zuGKqhAPOPe7JCxTpJYvqj3x_Qvy3qXC2Oi_E9-Zwo9QbDl6K1vnyJYP6FO6NmFeIjADI67EL3rofeNEtqmw3MUw\" height=\"30\" width=\"auto\" /><br>Galveston Fire Station 7<br>3902 Buccaneer Blvd<br>Galveston, TX 77554",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/zuGKqhAPOPe7JCxTpJYvqj3x_Qvy3qXC2Oi_E9-Zwo9QbDl6K1vnyJYP6FO6NmFeIjADI67EL3rofeNEtqmw3MUw"
             }
         },
@@ -2349,7 +2283,7 @@
                     "highlight": "#icon-24-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/24-blue.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/yH0__i0DQFSPdN6WNT9izdJmy0V13h1xmuJz4CslMaqMASkeBmkObN8inXD7FIcqTijxJrEtKb9TYXJE66yl8trMyw\" height=\"200\" width=\"auto\" /><br><br>Galveston Fire Station 8<br>21710 Shelby Dr S<br>Galveston, TX 77554",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/yH0__i0DQFSPdN6WNT9izdJmy0V13h1xmuJz4CslMaqMASkeBmkObN8inXD7FIcqTijxJrEtKb9TYXJE66yl8trMyw\" height=\"30\" width=\"auto\" /><br>Galveston Fire Station 8<br>21710 Shelby Dr S<br>Galveston, TX 77554",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/yH0__i0DQFSPdN6WNT9izdJmy0V13h1xmuJz4CslMaqMASkeBmkObN8inXD7FIcqTijxJrEtKb9TYXJE66yl8trMyw"
             }
         },
@@ -2372,7 +2306,7 @@
                     "highlight": "#icon-112-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/112-purple.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/H2SDnRNJJ82XV6PI85c3ijIKDZpNjrHSVYOBT-UVROQKNUxS8RLydkr_MNJB6kgOMg7RwdUOGdVjX5c\" height=\"200\" width=\"auto\" /><br><br>League City Fire Station 1<br>601 2nd St<br>League City, TX 77573",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/H2SDnRNJJ82XV6PI85c3ijIKDZpNjrHSVYOBT-UVROQKNUxS8RLydkr_MNJB6kgOMg7RwdUOGdVjX5c\" height=\"30\" width=\"auto\" /><br>League City Fire Station 1<br>601 2nd St<br>League City, TX 77573",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/H2SDnRNJJ82XV6PI85c3ijIKDZpNjrHSVYOBT-UVROQKNUxS8RLydkr_MNJB6kgOMg7RwdUOGdVjX5c"
             }
         },
@@ -2395,7 +2329,7 @@
                     "highlight": "#icon-112-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/112-purple.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/_mLnt_oQN6g68N2vQ46537rMZvQA6pLcCR3P71oBW4KGlkxlcoEKemNBVbuHa4L0CLGx8iD-mEhxa6o\" height=\"200\" width=\"auto\" /><br><br>League City Fire Station 3<br>518 Deke Slayton Hwy<br>League City, TX 77573",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/_mLnt_oQN6g68N2vQ46537rMZvQA6pLcCR3P71oBW4KGlkxlcoEKemNBVbuHa4L0CLGx8iD-mEhxa6o\" height=\"30\" width=\"auto\" /><br>League City Fire Station 3<br>518 Deke Slayton Hwy<br>League City, TX 77573",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/_mLnt_oQN6g68N2vQ46537rMZvQA6pLcCR3P71oBW4KGlkxlcoEKemNBVbuHa4L0CLGx8iD-mEhxa6o"
             }
         },
@@ -2418,7 +2352,7 @@
                     "highlight": "#icon-112-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/112-purple.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/xbBhDmfthnbGSTYOMU6s8yDs32j7jtJ9SG9lr07a_uwEUUBxppREBgGCO8YvUI0dwqWbA5KHnQmJuT4\" height=\"200\" width=\"auto\" /><br><br>League City Fire Station 4<br>175 W Bay Area Blvd<br>League City, TX 77573",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/xbBhDmfthnbGSTYOMU6s8yDs32j7jtJ9SG9lr07a_uwEUUBxppREBgGCO8YvUI0dwqWbA5KHnQmJuT4\" height=\"30\" width=\"auto\" /><br>League City Fire Station 4<br>175 W Bay Area Blvd<br>League City, TX 77573",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/xbBhDmfthnbGSTYOMU6s8yDs32j7jtJ9SG9lr07a_uwEUUBxppREBgGCO8YvUI0dwqWbA5KHnQmJuT4"
             }
         },
@@ -2441,7 +2375,7 @@
                     "highlight": "#icon-112-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/112-purple.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/LvlTLz4mGiegRhE5u34VSMaeQxY_-kY4EyKuc-XRWJAdPFewn-fum5oiDArRVt0-Orfh8NNEIAZc4Nc\" height=\"200\" width=\"auto\" /><br><br>League City Fire Station 5<br>2898 Bay Creek Dr<br>Dickinson, TX 77539",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/LvlTLz4mGiegRhE5u34VSMaeQxY_-kY4EyKuc-XRWJAdPFewn-fum5oiDArRVt0-Orfh8NNEIAZc4Nc\" height=\"30\" width=\"auto\" /><br>League City Fire Station 5<br>2898 Bay Creek Dr<br>Dickinson, TX 77539",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/LvlTLz4mGiegRhE5u34VSMaeQxY_-kY4EyKuc-XRWJAdPFewn-fum5oiDArRVt0-Orfh8NNEIAZc4Nc"
             }
         },
@@ -2464,7 +2398,7 @@
                     "highlight": "#icon-62-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/62-green.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/lZZOHvXq85NZZNXs0Ylm_tUtUKU6fRURKdZmhxuV0NpKeJgVbnEa603dVXHGyUvUHCfKWtN5o7FRWzgOnAw_9KP_TJL9CeGx4J5lXjNov_X7TRaWWffsKE37iQCjkEaO\" height=\"200\" width=\"auto\" /><br><br>Pasadena Fire Station 2<br>529 Pasadena Blvd<br>Pasadena, TX 77506",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/lZZOHvXq85NZZNXs0Ylm_tUtUKU6fRURKdZmhxuV0NpKeJgVbnEa603dVXHGyUvUHCfKWtN5o7FRWzgOnAw_9KP_TJL9CeGx4J5lXjNov_X7TRaWWffsKE37iQCjkEaO\" height=\"30\" width=\"auto\" /><br>Pasadena Fire Station 2<br>529 Pasadena Blvd<br>Pasadena, TX 77506",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/lZZOHvXq85NZZNXs0Ylm_tUtUKU6fRURKdZmhxuV0NpKeJgVbnEa603dVXHGyUvUHCfKWtN5o7FRWzgOnAw_9KP_TJL9CeGx4J5lXjNov_X7TRaWWffsKE37iQCjkEaO"
             }
         },
@@ -2487,7 +2421,7 @@
                     "highlight": "#icon-62-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/62-green.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/r8OYXJV5LkOs3JT_HQfsB2aeWKa8rM13PBpK3-FgWQJFteV3OLJnDjqj0EDn4cJRXNUO6Ke8gHiQGl702v4YZpnFtP5qsAUjvz1fLQuyIY9mGT5P_r-zRuzc7Q2Ogt6y\" height=\"200\" width=\"auto\" /><br><br>Pasadena Fire Station 3<br>3004 Red Bluff Rd<br>Pasadena, TX 77503",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/r8OYXJV5LkOs3JT_HQfsB2aeWKa8rM13PBpK3-FgWQJFteV3OLJnDjqj0EDn4cJRXNUO6Ke8gHiQGl702v4YZpnFtP5qsAUjvz1fLQuyIY9mGT5P_r-zRuzc7Q2Ogt6y\" height=\"30\" width=\"auto\" /><br>Pasadena Fire Station 3<br>3004 Red Bluff Rd<br>Pasadena, TX 77503",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/r8OYXJV5LkOs3JT_HQfsB2aeWKa8rM13PBpK3-FgWQJFteV3OLJnDjqj0EDn4cJRXNUO6Ke8gHiQGl702v4YZpnFtP5qsAUjvz1fLQuyIY9mGT5P_r-zRuzc7Q2Ogt6y"
             }
         },
@@ -2532,7 +2466,7 @@
                     "highlight": "#icon-62-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/62-green.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/SWqjLq9Pj2pCfqeFGR4jgYr60nFysW0w6QHn10WUVYUWsE0DtFwEUBs4tUWUT9KwzkO0rmNyqhPUv_cAZNd8hOM-PA6ALlN5_M6VC4OphROC1KhQjKWNyyMbxaAnPNUK\" height=\"200\" width=\"auto\" /><br><br>Pasadena Fire Station 5<br>2710 Pansy St<br>Pasadena, TX 77503",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/SWqjLq9Pj2pCfqeFGR4jgYr60nFysW0w6QHn10WUVYUWsE0DtFwEUBs4tUWUT9KwzkO0rmNyqhPUv_cAZNd8hOM-PA6ALlN5_M6VC4OphROC1KhQjKWNyyMbxaAnPNUK\" height=\"30\" width=\"auto\" /><br>Pasadena Fire Station 5<br>2710 Pansy St<br>Pasadena, TX 77503",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/SWqjLq9Pj2pCfqeFGR4jgYr60nFysW0w6QHn10WUVYUWsE0DtFwEUBs4tUWUT9KwzkO0rmNyqhPUv_cAZNd8hOM-PA6ALlN5_M6VC4OphROC1KhQjKWNyyMbxaAnPNUK"
             }
         },
@@ -2555,7 +2489,7 @@
                     "highlight": "#icon-62-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/62-green.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/Xl27p6jBlV3Cd4FPmcqEtSH9OOp9aWykOASN8tpD1gigWJH8TzvCbDH5EvPDCJzIaOkvOzbBUUqZvMhm7GPv5MoyccWx6VRT-hf_4vPw4e5bK7qe1T8nmP2Bs7YYtWHV\" height=\"200\" width=\"auto\" /><br><br>Pasadena Fire Station 6<br>1200 Kirby Rd<br>Seabrook, TX 77586",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/Xl27p6jBlV3Cd4FPmcqEtSH9OOp9aWykOASN8tpD1gigWJH8TzvCbDH5EvPDCJzIaOkvOzbBUUqZvMhm7GPv5MoyccWx6VRT-hf_4vPw4e5bK7qe1T8nmP2Bs7YYtWHV\" height=\"30\" width=\"auto\" /><br>Pasadena Fire Station 6<br>1200 Kirby Rd<br>Seabrook, TX 77586",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/Xl27p6jBlV3Cd4FPmcqEtSH9OOp9aWykOASN8tpD1gigWJH8TzvCbDH5EvPDCJzIaOkvOzbBUUqZvMhm7GPv5MoyccWx6VRT-hf_4vPw4e5bK7qe1T8nmP2Bs7YYtWHV"
             }
         },
@@ -2600,7 +2534,7 @@
                     "highlight": "#icon-62-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/62-green.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/bftjNWl_PL4cHCwyO-U3STsqW0pbWrvQi86GO9cGglnPJk1prCwfEwa95nYAiYpjHC4eTYZgRtw5oSqjc0VV98j9Za-8K0cHJwc0ts3ZILk8pM3JW_lgKLYJrFA31ins\" height=\"200\" width=\"auto\" /><br><br>Pasadena Fire Station 8<br>4100 Space Center Blvd<br>Pasadena, TX 77505",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/bftjNWl_PL4cHCwyO-U3STsqW0pbWrvQi86GO9cGglnPJk1prCwfEwa95nYAiYpjHC4eTYZgRtw5oSqjc0VV98j9Za-8K0cHJwc0ts3ZILk8pM3JW_lgKLYJrFA31ins\" height=\"30\" width=\"auto\" /><br>Pasadena Fire Station 8<br>4100 Space Center Blvd<br>Pasadena, TX 77505",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/bftjNWl_PL4cHCwyO-U3STsqW0pbWrvQi86GO9cGglnPJk1prCwfEwa95nYAiYpjHC4eTYZgRtw5oSqjc0VV98j9Za-8K0cHJwc0ts3ZILk8pM3JW_lgKLYJrFA31ins"
             }
         },
@@ -2623,7 +2557,7 @@
                     "highlight": "#icon-62-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/62-green.png",
-                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/jRaOvm3GP2_1NWf-cZqwLcJ2foZAnMF-T5yGVEng8P8To2xOk1a87G8474IJbk6yOySgnbI6086vStfS3XL33sfzoiBBtyTODFgrQEMrGXr4bHJG6-a53PR1Wt-VnG4J\" height=\"200\" width=\"auto\" /><br><br>Pasadena Fire Station 9<br>4907 Donald St<br>Seabrook, TX 77586",
+                "description": "<img src=\"https://lh4.googleusercontent.com/proxy/jRaOvm3GP2_1NWf-cZqwLcJ2foZAnMF-T5yGVEng8P8To2xOk1a87G8474IJbk6yOySgnbI6086vStfS3XL33sfzoiBBtyTODFgrQEMrGXr4bHJG6-a53PR1Wt-VnG4J\" height=\"30\" width=\"auto\" /><br>Pasadena Fire Station 9<br>4907 Donald St<br>Seabrook, TX 77586",
                 "gx_media_links": "https://lh4.googleusercontent.com/proxy/jRaOvm3GP2_1NWf-cZqwLcJ2foZAnMF-T5yGVEng8P8To2xOk1a87G8474IJbk6yOySgnbI6086vStfS3XL33sfzoiBBtyTODFgrQEMrGXr4bHJG6-a53PR1Wt-VnG4J"
             }
         },
@@ -2646,7 +2580,7 @@
                     "highlight": "#icon-169-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/169-ltblue-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/qgTWOFP230jSsud5UQ2aS5FQ6TvXiUSaH-EbbJD6elpUf4wSiQciBahnjlOBU29kGk7NNfDuQi55nt9cr-uafqUjMbSx6TEcyN8pAWxmlCnno8tGHV0oaBk\" height=\"200\" width=\"auto\" /><br><br>Sugarland Fire Station 1<br>255 Guenther St<br>Sugar Land, TX 77478",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/qgTWOFP230jSsud5UQ2aS5FQ6TvXiUSaH-EbbJD6elpUf4wSiQciBahnjlOBU29kGk7NNfDuQi55nt9cr-uafqUjMbSx6TEcyN8pAWxmlCnno8tGHV0oaBk\" height=\"30\" width=\"auto\" /><br>Sugarland Fire Station 1<br>255 Guenther St<br>Sugar Land, TX 77478",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/qgTWOFP230jSsud5UQ2aS5FQ6TvXiUSaH-EbbJD6elpUf4wSiQciBahnjlOBU29kGk7NNfDuQi55nt9cr-uafqUjMbSx6TEcyN8pAWxmlCnno8tGHV0oaBk"
             }
         },
@@ -2669,7 +2603,7 @@
                     "highlight": "#icon-169-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/169-ltblue-dot.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/EZqQzWP5fuwhJMmqLrwPTMNPLOtrEBlkW6lfX5gUiJa_oLOnlC8XnozJBQv9NNNwLIV1mkIhYRlPp9nuthb2tx61WMNOlGL4EkyPwFlPwKkQAcT5XtkgrDY\" height=\"200\" width=\"auto\" /><br><br>Sugarland Fire Station 2<br>1040 Industrial Blvd<br>Sugar Land, TX 77478",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/EZqQzWP5fuwhJMmqLrwPTMNPLOtrEBlkW6lfX5gUiJa_oLOnlC8XnozJBQv9NNNwLIV1mkIhYRlPp9nuthb2tx61WMNOlGL4EkyPwFlPwKkQAcT5XtkgrDY\" height=\"30\" width=\"auto\" /><br>Sugarland Fire Station 2<br>1040 Industrial Blvd<br>Sugar Land, TX 77478",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/EZqQzWP5fuwhJMmqLrwPTMNPLOtrEBlkW6lfX5gUiJa_oLOnlC8XnozJBQv9NNNwLIV1mkIhYRlPp9nuthb2tx61WMNOlGL4EkyPwFlPwKkQAcT5XtkgrDY"
             }
         },
@@ -2692,7 +2626,7 @@
                     "highlight": "#icon-169-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/169-ltblue-dot.png",
-                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/ANl6Ijj33skHyjM_jDJdZcFtvetb0Av50XBGj0Ec648rkkgXxm3I61uaPeM58ILoI0d0m5zguTLNskgmL7nK_iYr25eNrDW9rFPBT82PSVUeCn7gHf1FwOU\" height=\"200\" width=\"auto\" /><br><br>Sugarland Fire Station 3<br>2255 Settlers Way Blvd<br>Sugar Land, TX 77478",
+                "description": "<img src=\"https://lh5.googleusercontent.com/proxy/ANl6Ijj33skHyjM_jDJdZcFtvetb0Av50XBGj0Ec648rkkgXxm3I61uaPeM58ILoI0d0m5zguTLNskgmL7nK_iYr25eNrDW9rFPBT82PSVUeCn7gHf1FwOU\" height=\"30\" width=\"auto\" /><br>Sugarland Fire Station 3<br>2255 Settlers Way Blvd<br>Sugar Land, TX 77478",
                 "gx_media_links": "https://lh5.googleusercontent.com/proxy/ANl6Ijj33skHyjM_jDJdZcFtvetb0Av50XBGj0Ec648rkkgXxm3I61uaPeM58ILoI0d0m5zguTLNskgmL7nK_iYr25eNrDW9rFPBT82PSVUeCn7gHf1FwOU"
             }
         },
@@ -2715,7 +2649,7 @@
                     "highlight": "#icon-169-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/169-ltblue-dot.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/vLRpKn4AXhUpH-0WnVCH8xEHTGTOr8ibC7EeihGDtDsDjXb0NHNKcj4EFMn5V2fxPdpSwCxYDBMD7pml4O3PO6qR0GAv-LbUIiC9-Z5WmxbPHfXsoA\" height=\"200\" width=\"auto\" /><br><br>Sugarland Fire Station 4<br>2100 Austin Pkwy<br>Sugar Land, TX 77479",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/vLRpKn4AXhUpH-0WnVCH8xEHTGTOr8ibC7EeihGDtDsDjXb0NHNKcj4EFMn5V2fxPdpSwCxYDBMD7pml4O3PO6qR0GAv-LbUIiC9-Z5WmxbPHfXsoA\" height=\"30\" width=\"auto\" /><br>Sugarland Fire Station 4<br>2100 Austin Pkwy<br>Sugar Land, TX 77479",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/vLRpKn4AXhUpH-0WnVCH8xEHTGTOr8ibC7EeihGDtDsDjXb0NHNKcj4EFMn5V2fxPdpSwCxYDBMD7pml4O3PO6qR0GAv-LbUIiC9-Z5WmxbPHfXsoA"
             }
         },
@@ -2738,7 +2672,7 @@
                     "highlight": "#icon-163-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/163-lightblue.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/0oDdxO9PcD8F0TJpv_61ldxuh31yYDYcQkz-lTgjODYqD6TVw_g_pUDHkdwEjde0ppSXD8aIPrXuKDx8di51oLFkOIMKURtSLnTOJq-C-tIEySIXwraSnQg\" height=\"200\" width=\"auto\" /><br><br>Sugarland Fire Station 5<br>5735 Commonwealth Blvd<br>Sugar Land, TX 77479",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/0oDdxO9PcD8F0TJpv_61ldxuh31yYDYcQkz-lTgjODYqD6TVw_g_pUDHkdwEjde0ppSXD8aIPrXuKDx8di51oLFkOIMKURtSLnTOJq-C-tIEySIXwraSnQg\" height=\"30\" width=\"auto\" /><br>Sugarland Fire Station 5<br>5735 Commonwealth Blvd<br>Sugar Land, TX 77479",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/0oDdxO9PcD8F0TJpv_61ldxuh31yYDYcQkz-lTgjODYqD6TVw_g_pUDHkdwEjde0ppSXD8aIPrXuKDx8di51oLFkOIMKURtSLnTOJq-C-tIEySIXwraSnQg"
             }
         },
@@ -2761,7 +2695,7 @@
                     "highlight": "#icon-163-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/163-lightblue.png",
-                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/mZwghhWtla8qwrVXnvtOGqWqeVHDaei2pUlJoT1qpRj_JiQhG1oCZbL1HbbKWkwJtJ9EFrVUFxGwfJwCcQKQ8Wrp4EyiSr4X6FCd39B_qMxSNoQQho2YnjM\" height=\"200\" width=\"auto\" /><br><br>Sugarland Fire Station 6<br>6625 Sansbury Blvd<br>Sugar Land, TX 77479",
+                "description": "<img src=\"https://lh6.googleusercontent.com/proxy/mZwghhWtla8qwrVXnvtOGqWqeVHDaei2pUlJoT1qpRj_JiQhG1oCZbL1HbbKWkwJtJ9EFrVUFxGwfJwCcQKQ8Wrp4EyiSr4X6FCd39B_qMxSNoQQho2YnjM\" height=\"30\" width=\"auto\" /><br>Sugarland Fire Station 6<br>6625 Sansbury Blvd<br>Sugar Land, TX 77479",
                 "gx_media_links": "https://lh6.googleusercontent.com/proxy/mZwghhWtla8qwrVXnvtOGqWqeVHDaei2pUlJoT1qpRj_JiQhG1oCZbL1HbbKWkwJtJ9EFrVUFxGwfJwCcQKQ8Wrp4EyiSr4X6FCd39B_qMxSNoQQho2YnjM"
             }
         },
@@ -2784,7 +2718,7 @@
                     "highlight": "#icon-158-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/158-yellow.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/DfdjxnFq72cmr3xIxsSU21VvF2Im_2QLbewHKm7xPwYdQZKc6uTRr0mbuVtUt2_sbqiHQK08fXZ-CAKZRtdYJ2q9vf1tMk9Yt80q\" height=\"200\" width=\"auto\" /><br><br>Texas City Fire Station 1<br>1725 25th St N<br>Texas City, TX 77590",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/DfdjxnFq72cmr3xIxsSU21VvF2Im_2QLbewHKm7xPwYdQZKc6uTRr0mbuVtUt2_sbqiHQK08fXZ-CAKZRtdYJ2q9vf1tMk9Yt80q\" height=\"30\" width=\"auto\" /><br>Texas City Fire Station 1<br>1725 25th St N<br>Texas City, TX 77590",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/DfdjxnFq72cmr3xIxsSU21VvF2Im_2QLbewHKm7xPwYdQZKc6uTRr0mbuVtUt2_sbqiHQK08fXZ-CAKZRtdYJ2q9vf1tMk9Yt80q"
             }
         },
@@ -2807,7 +2741,7 @@
                     "highlight": "#icon-158-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/158-yellow.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/a4OZxI3nfKR-7oaoGAfaO1QGfHtTRqnluSQj7YdsOnRbn72sKaUXjh0Eok3OrDV9I7FQ5917A0fM9koavYt6zQ722_vcMFUu2nNl\" height=\"200\" width=\"auto\" /><br><br>Texas City Fire Station 2<br>825 10th St N<br>Texas City, TX 77590",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/a4OZxI3nfKR-7oaoGAfaO1QGfHtTRqnluSQj7YdsOnRbn72sKaUXjh0Eok3OrDV9I7FQ5917A0fM9koavYt6zQ722_vcMFUu2nNl\" height=\"30\" width=\"auto\" /><br>Texas City Fire Station 2<br>825 10th St N<br>Texas City, TX 77590",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/a4OZxI3nfKR-7oaoGAfaO1QGfHtTRqnluSQj7YdsOnRbn72sKaUXjh0Eok3OrDV9I7FQ5917A0fM9koavYt6zQ722_vcMFUu2nNl"
             }
         },
@@ -2830,7 +2764,7 @@
                     "highlight": "#icon-158-highlight"
                 },
                 "icon": "http://www.gstatic.com/mapspro/images/stock/158-yellow.png",
-                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/lC7yXbAJy_f94_oeOFnluw_Q1Tl77WyOKT90RjfSbgP0G9duA9_JDD1V-eY-ioA-jMBJTgLbREo5bW_2f_3AF98xHeI_qZkbrHqs\" height=\"200\" width=\"auto\" /><br><br>Texas City Fire Station 3<br>1101 N Amburn Rd<br>Texas City, TX 77591",
+                "description": "<img src=\"https://lh3.googleusercontent.com/proxy/lC7yXbAJy_f94_oeOFnluw_Q1Tl77WyOKT90RjfSbgP0G9duA9_JDD1V-eY-ioA-jMBJTgLbREo5bW_2f_3AF98xHeI_qZkbrHqs\" height=\"30\" width=\"auto\" /><br>Texas City Fire Station 3<br>1101 N Amburn Rd<br>Texas City, TX 77591",
                 "gx_media_links": "https://lh3.googleusercontent.com/proxy/lC7yXbAJy_f94_oeOFnluw_Q1Tl77WyOKT90RjfSbgP0G9duA9_JDD1V-eY-ioA-jMBJTgLbREo5bW_2f_3AF98xHeI_qZkbrHqs"
             }
         }

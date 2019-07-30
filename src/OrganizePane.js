@@ -10,14 +10,16 @@ const { Option } = Select;
 
 const getPriorityUiString = priority => {
   let style;
-  if(priority < 0.3){
+  if (priority < 0.3) {
     style = 'status-low';
-  } else if(priority < 0.6){
+  } else if (priority < 0.6) {
     style = 'status-medium';
-  } else{
+  } else {
     style = 'status-high';
   }
-  return <span className={style}>{Math.max(0, 10 - priority * 10).toFixed(1)}</span>;
+  return (
+    <span className={style}>{Math.max(0, 10 - priority * 10).toFixed(1)}</span>
+  );
 };
 
 export function OrganizePane({
@@ -51,7 +53,7 @@ export function OrganizePane({
     const cluster = fullclustersSorted[index];
 
     const handleItemClick = item => {
-      handleSelectedCluster(item._id);
+      handleSelectedCluster(item);
     };
 
     return (
@@ -152,7 +154,8 @@ export function OrganizePane({
       <div className="organize-info">{/* {info}*/}</div>
 
       <div className="fyi">
-        <Icon className="fyi-icon" type="info-circle" /> Circle color indicates cluster priority
+        <Icon className="fyi-icon" type="info-circle" /> Circle color indicates
+        cluster priority
       </div>
     </div>
   );

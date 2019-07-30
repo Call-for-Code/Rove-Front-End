@@ -10,11 +10,11 @@ const { Option } = Select;
 
 const getPriorityUiString = priority => {
   let style;
-  if(priority < 0.3){
+  if (priority < 0.3) {
     style = 'status-low';
-  } else if(priority < 0.6){
+  } else if (priority < 0.6) {
     style = 'status-medium';
-  } else{
+  } else {
     style = 'status-high';
   }
   return <span className={style}>{(10 - priority * 10).toFixed(1)}</span>;

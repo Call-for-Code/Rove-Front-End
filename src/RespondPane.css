@@ -13,9 +13,9 @@
   flex: 1;
   display: grid;
   grid-template:
-    'fyi'  auto
-    'from'  auto
-    'dividerTop'  auto
+    'fyi' auto
+    'from' auto
+    'dividerTop' auto
     'list' 1fr
     'dividerMid' auto
     'to' auto

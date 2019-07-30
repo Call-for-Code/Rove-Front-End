@@ -7,6 +7,7 @@ import { GatherPane } from './GatherPane';
 import { OrganizePane } from './OrganizePane';
 import kmeans from 'node-kmeans';
 import { RespondPane } from './RespondPane';
+import { ErrorBoundary } from './ErrorBoundary';
 const { TabPane } = Tabs;
 
 export const K_PARTITIONS = 15;
@@ -95,27 +96,63 @@ function App() {
   const [selectedPt, setSelectedPt] = useState('');
   const handleSelectedPt = useCallback(pt => setSelectedPt(pt), []);
 
-  const [selectedCluster, setSelectedCluster] = useState('');
+  const [selectedCluster, setSelectedCluster] = useState(null);
   const handleSelectedCluster = useCallback(
-    clusterId => setSelectedCluster(clusterId),
+    cluster => setSelectedCluster(cluster),
     []
   );
 
-  const [firestations, setFirestations] = useState({});
+  const [firestations, setFirestations] = useState(null);
   useEffect(() => {
     async function fetchData() {
-      const result = await (await fetch(
+      let result = await (await fetch(
         process.env.PUBLIC_URL + '/firestations.json'
       )).json();
+      result.features = result.features.filter(station => !!station.properties);
       setFirestations(result);
     }
     fetchData();
   }, []);
 
+  const [selectedFirestation, setSelectedFirestation] = useState(null);
+  const handleSelectedFirestation = useCallback(
+    firestation => setSelectedFirestation(firestation),
+    []
+  );
+
+  const [route, setRoute] = useState(null);
+  useEffect(() => {
+    if (tab === '3' && selectedFirestation && selectedCluster) {
+      async function fetchData() {
+        const result = await fetch(
+          `http://ligma.mybluemix.net/api/route/` +
+            `?start=${selectedFirestation.geometry.coordinates[1]},${
+              selectedFirestation.geometry.coordinates[0]
+            }` +
+            `&end=${selectedCluster.centroid[1]},${
+              selectedCluster.centroid[0]
+            }`,
+          {
+            mode: 'cors'
+          }
+        );
+
+        const resJson = await result.json();
+
+        const pathData = resJson.route.map(str => {
+          const arr = str.split(',').map(inStr => parseFloat(inStr));
+          return [arr[1], arr[0], 20];
+        });
+        setRoute(pathData);
+      }
+      fetchData();
+    }
+  }, [tab, selectedFirestation, selectedCluster]);
+
   return (
     <div className="App">
       <div className="menu">
-        <h1 className="header">Emergency Dashboard</h1>
+        <h1 className="header">ROVE</h1>
 
         <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
           <TabPane className="tab-pane" tab="1. Visualize" key="1">
@@ -129,19 +166,22 @@ function App() {
             <OrganizePane
               fulldata={fulldata}
               fulldataLngLats={fulldataLngLats}
-              kmeansResult={kmeansResult}
               fullclusters={fullclusters}
               selectedCluster={selectedCluster}
               handleSelectedCluster={handleSelectedCluster}
             />
           </TabPane>
           <TabPane className="tab-pane" tab="3. Respond" key="3">
-             <RespondPane
-                fulldata={fulldata}
-                fulldataLngLats={fulldataLngLats}
-                kmeansResult={kmeansResult}
-                fullclusters={fullclusters}
-                firestations={firestations}/>
+            <RespondPane
+              fulldata={fulldata}
+              fulldataLngLats={fulldataLngLats}
+              fullclusters={fullclusters}
+              firestations={firestations}
+              selectedFirestation={selectedFirestation}
+              handleSelectedFirestation={handleSelectedFirestation}
+              selectedCluster={selectedCluster}
+              handleSelectedCluster={handleSelectedCluster}
+            />
           </TabPane>
         </Tabs>
       </div>
@@ -151,12 +191,26 @@ function App() {
         fullclusters={fullclusters}
         selectedPt={selectedPt}
         handleSelectedPt={handleSelectedPt}
-        kmeansResult={kmeansResult}
         tab={tab}
         firestations={firestations}
+        route={route}
+        handleSelectedFirestation={handleSelectedFirestation}
+        handleSelectedCluster={handleSelectedCluster}
       />
     </div>
   );
+}
+
+
+class AppWrapper {
+
+
+  render() {
+    return (
+      <ErrorBoundary>
+        <App/>
+      </ErrorBoundary>);
+  }
 }
 
 export default App;
