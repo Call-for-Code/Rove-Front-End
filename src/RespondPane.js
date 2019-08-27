@@ -38,7 +38,7 @@ function RespondPane({
     const handleItemClick = item => {
       handleSelectedFirestation(item);
     };
-    console.log(firestation);
+    //console.log(firestation);
     return (
       <List.Item
         key={key}

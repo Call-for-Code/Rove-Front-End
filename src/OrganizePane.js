@@ -140,8 +140,14 @@ export function OrganizePane({
 
       <div className="sliders">
         <div className="sort">Num. of clusters:</div>
-        <Slider min={3} max={40} defaultValue={15} onChange={setClusters} className="slider"/>
-        <Button icon="check" onClick={handleSliderClick}/>
+        <Slider
+          min={3}
+          max={40}
+          defaultValue={15}
+          onChange={setClusters}
+          className="slider"
+        />
+        <Button icon="check" onClick={handleSliderClick} />
       </div>
 
       <div className="divider" style={{ gridArea: 'dividerTop' }} />

@@ -21,7 +21,6 @@
   grid-template-columns: 1fr;
 }
 
-
 .select {
   grid-area: select;
   padding-bottom: 16px;

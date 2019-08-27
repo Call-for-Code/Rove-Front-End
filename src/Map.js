@@ -317,7 +317,7 @@ const MapImpl = React.memo(
               : null
           );
         } else if (tab === '2') {
-          console.log(fullclusters);
+          //console.log(fullclusters);
           layers.push(
             new ScatterplotLayer({
               id: 'scatterplot',
