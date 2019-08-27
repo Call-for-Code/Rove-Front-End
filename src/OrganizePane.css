@@ -13,19 +13,19 @@
   flex: 1;
   display: grid;
   grid-template:
-    'fyi'
-    'select'
-    'dividerTop'
-    'list'
-    'dividerBottom'
-    'info';
-  grid-template-rows: auto auto auto 1fr auto auto;
+    'fyi' auto
+    'select' auto
+    'sliders' auto
+    'dividerTop' auto
+    'list' 1fr
+    'dividerBottom' auto
+    'info' auto;
   grid-template-columns: 1fr;
 }
 
 .select {
   grid-area: select;
-  padding-bottom: 16px;
+  padding-bottom: 8px;
 }
 
 .divider {
@@ -83,4 +83,18 @@
 
 .fyi-icon {
   margin-right: 8px;
+}
+
+.sliders {
+  grid-area: sliders;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-right: 8px;
+  padding-bottom: 16px;
+}
+
+.slider {
+  flex: 1;
 }

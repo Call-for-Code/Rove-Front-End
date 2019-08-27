@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { Icon, List, Select } from 'antd';
+import { Button, Icon, List, Select, Slider } from 'antd';
 import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
@@ -28,7 +28,8 @@ export function OrganizePane({
   handleSelectedCluster,
   fulldataLngLats,
   kmeansResult,
-  fullclusters
+  fullclusters,
+  handleActualClusters
 }) {
   const [selected, setSelected] = useState('overall');
 
@@ -99,6 +100,11 @@ export function OrganizePane({
     info = "Select a report in the above list or Priority Scatterplot"
   }*/
 
+  const [clusters, setClusters] = useState(15);
+
+  const handleSliderClick = () => {
+    handleActualClusters(clusters);
+  };
   return (
     <div className="organize">
       <div className="select">
@@ -130,6 +136,12 @@ export function OrganizePane({
             </div>
           </Option>
         </Select>
+      </div>
+
+      <div className="sliders">
+        <div className="sort">Num. of clusters:</div>
+        <Slider min={3} max={40} defaultValue={15} onChange={setClusters} className="slider"/>
+        <Button icon="check" onClick={handleSliderClick}/>
       </div>
 
       <div className="divider" style={{ gridArea: 'dividerTop' }} />

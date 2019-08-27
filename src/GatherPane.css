@@ -13,14 +13,14 @@
   flex: 1;
   display: grid;
   grid-template:
-    'select'
-    'dividerTop'
-    'list'
-    'dividerBottom'
-    'info';
-  grid-template-rows: auto auto 1fr auto auto;
+    'select' auto
+    'dividerTop' auto
+    'list' 1fr
+    'dividerBottom' auto
+    'info' auto;
   grid-template-columns: 1fr;
 }
+
 
 .select {
   grid-area: select;

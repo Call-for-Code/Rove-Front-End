@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { Icon, List, Select } from 'antd';
+import { Icon, List, Select,  Slider, Switch } from 'antd';
 import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';

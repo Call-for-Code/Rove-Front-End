@@ -12,8 +12,6 @@ import localforage from 'localforage';
 import logo from './rove_logo.png';
 const { TabPane } = Tabs;
 
-export const K_PARTITIONS = 15;
-
 function App() {
   const [tab, setTab] = useState('1');
 
@@ -55,16 +53,17 @@ function App() {
     [fulldata]
   );
 
+  const [actualClusters, setActualClusters] = useState(15);
   const [kmeansResult, setKmeansResult] = useState('');
   useEffect(() => {
     if (!fulldataLngLats || fulldataLngLats.length === 0) {
       return;
     }
-    kmeans.clusterize(fulldataLngLats, { k: K_PARTITIONS }, (err, res) => {
+    kmeans.clusterize(fulldataLngLats, { k: actualClusters }, (err, res) => {
       if (err) console.error(err);
       else setKmeansResult(res);
     });
-  }, [fulldataLngLats]);
+  }, [fulldataLngLats, actualClusters]);
   const fullclusters = useMemo(
     () =>
       kmeansResult
@@ -233,6 +232,7 @@ function App() {
               fullclusters={fullclusters}
               selectedCluster={selectedCluster}
               handleSelectedCluster={handleSelectedCluster}
+              handleActualClusters={setActualClusters}
             />
           </TabPane>
           <TabPane className="tab-pane" tab="3. Respond" key="3">
