@@ -18,12 +18,6 @@
   padding-top: 16px;
 }
 
-.icon {
-  height: 16px;
-  width: 16px;
-  margin-right: 8px;
-}
-
 .tab-pane {
   text-align: initial;
   height: 100%;
@@ -55,4 +49,11 @@
 
 .ant-tabs-content {
   max-height: 100%;
+}
+
+.logo {
+  height: 35px;
+  width: 35px;
+  margin-right: 8px;
+  margin-top: -8px;
 }

@@ -9,6 +9,7 @@ import kmeans from 'node-kmeans';
 import { RespondPane } from './RespondPane';
 import { ErrorBoundary } from './ErrorBoundary';
 import localforage from 'localforage';
+import logo from './rove_logo.png';
 const { TabPane } = Tabs;
 
 export const K_PARTITIONS = 15;
@@ -201,7 +202,7 @@ function App() {
     <div className="App">
       <div className="menu">
         <h1 className="header">
-          {/*<img src=></img>*/}
+          <img src={logo} className="logo"/>
           ROVE
         </h1>
 
