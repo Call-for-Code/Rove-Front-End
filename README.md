@@ -1,6 +1,6 @@
 # ROVE frontend web app
 
-Live: https://rove.now.sh
+Live: https://rove.mybluemix.net
 
 ### Data sources
 - houston.geojson => flooded.json & roads.geojson, Hurricane Harvey flooded roads:
