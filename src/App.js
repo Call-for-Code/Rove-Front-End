@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const result = await (await fetch(
-        process.env.PUBLIC_URL + '/fulldata.json'
+        process.env.PUBLIC_URL + '/static/fulldata.json'
       )).json();
       setData(result);
     }
@@ -107,7 +107,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let result = await (await fetch(
-        process.env.PUBLIC_URL + '/firestations.json'
+        process.env.PUBLIC_URL + '/static/firestations.json'
       )).json();
       result.features = result.features.filter(station => !!station.properties);
       setFirestations(result);
@@ -173,7 +173,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let result = await (await fetch(
-        process.env.PUBLIC_URL + '/roads.geojson'
+        process.env.PUBLIC_URL + '/static/roads.geojson'
       )).json();
       setRoads(result);
     }
