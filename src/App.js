@@ -127,9 +127,9 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let cached = await localforage.getItem('buildings');
-      if(cached){
-        cached.features=[];
-        for(let i=0; i<SPLIT; i++){
+      if (cached) {
+        cached.features = [];
+        for (let i = 0; i < SPLIT; i++) {
           let featuresSlice = await localforage.getItem(`features-${i}`);
           cached.features = cached.features.concat(featuresSlice);
         }
@@ -139,7 +139,7 @@ function App() {
 
       let result = await (await fetch(
         'https://storage.googleapis.com/ibm-frontend/buildings.geojson',
-        {cache: "force-cache"}
+        { cache: 'force-cache' }
       )).json();
       setBuildings(result);
 
@@ -149,9 +149,9 @@ function App() {
       };
       localforage.setItem('buildings', cache);
       const length = result.features.length;
-      for(let i=0; i<SPLIT; i++){
-        const end = i===SPLIT-1 ? length : (i+1)*length/SPLIT;
-        const featuresSlice = result.features.slice(i*length/SPLIT, end);
+      for (let i = 0; i < SPLIT; i++) {
+        const end = i === SPLIT - 1 ? length : ((i + 1) * length) / SPLIT;
+        const featuresSlice = result.features.slice((i * length) / SPLIT, end);
         localforage.setItem(`features-${i}`, featuresSlice);
       }
     }
@@ -202,7 +202,7 @@ function App() {
     <div className="App">
       <div className="menu">
         <h1 className="header">
-          <img src={logo} className="logo"/>
+          <img src={logo} className="logo" />
           ROVE
         </h1>
 

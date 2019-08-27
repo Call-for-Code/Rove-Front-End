@@ -246,7 +246,6 @@ const MapImpl = React.memo(
     kmeansResult,
     roads
   }) => {
-
     const [layers, setLayers] = useState([]);
 
     useEffect(() => {
@@ -262,56 +261,59 @@ const MapImpl = React.memo(
           layers.push(
             hexagonOn
               ? new HexagonLayer({
-                id: 'heatmap',
-                colorRange,
-                coverage,
-                data: fulldataLngLats,
-                elevationRange: [0, 500],
-                elevationScale: 10,
-                extruded: true,
-                getPosition: d => d,
-                opacity: 1,
-                pickable: true,
-                radius,
-                upperPercentile,
-                lowerPercentile,
-                material,
-                onClick: event => {
-                  console.log(event);
-                  return true;
-                },
-                onHover: handleHover
-              })
+                  id: 'heatmap',
+                  colorRange,
+                  coverage,
+                  data: fulldataLngLats,
+                  elevationRange: [0, 500],
+                  elevationScale: 10,
+                  extruded: true,
+                  getPosition: d => d,
+                  opacity: 1,
+                  pickable: true,
+                  radius,
+                  upperPercentile,
+                  lowerPercentile,
+                  material,
+                  onClick: event => {
+                    console.log(event);
+                    return true;
+                  },
+                  onHover: handleHover
+                })
               : null,
             scatterplotOn
               ? new ScatterplotLayer({
-                id: 'scatterplot-pts',
-                data: fulldata,
-                pickable: true,
-                opacity: 0.8,
-                stroked: false,
-                filled: true,
-                radiusScale: 6,
-                radiusMinPixels: 1,
-                radiusMaxPixels: 100,
-                lineWidthMinPixels: 1,
-                getPosition: d => {
-                  return [
-                    d.location_information.geometry.location.lng,
-                    d.location_information.geometry.location.lat
-                  ];
-                },
-                getRadius: d => 10,
-                getFillColor: d =>
-                  scatterplotColorRange[
-                    Math.max(0, Math.min(5, Math.floor(d.overall.priority * 6)))
+                  id: 'scatterplot-pts',
+                  data: fulldata,
+                  pickable: true,
+                  opacity: 0.8,
+                  stroked: false,
+                  filled: true,
+                  radiusScale: 6,
+                  radiusMinPixels: 1,
+                  radiusMaxPixels: 100,
+                  lineWidthMinPixels: 1,
+                  getPosition: d => {
+                    return [
+                      d.location_information.geometry.location.lng,
+                      d.location_information.geometry.location.lat
+                    ];
+                  },
+                  getRadius: d => 10,
+                  getFillColor: d =>
+                    scatterplotColorRange[
+                      Math.max(
+                        0,
+                        Math.min(5, Math.floor(d.overall.priority * 6))
+                      )
                     ],
-                getLineColor: d => [0, 0, 0],
-                onClick: (info, event) => {
-                  handleSelectedPt(info.object._id);
-                },
-                onHover: handleHover
-              })
+                  getLineColor: d => [0, 0, 0],
+                  onClick: (info, event) => {
+                    handleSelectedPt(info.object._id);
+                  },
+                  onHover: handleHover
+                })
               : null
           );
         } else if (tab === '2') {
@@ -340,7 +342,7 @@ const MapImpl = React.memo(
                     0,
                     Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
                   )
-                  ],
+                ],
               getLineColor: d => [0, 0, 0],
               onClick: (info, event) => {},
               onHover: (info, event) => {}
@@ -435,7 +437,7 @@ const MapImpl = React.memo(
                     0,
                     Math.min(5, Math.floor((d.overallPriority - 0.5) * 15 + 5))
                   )
-                  ],
+                ],
               getLineColor: d => [0, 0, 0],
               onClick: ({ object, x, y }, event) => {
                 handleSelectedCluster(object);
@@ -513,7 +515,6 @@ const MapImpl = React.memo(
       scatterplotOn,
       tab
     ]);
-    
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
     useEffect(() => {
