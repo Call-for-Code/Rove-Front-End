@@ -8,7 +8,7 @@ import { OrganizePane } from './OrganizePane';
 import kmeans from 'node-kmeans';
 import { RespondPane } from './RespondPane';
 import { ErrorBoundary } from './ErrorBoundary';
-
+import localforage from 'localforage';
 const { TabPane } = Tabs;
 
 export const K_PARTITIONS = 15;
@@ -121,14 +121,38 @@ function App() {
     []
   );
 
+  const SPLIT = 5;
   const [buildings, setBuildings] = useState(null);
   useEffect(() => {
     async function fetchData() {
+      let cached = await localforage.getItem('buildings');
+      if(cached){
+        cached.features=[];
+        for(let i=0; i<SPLIT; i++){
+          let featuresSlice = await localforage.getItem(`features-${i}`);
+          cached.features = cached.features.concat(featuresSlice);
+        }
+        setBuildings(cached);
+        return;
+      }
+
       let result = await (await fetch(
         'https://storage.googleapis.com/ibm-frontend/buildings.geojson',
         {cache: "force-cache"}
       )).json();
       setBuildings(result);
+
+      const cache = {
+        ...result,
+        features: null
+      };
+      localforage.setItem('buildings', cache);
+      const length = result.features.length;
+      for(let i=0; i<SPLIT; i++){
+        const end = i===SPLIT-1 ? length : (i+1)*length/SPLIT;
+        const featuresSlice = result.features.slice(i*length/SPLIT, end);
+        localforage.setItem(`features-${i}`, featuresSlice);
+      }
     }
     fetchData();
   }, []);
