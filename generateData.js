@@ -81,7 +81,7 @@ let processData = () => {
       phone_number: Math.floor(Math.random() * 9000000000 + 1000000000),
       health: {
         priority: getRandomPriority(minDistToHotspot),
-        key_words: ["uncool"]
+        key_words: [keywords[Math.floor(Math.random() * keywords.length)]]
       },
       food: {
         priority: getRandomPriority(minDistToHotspot)
