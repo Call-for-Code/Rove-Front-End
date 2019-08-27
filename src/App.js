@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import Map from './Map';
@@ -124,7 +124,19 @@ function App() {
 
   const SPLIT = 5;
   const [buildings, setBuildings] = useState(null);
+  const [startBuildings, setStartBuildings] = useState(false);
+  const handleTabChange = (tab) => {
+    if(tab==="3"){
+      setStartBuildings(true);
+    }
+    setTab(tab);
+  };
+  const isFirstRun = useRef(true);
   useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return;
+    }
     async function fetchData() {
       let cached = await localforage.getItem('buildings');
       if (cached) {
@@ -156,7 +168,7 @@ function App() {
       }
     }
     fetchData();
-  }, []);
+  }, [startBuildings]);
 
   const [roads, setRoads] = useState(null);
   useEffect(() => {
@@ -206,7 +218,7 @@ function App() {
           ROVE
         </h1>
 
-        <Tabs className="tabs" defaultActiveKey={tab} onChange={setTab}>
+        <Tabs className="tabs" defaultActiveKey={tab} onChange={handleTabChange}>
           <TabPane className="tab-pane" tab="1. Visualize" key="1">
             <GatherPane
               fulldata={fulldata}
