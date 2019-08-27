@@ -8,6 +8,7 @@ import { OrganizePane } from './OrganizePane';
 import kmeans from 'node-kmeans';
 import { RespondPane } from './RespondPane';
 import { ErrorBoundary } from './ErrorBoundary';
+
 const { TabPane } = Tabs;
 
 export const K_PARTITIONS = 15;
@@ -124,7 +125,8 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let result = await (await fetch(
-        'https://storage.googleapis.com/ibm-frontend/buildings.geojson'
+        'https://storage.googleapis.com/ibm-frontend/buildings.geojson',
+        {cache: "force-cache"}
       )).json();
       setBuildings(result);
     }

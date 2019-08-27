@@ -52,3 +52,7 @@
 .status-low {
   color: #e8c06f;
 }
+
+.ant-tabs-content {
+  max-height: 100%;
+}
