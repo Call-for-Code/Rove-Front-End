@@ -141,7 +141,7 @@ function App() {
   const [selectedCluster, setSelectedCluster] = useState(null);
   const handleSelectedCluster = useCallback(
     cluster => {
-      if (!routeLoading) setSelectedCluster(cluster);
+      /*if (!routeLoading) */setSelectedCluster(cluster);
     },
     [routeLoading]
   );
@@ -162,7 +162,7 @@ function App() {
 
   const handleSelectedFirestation = useCallback(
     firestation => {
-      if (!routeLoading) setSelectedFirestation(firestation);
+      /*if (!routeLoading) */setSelectedFirestation(firestation);
     },
     [routeLoading]
   );
