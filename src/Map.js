@@ -263,7 +263,7 @@ function Map({
   );
 }
 
-const MapImpl = React.memo(
+const MapImpl =
   ({
     hexagonOn,
     fulldataLngLats,
@@ -436,7 +436,9 @@ const MapImpl = React.memo(
                 notification.open({
                   placement: 'bottomRight',
                   message: `Origin selected`,
-                  description: object.properties.name
+                  description: object.properties.name,
+                  key: object.properties.name,
+                  duration: 2
                 });
                 handleSelectedFirestation(object);
               }
@@ -488,7 +490,9 @@ const MapImpl = React.memo(
                 notification.open({
                   placement: 'bottomRight',
                   message: `Destination selected`,
-                  description: `Cluster - ${object.reports.length} reports`
+                  description: `Cluster - ${object.reports.length} reports`,
+                  key: object.reports.length,
+                  duration: 2
                 });
                 handleSelectedCluster(object);
               },
@@ -604,8 +608,7 @@ const MapImpl = React.memo(
         />
       </DeckGL>
     );
-  }
-);
+  };
 
 // MapImpl.whyDidYouRender = true;
 

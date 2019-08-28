@@ -229,8 +229,8 @@ function App() {
   const [route, setRoute] = useState(null);
   useEffect(() => {
     if (tab === '3' && selectedFirestation && selectedCluster) {
-      setRouteLoading(true);
       async function fetchData() {
+        setRouteLoading(true);
         const result = await fetch(
           `https://ligma.mybluemix.net/api/route/` +
             `?start=${selectedFirestation.geometry.coordinates[1]},${
