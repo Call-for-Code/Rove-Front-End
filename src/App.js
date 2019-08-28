@@ -8,7 +8,7 @@ import React, {
 import './App.css';
 import 'antd/dist/antd.css';
 import Map from './Map';
-import { Tabs } from 'antd';
+import { Tabs, notification } from 'antd';
 import { GatherPane } from './GatherPane';
 import { OrganizePane } from './OrganizePane';
 import kmeans from 'node-kmeans';
@@ -48,11 +48,19 @@ function App() {
       }
       setData(result);
 
-      let sms = await (await fetch(
-        'http://mv.pluscubed.com:8000/users'
-      )).json();
-      result = result.concat(sms);
-      setData(result);
+      try {
+        let sms = await (await fetch(
+          'http://mv.pluscubed.com:8000/users'
+        )).json();
+        result = result.concat(sms);
+        setData(result);
+      }catch(e){
+        notification.open({
+          placement: 'bottomLeft',
+          message: 'Error',
+          description: e.toString()
+        })
+      }
 
       setLoadData(false);
     }

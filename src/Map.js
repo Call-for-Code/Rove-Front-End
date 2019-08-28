@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { Checkbox, Radio, Card, Button, Icon } from 'antd';
+import { Checkbox, Radio, Card, Button, Icon, notification } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
@@ -217,7 +217,7 @@ function Map({ tab, buildings, handleRefreshClicked, routeLoading, loadData, ...
         icon="reload"
         type="primary"
         onClick={handleRefreshClicked}>
-        Refresh data
+        Refresh reports
       </Button>
 
       {tab === '3' ? (
@@ -234,7 +234,7 @@ function Map({ tab, buildings, handleRefreshClicked, routeLoading, loadData, ...
       : null}
 
       {loadData ?
-        <Card className="loading">
+        <Card className="loading-topleft">
           <div className="loading-label"><Icon type="loading"/> Loading reports...</div>
         </Card>
         : null}
@@ -368,7 +368,7 @@ const MapImpl = React.memo(
           );
           if (kmeansResult) {
             kmeansResult.forEach((cluster, i) => {
-              console.log(cluster);
+              // console.log(cluster);
               layers.push(
                 new ScatterplotLayer({
                   id: 'scatterplot-cluster' + i,
@@ -388,7 +388,10 @@ const MapImpl = React.memo(
                   onClick: ({ object }, event) => {
                     /* handleSelectedPt(object);*/
                   },
-                  onHover: handleHover
+                  onHover: (t) => {
+                    console.log(t);
+                    handleHover(t)
+                  }
                 })
               );
             });
@@ -411,6 +414,11 @@ const MapImpl = React.memo(
               getElevation: 30,
               onHover: handleHover,
               onClick: ({ object, x, y }) => {
+                notification.open({
+                  placement: 'bottomRight',
+                  message: `Origin selected`,
+                  description: object.properties.name
+                });
                 handleSelectedFirestation(object);
               }
             })
@@ -458,6 +466,11 @@ const MapImpl = React.memo(
                 ],
               getLineColor: d => [0, 0, 0],
               onClick: ({ object, x, y }, event) => {
+                notification.open({
+                  placement: 'bottomRight',
+                  message: `Destination selected`,
+                  description: `Cluster - ${object.reports.length}`
+                });
                 handleSelectedCluster(object);
               },
               onHover: handleHover
