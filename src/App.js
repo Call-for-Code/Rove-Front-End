@@ -30,21 +30,21 @@ function App() {
   const [loadData, setLoadData] = useState(true);
 
   useEffect(() => {
-    if(!loadData){
+    if (!loadData) {
       return;
     }
 
     async function fetchData() {
       let result;
       let staticData = await localforage.getItem('fulldata');
-      if(!staticData) {
+      if (!staticData) {
         const res = await (await fetch(
           process.env.PUBLIC_URL + '/static/fulldata.json'
         )).json();
         result = res;
         localforage.setItem('fulldata', res);
-      }else{
-        result=staticData;
+      } else {
+        result = staticData;
       }
       setData(result);
 
@@ -54,12 +54,12 @@ function App() {
         )).json();
         result = result.concat(sms);
         setData(result);
-      }catch(e){
+      } catch (e) {
         notification.open({
           placement: 'bottomLeft',
           message: 'Error',
           description: e.toString()
-        })
+        });
       }
 
       setLoadData(false);
@@ -141,8 +141,7 @@ function App() {
   const [selectedCluster, setSelectedCluster] = useState(null);
   const handleSelectedCluster = useCallback(
     cluster => {
-      if(!routeLoading)
-        setSelectedCluster(cluster)
+      if (!routeLoading) setSelectedCluster(cluster);
     },
     [routeLoading]
   );
@@ -163,8 +162,7 @@ function App() {
 
   const handleSelectedFirestation = useCallback(
     firestation => {
-      if(!routeLoading)
-        setSelectedFirestation(firestation)
+      if (!routeLoading) setSelectedFirestation(firestation);
     },
     [routeLoading]
   );

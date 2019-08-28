@@ -1,4 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useState
+} from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -100,7 +104,14 @@ const randomColors = [
   [0, 0, 0]
 ];
 
-function Map({ tab, buildings, handleRefreshClicked, routeLoading, loadData, ...rest }) {
+function Map({
+  tab,
+  buildings,
+  handleRefreshClicked,
+  routeLoading,
+  loadData,
+  ...rest
+}) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
@@ -170,11 +181,11 @@ function Map({ tab, buildings, handleRefreshClicked, routeLoading, loadData, ...
         </div>
       );
     } else if (object.reports) {
-      // 3. cluster
+      // 2, 3. cluster
       return (
         <div className="tooltip" style={{ left: x, top: y }}>
-          <div>{`Cluster - ${object.reports.length}`}</div>
-          <div>Click to set navigation destination</div>
+          <div>{`Cluster - ${object.reports.length} reports`}</div>
+          { tab==='3' ? <div>Click to set navigation destination</div> : null}
         </div>
       );
     }
@@ -213,31 +224,39 @@ function Map({ tab, buildings, handleRefreshClicked, routeLoading, loadData, ...
         </Card>
       ) : null}
 
-      <Button className="refresh"
+      <Button
+        className="refresh"
         icon="reload"
         type="primary"
-        onClick={handleRefreshClicked}>
+        onClick={handleRefreshClicked}
+      >
         Refresh reports
       </Button>
 
       {tab === '3' ? (
         buildings ? null : (
           <Card className="loading">
-            <div className="loading-label"><Icon type="loading"/> Loading building data...</div>
+            <div className="loading-label">
+              <Icon type="loading" /> Loading building data...
+            </div>
           </Card>
         )
       ) : null}
-      {routeLoading ?
+      {routeLoading ? (
         <Card className="loading">
-          <div className="loading-label"><Icon type="loading"/> Calculating route...</div>
+          <div className="loading-label">
+            <Icon type="loading" /> Calculating route...
+          </div>
         </Card>
-      : null}
+      ) : null}
 
-      {loadData ?
+      {loadData ? (
         <Card className="loading-topleft">
-          <div className="loading-label"><Icon type="loading"/> Loading reports...</div>
+          <div className="loading-label">
+            <Icon type="loading" /> Loading reports...
+          </div>
         </Card>
-        : null}
+      ) : null}
 
       {renderTooltip()}
     </div>
@@ -362,8 +381,8 @@ const MapImpl = React.memo(
                   )
                 ],
               getLineColor: d => [0, 0, 0],
-              onClick: (info, event) => {},
-              onHover: (info, event) => {}
+              onClick: ({ object, x, y }, event) => {},
+              onHover: handleHover
             })
           );
           if (kmeansResult) {
@@ -388,9 +407,9 @@ const MapImpl = React.memo(
                   onClick: ({ object }, event) => {
                     /* handleSelectedPt(object);*/
                   },
-                  onHover: (t) => {
+                  onHover: t => {
                     console.log(t);
-                    handleHover(t)
+                    handleHover(t);
                   }
                 })
               );
@@ -469,7 +488,7 @@ const MapImpl = React.memo(
                 notification.open({
                   placement: 'bottomRight',
                   message: `Destination selected`,
-                  description: `Cluster - ${object.reports.length}`
+                  description: `Cluster - ${object.reports.length} reports`
                 });
                 handleSelectedCluster(object);
               },
