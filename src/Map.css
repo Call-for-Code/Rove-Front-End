@@ -32,9 +32,16 @@
 
 .loading {
   position: absolute;
+  bottom: 32px;
+  left: 0;
   margin: 8px;
 }
 
 .loading-label {
   color: red;
+}
+
+.refresh {
+  position: absolute;
+  margin: 8px;
 }

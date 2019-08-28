@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { Checkbox, Radio, Card } from 'antd';
+import { Checkbox, Radio, Card, Button, Icon } from 'antd';
 
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
@@ -100,7 +100,7 @@ const randomColors = [
   [0, 0, 0]
 ];
 
-function Map({ tab, buildings, ...rest }) {
+function Map({ tab, buildings, handleRefreshClicked, routeLoading, loadData, ...rest }) {
   const [style, setStyle] = useState(MAPBOX_STYLE);
   const onRadioChange = e => {
     setStyle(e.target.value);
@@ -213,13 +213,31 @@ function Map({ tab, buildings, ...rest }) {
         </Card>
       ) : null}
 
+      <Button className="refresh"
+        icon="reload"
+        type="primary"
+        onClick={handleRefreshClicked}>
+        Refresh data
+      </Button>
+
       {tab === '3' ? (
         buildings ? null : (
           <Card className="loading">
-            <div className="loading-label">Building data loading...</div>
+            <div className="loading-label"><Icon type="loading"/> Loading building data...</div>
           </Card>
         )
       ) : null}
+      {routeLoading ?
+        <Card className="loading">
+          <div className="loading-label"><Icon type="loading"/> Calculating route...</div>
+        </Card>
+      : null}
+
+      {loadData ?
+        <Card className="loading">
+          <div className="loading-label"><Icon type="loading"/> Loading reports...</div>
+        </Card>
+        : null}
 
       {renderTooltip()}
     </div>
@@ -509,7 +527,6 @@ const MapImpl = React.memo(
       fulldataLngLats,
       hexagonOn,
       kmeansResult,
-      layers,
       roads,
       route,
       scatterplotOn,

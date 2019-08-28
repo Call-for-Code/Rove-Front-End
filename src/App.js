@@ -27,17 +27,42 @@ function App() {
     record.hygiene.priority * 0.1;
 
   const [data, setData] = useState([]);
+  const [loadData, setLoadData] = useState(true);
 
   useEffect(() => {
+    if(!loadData){
+      return;
+    }
+
     async function fetchData() {
-      const result = await (await fetch(
-        process.env.PUBLIC_URL + '/static/fulldata.json'
-      )).json();
+      let result;
+      let staticData = await localforage.getItem('fulldata');
+      if(!staticData) {
+        const res = await (await fetch(
+          process.env.PUBLIC_URL + '/static/fulldata.json'
+        )).json();
+        result = res;
+        localforage.setItem('fulldata', res);
+      }else{
+        result=staticData;
+      }
       setData(result);
+
+      let sms = await (await fetch(
+        'http://mv.pluscubed.com:8000/users'
+      )).json();
+      result = result.concat(sms);
+      setData(result);
+
+      setLoadData(false);
     }
 
     fetchData();
-  }, []);
+  }, [loadData]);
+
+  const handleRefreshClicked = () => {
+    setLoadData(true);
+  };
 
   const fulldata = useMemo(
     () =>
@@ -97,16 +122,21 @@ function App() {
             };
           })
         : [],
-    [fulldata, kmeansResult]
+    [kmeansResult]
   );
 
   const [selectedPt, setSelectedPt] = useState('');
   const handleSelectedPt = useCallback(pt => setSelectedPt(pt), []);
 
+  const [routeLoading, setRouteLoading] = useState(false);
+
   const [selectedCluster, setSelectedCluster] = useState(null);
   const handleSelectedCluster = useCallback(
-    cluster => setSelectedCluster(cluster),
-    []
+    cluster => {
+      if(!routeLoading)
+        setSelectedCluster(cluster)
+    },
+    [routeLoading]
   );
 
   const [firestations, setFirestations] = useState(null);
@@ -122,9 +152,13 @@ function App() {
   }, []);
 
   const [selectedFirestation, setSelectedFirestation] = useState(null);
+
   const handleSelectedFirestation = useCallback(
-    firestation => setSelectedFirestation(firestation),
-    []
+    firestation => {
+      if(!routeLoading)
+        setSelectedFirestation(firestation)
+    },
+    [routeLoading]
   );
 
   const SPLIT = 5;
@@ -189,6 +223,7 @@ function App() {
   const [route, setRoute] = useState(null);
   useEffect(() => {
     if (tab === '3' && selectedFirestation && selectedCluster) {
+      setRouteLoading(true);
       async function fetchData() {
         const result = await fetch(
           `https://ligma.mybluemix.net/api/route/` +
@@ -210,6 +245,7 @@ function App() {
           return [arr[1], arr[0], 20];
         });
         setRoute(pathData);
+        setRouteLoading(false);
       }
       fetchData();
     }
@@ -273,6 +309,9 @@ function App() {
         buildings={buildings}
         kmeansResult={kmeansResult}
         roads={roads}
+        handleRefreshClicked={handleRefreshClicked}
+        routeLoading={routeLoading}
+        loadData={loadData}
       />
     </div>
   );
