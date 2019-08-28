@@ -1,4 +1,5 @@
 ---
+name: rove
 path: build/
 memory: 64M
 instances: 1
