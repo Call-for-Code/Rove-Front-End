@@ -231,26 +231,34 @@ function App() {
     if (tab === '3' && selectedFirestation && selectedCluster) {
       async function fetchData() {
         setRouteLoading(true);
-        const result = await fetch(
-          `https://ligma.mybluemix.net/api/route/` +
+        try {
+          const result = await fetch(
+            `https://ligma.mybluemix.net/api/route/` +
             `?start=${selectedFirestation.geometry.coordinates[1]},${
               selectedFirestation.geometry.coordinates[0]
             }` +
             `&end=${selectedCluster.centroid[1]},${
               selectedCluster.centroid[0]
             }`,
-          {
-            mode: 'cors'
-          }
-        );
+            {
+              mode: 'cors'
+            }
+          );
 
-        const resJson = await result.json();
+          const resJson = await result.json();
 
-        const pathData = resJson.route.map(str => {
-          const arr = str.split(',').map(inStr => parseFloat(inStr));
-          return [arr[1], arr[0], 20];
-        });
-        setRoute(pathData);
+          const pathData = resJson.route.map(str => {
+            const arr = str.split(',').map(inStr => parseFloat(inStr));
+            return [arr[1], arr[0], 20];
+          });
+          setRoute(pathData);
+        }catch(e){
+          notification.open({
+            placement: 'bottomLeft',
+            message: 'Error',
+            description: e.toString()
+          });
+        }
         setRouteLoading(false);
       }
       fetchData();
