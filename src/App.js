@@ -98,6 +98,9 @@ function App() {
     if (!fulldataLngLats || fulldataLngLats.length === 0) {
       return;
     }
+    setRoute(null);
+    setSelectedFirestation(null);
+    setSelectedCluster(null);
     kmeans.clusterize(fulldataLngLats, { k: actualClusters }, (err, res) => {
       if (err) console.error(err);
       else setKmeansResult(res);
@@ -141,7 +144,7 @@ function App() {
   const [selectedCluster, setSelectedCluster] = useState(null);
   const handleSelectedCluster = useCallback(
     cluster => {
-      if (!routeLoading) setSelectedCluster(cluster);
+      setSelectedCluster(cluster);
     },
     [routeLoading]
   );
@@ -162,7 +165,7 @@ function App() {
 
   const handleSelectedFirestation = useCallback(
     firestation => {
-      if (!routeLoading) setSelectedFirestation(firestation);
+      setSelectedFirestation(firestation);
     },
     [routeLoading]
   );
