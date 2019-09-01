@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { Icon, List, Select } from 'antd';
+import { Button, Icon, List, Select } from 'antd';
 import * as Icons from './icons';
 import VList from 'react-virtualized/dist/commonjs/List';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
@@ -30,7 +30,9 @@ function RespondPane({
   fulldataLngLats,
   fullclusters,
   selectedFirestation,
-  handleSelectedFirestation
+  handleSelectedFirestation,
+  handleRouteLoading,
+  routeLoading
 }) {
   const renderItem = ({ index, key }) => {
     const firestation = firestations.features[index];
@@ -110,6 +112,10 @@ function RespondPane({
       info = "Select a report in the above list or Priority Scatterplot"
     }*/
 
+  const onCalculateRouteClicked = () => {
+    handleRouteLoading(true)
+  };
+
   return (
     <div className="respond">
       <div className="fyi">
@@ -177,6 +183,16 @@ function RespondPane({
       <div className="divider" style={{ gridArea: 'dividerBottom' }} />
 
       <div className="organize-info">{/* {info}*/}</div>
+
+      <div className="calculate">
+        <Button
+          className="calculate-button"
+          type="primary"
+          onClick={onCalculateRouteClicked}
+          disabled={!(selectedFirestation && selectedCluster && !routeLoading)}>
+          Calculate Route
+        </Button>
+      </div>
     </div>
   );
 }

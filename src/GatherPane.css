@@ -21,7 +21,7 @@
   grid-template-columns: 1fr;
 }
 
-.select {
+.select-gather {
   grid-area: select;
   padding-bottom: 16px;
 }
@@ -41,7 +41,7 @@
   grid-area: list;
 }
 
-.info {
+.info-gather {
   grid-area: info;
   padding: 16px;
   max-width: 400px;

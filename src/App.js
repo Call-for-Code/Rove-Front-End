@@ -141,7 +141,7 @@ function App() {
   const [selectedCluster, setSelectedCluster] = useState(null);
   const handleSelectedCluster = useCallback(
     cluster => {
-      /*if (!routeLoading) */setSelectedCluster(cluster);
+      if (!routeLoading) setSelectedCluster(cluster);
     },
     [routeLoading]
   );
@@ -162,7 +162,7 @@ function App() {
 
   const handleSelectedFirestation = useCallback(
     firestation => {
-      /*if (!routeLoading) */setSelectedFirestation(firestation);
+      if (!routeLoading) setSelectedFirestation(firestation);
     },
     [routeLoading]
   );
@@ -228,9 +228,8 @@ function App() {
 
   const [route, setRoute] = useState(null);
   useEffect(() => {
-    if (tab === '3' && selectedFirestation && selectedCluster) {
+    if (routeLoading && selectedFirestation && selectedCluster) {
       async function fetchData() {
-        setRouteLoading(true);
         try {
           const result = await fetch(
             `https://ligma.mybluemix.net/api/route/` +
@@ -263,7 +262,7 @@ function App() {
       }
       fetchData();
     }
-  }, [tab, selectedFirestation, selectedCluster]);
+  }, [routeLoading]);
 
   return (
     <div className="App">
@@ -305,6 +304,8 @@ function App() {
               handleSelectedFirestation={handleSelectedFirestation}
               selectedCluster={selectedCluster}
               handleSelectedCluster={handleSelectedCluster}
+              routeLoading={routeLoading}
+              handleRouteLoading={setRouteLoading}
             />
           </TabPane>
         </Tabs>

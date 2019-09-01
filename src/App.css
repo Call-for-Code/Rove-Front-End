@@ -48,7 +48,7 @@
 }
 
 .ant-tabs-content {
-  max-height: 100%;
+  max-height: calc(100% - 60px);
 }
 
 .logo {

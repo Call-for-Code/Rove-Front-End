@@ -101,7 +101,7 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
 
   return (
     <div className="gather">
-      <div className="select">
+      <div className="select-gather">
         <span className="sort">Sort reports by:</span>
         <Select
           className="select-el"
@@ -154,7 +154,7 @@ export function GatherPane({ fulldata, selectedPt, handleSelectedPt }) {
 
       <div className="divider" style={{ gridArea: 'dividerBottom' }} />
 
-      <div className="info">{info}</div>
+      <div className="info-gather">{info}</div>
     </div>
   );
 }

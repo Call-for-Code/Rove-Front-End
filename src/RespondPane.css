@@ -22,7 +22,8 @@
     'dividerMidBottom' auto
     'cluster-list' 1fr
     'dividerBottom' auto
-    'info' auto;
+    'info' auto
+    'calculate' auto;
   grid-template-columns: 1fr;
   max-height: 100%;
 }
@@ -34,9 +35,9 @@
 
 .from-label {
   display: inline-block;
-  width: 60px;
-  text-align: end;
+  padding-left: 16px;
   padding-right: 12px;
+  font-weight: 700;
 }
 
 .to {
@@ -47,13 +48,13 @@
 
 .to-label {
   display: inline-block;
-  width: 60px;
-  text-align: end;
+  padding-left: 16px;
   padding-right: 12px;
+  font-weight: 700;
 }
 
 .divider {
-  height: 0.5px;
+  height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
   margin-left: 32px;
   margin-right: 32px;
@@ -70,6 +71,7 @@
 
 .organize-info {
   grid-area: info;
+  display: none;
   padding: 16px;
   max-width: 400px;
   /*min-height: 200px;*/
@@ -125,4 +127,15 @@
 
 .firestation {
   color: rgb(50, 50, 240);
+}
+
+.calculate {
+  grid-area: calculate;
+  padding: 8px;
+}
+
+.calculate-button {
+  width: 100%;
+  height: 50px;
+  font-weight: 700;
 }
