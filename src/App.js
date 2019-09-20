@@ -50,7 +50,7 @@ function App() {
 
       try {
         let sms = await (await fetch(
-          'https://guge.pluscubed.com/rove/users'
+          'https://rove-sms.mybluemix.net/users'
         )).json();
         result = result.concat(sms);
         setData(result);
